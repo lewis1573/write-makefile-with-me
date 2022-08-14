@@ -2,6 +2,7 @@
     "language": "zh-hans",
     "plugins": [
         "-lunr", "-search", "search-pro",
+        "-highlight", "prism", "prism-themes",
         "anchor-navigation-ex", "edit-link", "copy-code-button", "theme-comscore", "ga"
     ],
     "pluginsConfig": {
@@ -11,6 +12,11 @@
       },
       "theme-default": {
         "showLevel": false
+      },
+      "prism": {
+        "css": [    
+          "prismjs/themes/prism-solarizedlight.css"
+        ]
       },
       "anchor-navigation-ex": {
           "showLevel": false,
