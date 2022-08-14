@@ -14,7 +14,7 @@ make命令执行时，需要一个makefile文件，以告诉make命令需要怎�
 
 在讲述这个makefile之前，还是让我们先来粗略地看一看makefile的规则。
 
-```Makefile
+``` makefile
 target ... : prerequisites ...
 	command
 	...
@@ -42,7 +42,7 @@ command:
 
 正如前面所说，如果一个工程有3个头文件和8个c文件，为了完成前面所述的那三个规则，我们的makefile应该是下面的这个样子的。
 
-```Makefile
+``` makefile
 edit : main.o kbd.o command.o display.o \
         insert.o search.o files.o utils.o
 	cc -o edit main.o kbd.o command.o display.o \
