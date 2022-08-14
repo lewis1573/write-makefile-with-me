@@ -3,7 +3,7 @@
     "plugins": [
         "-lunr", "-search", "search-pro",
         "-highlight", "prism", 
-        "anchor-navigation-ex", "edit-link", "copy-code-button", "theme-comscore", "ga"
+        "anchor-navigation-ex", "edit-link", "theme-comscore", "ga"
     ],
     "pluginsConfig": {
       "fontSettings": {
