@@ -15,10 +15,11 @@ make命令执行时，需要一个makefile文件，以告诉make命令需要怎�
 在讲述这个makefile之前，还是让我们先来粗略地看一看makefile的规则。
 
 ``` makefile
+.RECIPEPREFIX = >
 target ... : prerequisites ...
-	command
-	...
-	...
+ >  command
+ >  ...
+ >  ...
 ```
 
 target:   
@@ -43,29 +44,30 @@ command:
 正如前面所说，如果一个工程有3个头文件和8个c文件，为了完成前面所述的那三个规则，我们的makefile应该是下面的这个样子的。
 
 ``` makefile
+.RECIPEPREFIX = >
 edit : main.o kbd.o command.o display.o \
         insert.o search.o files.o utils.o
-	cc -o edit main.o kbd.o command.o display.o \
+ >  cc -o edit main.o kbd.o command.o display.o \
         insert.o search.o files.o utils.o
 
 main.o : main.c defs.h
-	cc -c main.c
+ >  cc -c main.c
 kbd.o : kbd.c defs.h command.h
-	cc -c kbd.c
+ >  cc -c kbd.c
 command.o : command.c defs.h command.h
-	cc -c command.c
+ >  cc -c command.c
 display.o : display.c defs.h buffer.h
-	cc -c display.c
+ >  cc -c display.c
 insert.o : insert.c defs.h buffer.h
-	cc -c insert.c
+ >  cc -c insert.c
 search.o : search.c defs.h buffer.h
-	cc -c search.c
+ >  cc -c search.c
 files.o : files.c defs.h buffer.h command.h
-	cc -c files.c
+ >  cc -c files.c
 utils.o : utils.c defs.h
-	cc -c utils.c
+ >  cc -c utils.c
 clean :
-	rm edit main.o kbd.o command.o display.o \
+ >  rm edit main.o kbd.o command.o display.o \
         insert.o search.o files.o utils.o
 ```
 
@@ -100,9 +102,10 @@ clean :
 在上面的例子中，先让我们看看edit的规则：
 
 ``` makefile
+.RECIPEPREFIX = >
 edit : main.o kbd.o command.o display.o \
         insert.o search.o files.o utils.o
-	cc -o edit main.o kbd.o command.o display.o \
+ >  cc -o edit main.o kbd.o command.o display.o \
         insert.o search.o files.o utils.o
 ```
 
@@ -111,6 +114,7 @@ edit : main.o kbd.o command.o display.o \
 比如，我们声明一个变量，叫 `objects` ， `OBJECTS` ， `objs` ， `OBJS` ， `obj` 或是 `OBJ` ，反正不管什么啦，只要能够表示obj文件就行了。我们在makefile一开始就这样定义：
 
 ``` makefile
+.RECIPEPREFIX = >
 objects = main.o kbd.o command.o display.o \
      insert.o search.o files.o utils.o
 ```
@@ -118,29 +122,30 @@ objects = main.o kbd.o command.o display.o \
 于是，我们就可以很方便地在我们的makefile中以 `$(objects)` 的方式来使用这个变量了，于是 我们的改良版makefile就变成下面这个样子：
 
 ``` makefile
+.RECIPEPREFIX = >
 objects = main.o kbd.o command.o display.o \
     insert.o search.o files.o utils.o
 
 edit : $(objects)
-	cc -o edit $(objects)
+ >  cc -o edit $(objects)
 main.o : main.c defs.h
-	cc -c main.c
+ >  cc -c main.c
 kbd.o : kbd.c defs.h command.h
-	cc -c kbd.c
+ >  cc -c kbd.c
 command.o : command.c defs.h command.h
-	cc -c command.c
+ >  cc -c command.c
 display.o : display.c defs.h buffer.h
-	cc -c display.c
+ >  cc -c display.c
 insert.o : insert.c defs.h buffer.h
-	cc -c insert.c
+ >  cc -c insert.c
 search.o : search.c defs.h buffer.h
-	cc -c search.c
+ >  cc -c search.c
 files.o : files.c defs.h buffer.h command.h
-	cc -c files.c
+ >  cc -c files.c
 utils.o : utils.c defs.h
-	cc -c utils.c
+ >  cc -c utils.c
 clean :
-	rm edit $(objects)
+ >  rm edit $(objects)
 ```
 
 于是如果有新的 `.o` 文件加入，我们只需简单地修改一下 `objects` 变量就可以了。
@@ -154,11 +159,12 @@ GNU的make很强大，它可以自动推导文件以及文件依赖关系后面�
 只要make看到一个 `.o` 文件，它就会自动的把 `.c` 文件加在依赖关系中，如果make找到一个 `whatever.o` ，那么 `whatever.c` 就会是 `whatever.o` 的依赖文件。并且 `cc -c whatever.c` 也会被推导出来，于是，我们的makefile再也不用写得这么复杂。我们的新makefile又出炉了。
 
 ``` makefile
+.RECIPEPREFIX = >
 objects = main.o kbd.o command.o display.o \
     insert.o search.o files.o utils.o
 
 edit : $(objects)
-	cc -o edit $(objects)
+ >  cc -o edit $(objects)
 
 main.o : defs.h
 kbd.o : defs.h command.h
@@ -171,7 +177,7 @@ utils.o : defs.h
 
 .PHONY : clean
 clean :
-	rm edit $(objects)
+ >  rm edit $(objects)
 ```
 
 这种方法，也就是make的"隐晦规则"。上面文件内容中， `.PHONY` 表示 `clean` 是个伪目标 文件。
@@ -183,11 +189,12 @@ clean :
 既然我们的make可以自动推导命令，那么我看到那堆 `.o` 和 `.h` 的依赖就有点不爽，那么多的 重复的 `.h` ，能不能把其收拢起来，好吧，没有问题，这个对于make来说很容易，谁叫它提供了自动推导命令和文件的功能呢？来看看最新风格的makefile吧。
 
 ``` makefile
+.RECIPEPREFIX = >
 objects = main.o kbd.o command.o display.o \
     insert.o search.o files.o utils.o
 
 edit : $(objects)
-	cc -o edit $(objects)
+ >  cc -o edit $(objects)
 
 $(objects) : defs.h
 kbd.o command.o files.o : command.h
@@ -195,7 +202,7 @@ display.o insert.o search.o files.o : buffer.h
 
 .PHONY : clean
 clean :
-	rm edit $(objects)
+ >  rm edit $(objects)
 ```
 
 这种风格，让我们的makefile变得很简单，但我们的文件依赖关系就显得有点凌乱了。鱼和熊掌不可兼得。还看你的喜好了。我是不喜欢这种风格的，一是文件的依赖关系看不清楚，二是如果文件一多，要加入几个新的 `.o` 文件，那就理不清楚了。
@@ -205,16 +212,18 @@ clean :
 每个Makefile中都应该写一个清空目标文件（ `.o` 和执行文件）的规则，这不仅便于重编译，也很利于保持文件的清洁。这是一个"修养"（呵呵，还记得我的《编程修养》吗）。一般的风格都是：
 
 ``` makefile
+.RECIPEPREFIX = >
 clean:
-	rm edit $(objects)
+ >  rm edit $(objects)
 ```
 
 更为稳健的做法是：
 
 ``` makefile
+.RECIPEPREFIX = >
 .PHONY : clean
 clean :
-	-rm edit $(objects)
+ >  -rm edit $(objects)
 ```
 
 前面说过， `.PHONY` 表示 `clean` 是一个"伪目标"。而在 `rm` 命令前面加了一个小减号的意思就是，也许某些文件出现问题，但不要管，继续做后面的事。当然， `clean` 的规则不要放在文件的开头，不然，这就会变成make的默认目标，相信谁也不愿意这样。不成文的规矩是------"clean从来都是放在文件的最后"。
