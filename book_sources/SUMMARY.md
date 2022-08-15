@@ -9,4 +9,4 @@
 * [第八章　　make的运行](./articles/chapter-08-invoke.md)
 * [第九章　　隐含规则](./articles/chapter-09-implicit_rules.md)
 * [第十章　　使用make更新函数库文件](./articles/chapter-10-archives.md)
-* [第十一章  后序](./articles/chapter-11-postscript.md)
+* [第十一章　后序](./articles/chapter-11-postscript.md)
