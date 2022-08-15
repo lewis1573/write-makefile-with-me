@@ -28,8 +28,8 @@
 ``` makefile
 .RECIPEPREFIX = >
 exec:
- <  cd /home/hchen
- <  pwd
+>  cd /home/hchen
+>  pwd
 ```
 
 -   示例二：
@@ -37,7 +37,7 @@ exec:
 ``` makefile
 .RECIPEPREFIX = >
 exec:
- <  cd /home/hchen; pwd
+>  cd /home/hchen; pwd
 ```
 
 当我们执行 `make exec` 时，第一个例子中的cd没有作用，pwd会打印出当前的Makefile目录，而第二个例子中，cd就起作用了，pwd会打印出"/home/hchen"。
@@ -56,7 +56,7 @@ make一般是使用环境变量SHELL中所定义的系统Shell来执行命令，
 ``` makefile
 .RECIPEPREFIX = >
 clean:
- <  -rm -f *.o
+>  -rm -f *.o
 ```
 
 还有一个全局的办法是，给make加上 `-i` 或是 `--ignore-errors` 参数，那么，Makefile中 所有命令都会忽略错误。而如果一个规则是以 `.IGNORE` 作为目标的，那么这个规则中的所有命令将会忽略错误。这些是不同级别的防止命令出错的方法，你可以根据你的不同喜欢设置。
@@ -72,7 +72,7 @@ clean:
 ``` makefile
 .RECIPEPREFIX = >
 subsystem:
- <  cd subdir && $(MAKE)
+>  cd subdir && $(MAKE)
 ```
 
 其等价于：
@@ -80,7 +80,7 @@ subsystem:
 ``` makefile
 .RECIPEPREFIX = >
 subsystem:
- <  $(MAKE) -C subdir
+>  $(MAKE) -C subdir
 ```
 
 定义\$(MAKE)宏变量的意思是，也许我们的make需要一些参数，所以定义成一个变量比较利于维护。这两个例子的意思都是先进入"subdir"目录，然后执行make命令。
@@ -146,7 +146,7 @@ export variable
 ``` makefile
 .RECIPEPREFIX = >
 subsystem:
- <  cd subdir && $(MAKE) MAKEFLAGS=
+>  cd subdir && $(MAKE) MAKEFLAGS=
 ```
 
 如果你定义了环境变量 `MAKEFLAGS` ，那么你得确信其中的选项是大家都会用到的，如果其中有 `-t` , `-n` 和 `-q` 参数，那么将会有让你意想不到的结果，或许会让你异常地恐慌。
@@ -178,7 +178,7 @@ endef
 ``` makefile
 .RECIPEPREFIX = >
 foo.c : foo.y
- <  $(run-yacc)
+>  $(run-yacc)
 ```
 
 我们可以看见，要使用这个命令包，我们就好像使用变量一样。在这个命令包的使用中，命令包"run-yacc"中的 `$^` 就是 `foo.y` ， `$@` 就是 `foo.c` （有关这种以 `$` 开头的特殊变量，我们会在后面介绍），make在执行命令包时，命令包中的每个命令会被依次独立执行。

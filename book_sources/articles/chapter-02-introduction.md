@@ -17,9 +17,9 @@ make命令执行时，需要一个makefile文件，以告诉make命令需要怎�
 ``` makefile
 .RECIPEPREFIX = >
 target ... : prerequisites ...
- >  command
- >  ...
- >  ...
+>  command
+>  ...
+>  ...
 ```
 
 target:   
@@ -47,27 +47,27 @@ command:
 .RECIPEPREFIX = >
 edit : main.o kbd.o command.o display.o \
         insert.o search.o files.o utils.o
- >  cc -o edit main.o kbd.o command.o display.o \
+>  cc -o edit main.o kbd.o command.o display.o \
         insert.o search.o files.o utils.o
 
 main.o : main.c defs.h
- >  cc -c main.c
+>  cc -c main.c
 kbd.o : kbd.c defs.h command.h
- >  cc -c kbd.c
+>  cc -c kbd.c
 command.o : command.c defs.h command.h
- >  cc -c command.c
+>  cc -c command.c
 display.o : display.c defs.h buffer.h
- >  cc -c display.c
+>  cc -c display.c
 insert.o : insert.c defs.h buffer.h
- >  cc -c insert.c
+>  cc -c insert.c
 search.o : search.c defs.h buffer.h
- >  cc -c search.c
+>  cc -c search.c
 files.o : files.c defs.h buffer.h command.h
- >  cc -c files.c
+>  cc -c files.c
 utils.o : utils.c defs.h
- >  cc -c utils.c
+>  cc -c utils.c
 clean :
- >  rm edit main.o kbd.o command.o display.o \
+>  rm edit main.o kbd.o command.o display.o \
         insert.o search.o files.o utils.o
 ```
 
@@ -105,7 +105,7 @@ clean :
 .RECIPEPREFIX = >
 edit : main.o kbd.o command.o display.o \
         insert.o search.o files.o utils.o
- >  cc -o edit main.o kbd.o command.o display.o \
+>  cc -o edit main.o kbd.o command.o display.o \
         insert.o search.o files.o utils.o
 ```
 
@@ -127,25 +127,25 @@ objects = main.o kbd.o command.o display.o \
     insert.o search.o files.o utils.o
 
 edit : $(objects)
- >  cc -o edit $(objects)
+>  cc -o edit $(objects)
 main.o : main.c defs.h
- >  cc -c main.c
+>  cc -c main.c
 kbd.o : kbd.c defs.h command.h
- >  cc -c kbd.c
+>  cc -c kbd.c
 command.o : command.c defs.h command.h
- >  cc -c command.c
+>  cc -c command.c
 display.o : display.c defs.h buffer.h
- >  cc -c display.c
+>  cc -c display.c
 insert.o : insert.c defs.h buffer.h
- >  cc -c insert.c
+>  cc -c insert.c
 search.o : search.c defs.h buffer.h
- >  cc -c search.c
+>  cc -c search.c
 files.o : files.c defs.h buffer.h command.h
- >  cc -c files.c
+>  cc -c files.c
 utils.o : utils.c defs.h
- >  cc -c utils.c
+>  cc -c utils.c
 clean :
- >  rm edit $(objects)
+>  rm edit $(objects)
 ```
 
 于是如果有新的 `.o` 文件加入，我们只需简单地修改一下 `objects` 变量就可以了。
@@ -164,7 +164,7 @@ objects = main.o kbd.o command.o display.o \
     insert.o search.o files.o utils.o
 
 edit : $(objects)
- >  cc -o edit $(objects)
+>  cc -o edit $(objects)
 
 main.o : defs.h
 kbd.o : defs.h command.h
@@ -177,7 +177,7 @@ utils.o : defs.h
 
 .PHONY : clean
 clean :
- >  rm edit $(objects)
+>  rm edit $(objects)
 ```
 
 这种方法，也就是make的"隐晦规则"。上面文件内容中， `.PHONY` 表示 `clean` 是个伪目标 文件。
@@ -194,7 +194,7 @@ objects = main.o kbd.o command.o display.o \
     insert.o search.o files.o utils.o
 
 edit : $(objects)
- >  cc -o edit $(objects)
+>  cc -o edit $(objects)
 
 $(objects) : defs.h
 kbd.o command.o files.o : command.h
@@ -202,7 +202,7 @@ display.o insert.o search.o files.o : buffer.h
 
 .PHONY : clean
 clean :
- >  rm edit $(objects)
+>  rm edit $(objects)
 ```
 
 这种风格，让我们的makefile变得很简单，但我们的文件依赖关系就显得有点凌乱了。鱼和熊掌不可兼得。还看你的喜好了。我是不喜欢这种风格的，一是文件的依赖关系看不清楚，二是如果文件一多，要加入几个新的 `.o` 文件，那就理不清楚了。
@@ -214,7 +214,7 @@ clean :
 ``` makefile
 .RECIPEPREFIX = >
 clean:
- >  rm edit $(objects)
+>  rm edit $(objects)
 ```
 
 更为稳健的做法是：
@@ -223,7 +223,7 @@ clean:
 .RECIPEPREFIX = >
 .PHONY : clean
 clean :
- >  -rm edit $(objects)
+>  -rm edit $(objects)
 ```
 
 前面说过， `.PHONY` 表示 `clean` 是一个"伪目标"。而在 `rm` 命令前面加了一个小减号的意思就是，也许某些文件出现问题，但不要管，继续做后面的事。当然， `clean` 的规则不要放在文件的开头，不然，这就会变成make的默认目标，相信谁也不愿意这样。不成文的规矩是------"clean从来都是放在文件的最后"。
