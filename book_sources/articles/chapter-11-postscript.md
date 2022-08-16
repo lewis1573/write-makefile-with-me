@@ -18,7 +18,7 @@
 
 开源软件的领袖和先驱，从来没有领过一天工资，从来没有使用过Windows操作系统。对于他的事迹和他的软件以及他的思想，我无需说过多的话，相信大家对这个人并不比我陌生，这是他的主页：http://www.stallman.org/ 。这里只贴上一张他的近照：
 
-<http://bbs.chinaunix.net/attachments/rms.jpg>
+![Richard Stallman, at LibrePlanet 2019](https://media.libreplanet.org/mgoblin_media/media_entries/2207/rms-closeup.medium.jpg)
 
 第二位是：Roland McGrath
 
