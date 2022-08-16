@@ -114,13 +114,10 @@ UNIX下的程序文件一多时你就会发现这些功能很有用了），这�
 
     -   a: 也就是all，输出所有的调试信息。（会非常的多）
     -   b: 也就是basic，只输出简单的调试信息。即输出不需要重编译的目标。
-    -   v:
-        也就是verbose，在b选项的级别之上。输出的信息包括哪个makefile被解析，不需要被重编译的依赖文件（或是依赖目标）等。
+    -   v: 也就是verbose，在b选项的级别之上。输出的信息包括哪个makefile被解析，不需要被重编译的依赖文件（或是依赖目标）等。
     -   i: 也就是implicit，输出所以的隐含规则。
-    -   j:
-        也就是jobs，输出执行规则中命令的详细信息，如命令的PID、返回码等。
-    -   m:
-        也就是makefile，输出make读取makefile，更新makefile，执行makefile的信息。
+    -   j: 也就是jobs，输出执行规则中命令的详细信息，如命令的PID、返回码等。
+    -   m: 也就是makefile，输出make读取makefile，更新makefile，执行makefile的信息。
 
 `-d`
 
@@ -206,9 +203,9 @@ UNIX下的程序文件一多时你就会发现这些功能很有用了），这�
 
 :   禁止"-w"选项。
 
-`-W` *\<file\>*, `--what-if`=*\<file\>*, `--new-file`=*\<file\>*, `--assume-file`=*\<file\>*
+`-W` <file>, `--what-if`=<file>, `--new-file`=<file>, `--assume-file`=<file>
 
-:   假定目标\<file\>;需要更新，如果和"-n"选项使用，那么这个参数会输出该目标更新时的运行动作。如果没有"-n"那么就像运行UNIX的"touch"命令一样，使得\<file\>;的修改时间为当前时间。
+:   假定目标<file>;需要更新，如果和"-n"选项使用，那么这个参数会输出该目标更新时的运行动作。如果没有"-n"那么就像运行UNIX的"touch"命令一样，使得<file>;的修改时间为当前时间。
 
 `--warn-undefined-variables`
 
