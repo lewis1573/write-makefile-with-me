@@ -203,9 +203,9 @@ UNIX下的程序文件一多时你就会发现这些功能很有用了），这�
 
 :   禁止"-w"选项。
 
-`-W` <file>, `--what-if`=<file>, `--new-file`=<file>, `--assume-file`=<file>
+`-W` \<file\>, `--what-if`=\<file\>, `--new-file`=\<file\>, `--assume-file`=\<file\>
 
-:   假定目标<file>;需要更新，如果和"-n"选项使用，那么这个参数会输出该目标更新时的运行动作。如果没有"-n"那么就像运行UNIX的"touch"命令一样，使得<file>;的修改时间为当前时间。
+:   假定目标\<file\>需要更新，如果和"-n"选项使用，那么这个参数会输出该目标更新时的运行动作。如果没有"-n"那么就像运行UNIX的"touch"命令一样，使得\<file\>的修改时间为当前时间。
 
 `--warn-undefined-variables`
 
