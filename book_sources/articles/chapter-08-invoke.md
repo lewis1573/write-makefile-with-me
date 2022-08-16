@@ -104,20 +104,20 @@ UNIX下的程序文件一多时你就会发现这些功能很有用了），这�
 
 :   认为所有的目标都需要更新（重编译）。
 
-`-C` *\<dir\>*, `--directory`=*\<dir\>*
+`-C <dir>`, `--directory=<dir>`
 
 :   指定读取makefile的目录。如果有多个"-C"参数，make的解释是后面的路径以前面的作为相对路径，并以最后的目录作为被指定目录。如："make -C \~hchen/test -C  prog"等价于 "make -C \~hchen/test/prog"。
 
-`-debug`\[=*\<options\>*\]
+`-debug[=<options>]`
 
 :   输出make的调试信息。它有几种不同的级别可供选择，如果没有参数，那就是输出最简单的调试信息。下面是\<options\>的取值：
 
-    -   a: 也就是all，输出所有的调试信息。（会非常的多）
-    -   b: 也就是basic，只输出简单的调试信息。即输出不需要重编译的目标。
-    -   v: 也就是verbose，在b选项的级别之上。输出的信息包括哪个makefile被解析，不需要被重编译的依赖文件（或是依赖目标）等。
-    -   i: 也就是implicit，输出所以的隐含规则。
-    -   j: 也就是jobs，输出执行规则中命令的详细信息，如命令的PID、返回码等。
-    -   m: 也就是makefile，输出make读取makefile，更新makefile，执行makefile的信息。
+  -   a: 也就是all，输出所有的调试信息。（会非常的多）
+  -   b: 也就是basic，只输出简单的调试信息。即输出不需要重编译的目标。
+  -   v: 也就是verbose，在b选项的级别之上。输出的信息包括哪个makefile被解析，不需要被重编译的依赖文件（或是依赖目标）等。
+  -   i: 也就是implicit，输出所以的隐含规则。
+  -   j: 也就是jobs，输出执行规则中命令的详细信息，如命令的PID、返回码等。
+  -   m: 也就是makefile，输出make读取makefile，更新makefile，执行makefile的信息。
 
 `-d`
 
@@ -127,7 +127,7 @@ UNIX下的程序文件一多时你就会发现这些功能很有用了），这�
 
 :   指明环境变量的值覆盖makefile中定义的变量的值。
 
-`-f`=*\<file\>*, `--file`=*\<file\>*, `--makefile`=*\<file\>*
+`-f=<file>`, `--file=<file>`, `--makefile=<file>`
 
 :   指定需要执行的makefile。
 
@@ -139,11 +139,11 @@ UNIX下的程序文件一多时你就会发现这些功能很有用了），这�
 
 :   在执行时忽略所有的错误。
 
-`-I` *\<dir\>*, `--include-dir`=*\<dir\>*
+`-I <dir>`, `--include-dir=<dir>`
 
 :   指定一个被包含makefile的搜索目标。可以使用多个"-I"参数来指定多个目录。
 
-`-j` \[*\<jobsnum\>*\], `--jobs`\[=*\<jobsnum\>*\]
+`-j [<jobsnum>]`, `--jobs [=<jobsnum>]`
 
 :   指同时运行命令的个数。如果没有这个参数，make运行命令时能运行多少就运行多少。如果有一个以上的"-j"参数，那么仅最后一个"-j"才是有效的。（注意这个参数在MS-DOS中是无用的）
 
@@ -151,7 +151,7 @@ UNIX下的程序文件一多时你就会发现这些功能很有用了），这�
 
 :   出错也不停止运行。如果生成一个目标失败了，那么依赖于其上的目标就不会被执行了。
 
-`-l` *\<load\>*, `--load-average`\[=*\<load\>*\], `-max-load`\[=*\<load\>*\]
+`-l <load>`, `--load-average[=<load>]`, `-max-load[=<load>]`
 
 :   指定make运行命令的负载。
 
@@ -159,9 +159,9 @@ UNIX下的程序文件一多时你就会发现这些功能很有用了），这�
 
 :   仅输出执行过程中的命令序列，但并不执行。
 
-`-o` *\<file\>*, `--old-file`=*\<file\>*, `--assume-old`=*\<file\>*
+`-o <file>`, `--old-file=<file>`, `--assume-old=<file>`
 
-:   不重新生成的指定的\<file\>，即使这个目标的依赖文件新于它。
+:   不重新生成的指定的`<file>`，即使这个目标的依赖文件新于它。
 
 `-p`, `--print-data-base`
 
