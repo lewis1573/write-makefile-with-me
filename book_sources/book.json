@@ -4,7 +4,6 @@
         "-lunr", "-search", "search-pro",
         "-highlight", "prism",
         "-sharing",
-        "chapter-numbering",
         "anchor-navigation-ex", "edit-link", "theme-comscore", "ga"
     ],
     "pluginsConfig": {

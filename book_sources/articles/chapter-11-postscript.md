@@ -1,4 +1,4 @@
-# 后序
+# 11. 后序
 
 终于到写结束语的时候了，以上基本上就是GNU make的Makefile的所有细节了。其它的厂商的make基本上也就是这样的，无论什么样的make，都是以文件的依赖性为基础的，其基本是都是遵循一个标准的。这篇文档中80%的技术细节都适用于任何的make，我猜测"函数"那一章的内容可能不是其它make所支持的，而隐含规则方面，我想不同的make会有不同的实现，我没有精力来查看GNU的make和VC的nmake、BCB的make，或是别的UNIX下的make有些什么样的差别，一是时间精力不够，二是因为我基本上都是在Unix下使用make，以前在SCO Unix和IBM的AIX，现在在Linux、Solaris、HP-UX、AIX和Alpha下使用，Linux和Solaris下更多一点。不过，我可以肯定的是，在Unix下的make，无论是哪种平台，几乎都使用了Richard Stallman开发的make和cc/gcc的编译器，而且，基本上都是GNU的make（公司里所有的UNIX机器上都被装上了GNU的东西，所以，使用GNU的程序也就多了一些）。GNU的东西还是很不错的，特别是使用得深了以后，越来越觉得GNU的软件的强大，也越来越觉得GNU的在操作系统中（主要是Unix，甚至Windows）"杀伤力"。
 
