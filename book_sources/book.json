@@ -4,6 +4,7 @@
         "-lunr", "-search", "search-pro",
         "-highlight", "prism",
         "-sharing",
+        "github",
         "anchor-navigation-ex", "edit-link", "theme-comscore", "ga"
     ],
     "pluginsConfig": {
@@ -13,6 +14,9 @@
       },
       "theme-default": {
         "showLevel": false
+      },
+      "github": {
+        "url": "https://github.com/lewis1573/write-makefile-with-me"
       },
       "anchor-navigation-ex": {
           "showLevel": false,
