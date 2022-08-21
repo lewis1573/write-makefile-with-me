@@ -2,7 +2,9 @@
     "language": "zh-hans",
     "plugins": [
         "-lunr", "-search", "search-pro",
-        "-highlight", "prism", 
+        "-highlight", "prism",
+        "-sharing",
+        "chapter-numbering",
         "anchor-navigation-ex", "edit-link", "theme-comscore", "ga"
     ],
     "pluginsConfig": {
