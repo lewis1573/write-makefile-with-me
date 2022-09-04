@@ -32,7 +32,7 @@ test.o:test.c
 
 为了解决 Tab 和空格引起的这些问题，这个版本中所有的例子都采用上面这种新规则，使用自定义命令前缀。为了保证每一段例子都可以单独运行，在每个例子都定义了前缀，不过正如上文所说，在实际的 makefile 中，只需要定义一次即可。
 
-关于 makefile 的 Tab 前缀，这里作一些补充说明，这个规则是原始 make 的作者 Stuart Feldman 定义的，他本人明确表示过，这是个坏主意，但是为了不影响已有用户，就没有更改，直到后来对数以万计的人造成了灾难， 它本人在软件工程的讲座中使用了这个例子（作为反例）。（[信息来源](https://retrocomputing.stackexchange.com/questions/20292/why-does-make-only-accept-tab-indentation)）
+关于 makefile 的 Tab 前缀，这里作一些补充说明，这个规则是原始 make 的作者 Stuart Feldman 定义的，他本人明确表示过，这是个坏主意，但是为了不影响已有用户，就没有更改，直到后来对数以万计的人造成了灾难， 他本人在软件工程的讲座中使用了这个例子（作为反例）。（[信息来源](https://retrocomputing.stackexchange.com/questions/20292/why-does-make-only-accept-tab-indentation)）
 
 在 GUN make 更新12年后的今天，我认为是时候摒弃 Tab 作为命令的前缀这个坏主意了。
 

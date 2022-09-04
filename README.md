@@ -11,7 +11,7 @@
 
 ## 内容
 
-基于 [how-to-write-makefile](https://github.com/seisman/how-to-write-makefile) 的最新版本（2022.8.16），将所有例子中的 `Tab` 前缀全部修改成了自定义前缀，修改的动机和修改方式参见[说明](book_sources\README.md)。
+基于 [how-to-write-makefile](https://github.com/seisman/how-to-write-makefile) 的最新版本（2022.8.16），将所有例子中的 `Tab` 前缀全部修改成了自定义前缀，修改的动机和修改方式参见[说明](book_sources/README.md)。
 
 
 ## 发布
