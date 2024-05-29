@@ -1,0 +1,602 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第二章　　Makefile 介绍 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="chapter-03-rules.html" />
+    
+    
+    <link rel="prev" href="chapter-01-overview.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="chapter-01-overview.html">
+            
+                <a href="chapter-01-overview.html">
+            
+                    
+                    第一章　　概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="chapter-02-introduction.html">
+            
+                <a href="chapter-02-introduction.html">
+            
+                    
+                    第二章　　Makefile 介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="chapter-03-rules.html">
+            
+                <a href="chapter-03-rules.html">
+            
+                    
+                    第三章　　书写规则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="chapter-04-recipes.html">
+            
+                <a href="chapter-04-recipes.html">
+            
+                    
+                    第四章　　书写命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="chapter-05-variables.html">
+            
+                <a href="chapter-05-variables.html">
+            
+                    
+                    第五章　　使用变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="chapter-06-conditionals.html">
+            
+                <a href="chapter-06-conditionals.html">
+            
+                    
+                    第六章　　使用条件判断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="chapter-07-functions.html">
+            
+                <a href="chapter-07-functions.html">
+            
+                    
+                    第七章　　使用函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="chapter-08-invoke.html">
+            
+                <a href="chapter-08-invoke.html">
+            
+                    
+                    第八章　　make的运行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="chapter-09-implicit_rules.html">
+            
+                <a href="chapter-09-implicit_rules.html">
+            
+                    
+                    第九章　　隐含规则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="chapter-10-archives.html">
+            
+                <a href="chapter-10-archives.html">
+            
+                    
+                    第十章　　使用make更新函数库文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="chapter-11-postscript.html">
+            
+                <a href="chapter-11-postscript.html">
+            
+                    
+                    第十一章　后序
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >第二章　　Makefile 介绍</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#makefile&#x4ECB;&#x7ECD;"><b></b>makefile&#x4ECB;&#x7ECD;</a></li><ul><li><span class="title-icon "></span><a href="#21-makefile&#x7684;&#x89C4;&#x5219;"><b></b>2.1 makefile&#x7684;&#x89C4;&#x5219;</a></li><li><span class="title-icon "></span><a href="#22-&#x4E00;&#x4E2A;&#x793A;&#x4F8B;"><b></b>2.2 &#x4E00;&#x4E2A;&#x793A;&#x4F8B;</a></li><li><span class="title-icon "></span><a href="#23-make&#x662F;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;&#x7684;"><b></b>2.3 make&#x662F;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;&#x7684;</a></li><li><span class="title-icon "></span><a href="#24-makefile&#x4E2D;&#x4F7F;&#x7528;&#x53D8;&#x91CF;"><b></b>2.4 makefile&#x4E2D;&#x4F7F;&#x7528;&#x53D8;&#x91CF;</a></li><li><span class="title-icon "></span><a href="#25-&#x8BA9;make&#x81EA;&#x52A8;&#x63A8;&#x5BFC;"><b></b>2.5 &#x8BA9;make&#x81EA;&#x52A8;&#x63A8;&#x5BFC;</a></li><li><span class="title-icon "></span><a href="#26-&#x53E6;&#x7C7B;&#x98CE;&#x683C;&#x7684;makefiles"><b></b>2.6 &#x53E6;&#x7C7B;&#x98CE;&#x683C;&#x7684;makefiles</a></li><li><span class="title-icon "></span><a href="#27-&#x6E05;&#x7A7A;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x7684;&#x89C4;&#x5219;"><b></b>2.7 &#x6E05;&#x7A7A;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x7684;&#x89C4;&#x5219;</a></li><li><span class="title-icon "></span><a href="#28-makefile&#x91CC;&#x6709;&#x4EC0;&#x4E48;&#xFF1F;"><b></b>2.8 Makefile&#x91CC;&#x6709;&#x4EC0;&#x4E48;&#xFF1F;</a></li><li><span class="title-icon "></span><a href="#29-makefile&#x7684;&#x6587;&#x4EF6;&#x540D;"><b></b>2.9 Makefile&#x7684;&#x6587;&#x4EF6;&#x540D;</a></li><li><span class="title-icon "></span><a href="#210-&#x5F15;&#x7528;&#x5176;&#x5B83;&#x7684;makefile"><b></b>2.10 &#x5F15;&#x7528;&#x5176;&#x5B83;&#x7684;Makefile</a></li><li><span class="title-icon "></span><a href="#211-&#x73AF;&#x5883;&#x53D8;&#x91CF;makefiles"><b></b>2.11 &#x73AF;&#x5883;&#x53D8;&#x91CF;MAKEFILES</a></li><li><span class="title-icon "></span><a href="#212-make&#x7684;&#x5DE5;&#x4F5C;&#x65B9;&#x5F0F;"><b></b>2.12 make&#x7684;&#x5DE5;&#x4F5C;&#x65B9;&#x5F0F;</a></li></ul></ul></div><a href="#makefile&#x4ECB;&#x7ECD;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="makefile&#x4ECB;&#x7ECD;"><a name="makefile&#x4ECB;&#x7ECD;" class="anchor-navigation-ex-anchor" href="#makefile&#x4ECB;&#x7ECD;"><i class="fa fa-link" aria-hidden="true"></i></a>makefile&#x4ECB;&#x7ECD;</h1>
+<p>make&#x547D;&#x4EE4;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x4E00;&#x4E2A;makefile&#x6587;&#x4EF6;&#xFF0C;&#x4EE5;&#x544A;&#x8BC9;make&#x547D;&#x4EE4;&#x9700;&#x8981;&#x600E;&#x4E48;&#x6837;&#x7684;&#x53BB;&#x7F16;&#x8BD1;&#x548C;&#x94FE;&#x63A5;&#x7A0B;&#x5E8F;&#x3002;</p>
+<p>&#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x7528;&#x4E00;&#x4E2A;&#x793A;&#x4F8B;&#x6765;&#x8BF4;&#x660E;makefile&#x7684;&#x4E66;&#x5199;&#x89C4;&#x5219;&#xFF0C;&#x4EE5;&#x4FBF;&#x7ED9;&#x5927;&#x5BB6;&#x4E00;&#x4E2A;&#x611F;&#x6027;&#x8BA4;&#x8BC6;&#x3002;&#x8FD9;&#x4E2A;&#x793A;&#x4F8B;&#x6765;&#x6E90;&#x4E8E;gnu&#x7684;make&#x4F7F;&#x7528;&#x624B;&#x518C;&#xFF0C;&#x5728;&#x8FD9;&#x4E2A;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x7684;&#x5DE5;&#x7A0B;&#x6709;8&#x4E2A;c&#x6587;&#x4EF6;&#xFF0C;&#x548C;3&#x4E2A;&#x5934;&#x6587;&#x4EF6;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x5199;&#x4E00;&#x4E2A;makefile&#x6765;&#x544A;&#x8BC9;make&#x547D;&#x4EE4;&#x5982;&#x4F55;&#x7F16;&#x8BD1;&#x548C;&#x94FE;&#x63A5;&#x8FD9;&#x51E0;&#x4E2A;&#x6587;&#x4EF6;&#x3002;&#x6211;&#x4EEC;&#x7684;&#x89C4;&#x5219;&#x662F;&#xFF1A;</p>
+<ol>
+<li>&#x5982;&#x679C;&#x8FD9;&#x4E2A;&#x5DE5;&#x7A0B;&#x6CA1;&#x6709;&#x7F16;&#x8BD1;&#x8FC7;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x7684;&#x6240;&#x6709;c&#x6587;&#x4EF6;&#x90FD;&#x8981;&#x7F16;&#x8BD1;&#x5E76;&#x88AB;&#x94FE;&#x63A5;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x8FD9;&#x4E2A;&#x5DE5;&#x7A0B;&#x7684;&#x67D0;&#x51E0;&#x4E2A;c&#x6587;&#x4EF6;&#x88AB;&#x4FEE;&#x6539;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x53EA;&#x7F16;&#x8BD1;&#x88AB;&#x4FEE;&#x6539;&#x7684;c&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x94FE;&#x63A5;&#x76EE;&#x6807;&#x7A0B;&#x5E8F;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x8FD9;&#x4E2A;&#x5DE5;&#x7A0B;&#x7684;&#x5934;&#x6587;&#x4EF6;&#x88AB;&#x6539;&#x53D8;&#x4E86;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7F16;&#x8BD1;&#x5F15;&#x7528;&#x4E86;&#x8FD9;&#x51E0;&#x4E2A;&#x5934;&#x6587;&#x4EF6;&#x7684;c&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x94FE;&#x63A5;&#x76EE;&#x6807;&#x7A0B;&#x5E8F;&#x3002;</li>
+</ol>
+<p>&#x53EA;&#x8981;&#x6211;&#x4EEC;&#x7684;makefile&#x5199;&#x5F97;&#x591F;&#x597D;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x8FD9;&#x4E00;&#x5207;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x7528;&#x4E00;&#x4E2A;make&#x547D;&#x4EE4;&#x5C31;&#x53EF;&#x4EE5;&#x5B8C;&#x6210;&#xFF0C;make&#x547D;&#x4EE4;&#x4F1A;&#x81EA;&#x52A8;&#x667A;&#x80FD;&#x5730;&#x6839;&#x636E;&#x5F53;&#x524D;&#x7684;&#x6587;&#x4EF6;&#x4FEE;&#x6539;&#x7684;&#x60C5;&#x51B5;&#x6765;&#x786E;&#x5B9A;&#x54EA;&#x4E9B;&#x6587;&#x4EF6;&#x9700;&#x8981;&#x91CD;&#x7F16;&#x8BD1;&#xFF0C;&#x4ECE;&#x800C;&#x81EA;&#x52A8;&#x7F16;&#x8BD1;&#x6240;&#x9700;&#x8981;&#x7684;&#x6587;&#x4EF6;&#x548C;&#x94FE;&#x63A5;&#x76EE;&#x6807;&#x7A0B;&#x5E8F;&#x3002;</p>
+<h2 id="21-makefile&#x7684;&#x89C4;&#x5219;"><a name="21-makefile&#x7684;&#x89C4;&#x5219;" class="anchor-navigation-ex-anchor" href="#21-makefile&#x7684;&#x89C4;&#x5219;"><i class="fa fa-link" aria-hidden="true"></i></a>2.1 makefile&#x7684;&#x89C4;&#x5219;</h2>
+<p>&#x5728;&#x8BB2;&#x8FF0;&#x8FD9;&#x4E2A;makefile&#x4E4B;&#x524D;&#xFF0C;&#x8FD8;&#x662F;&#x8BA9;&#x6211;&#x4EEC;&#x5148;&#x6765;&#x7C97;&#x7565;&#x5730;&#x770B;&#x4E00;&#x770B;makefile&#x7684;&#x89C4;&#x5219;&#x3002;</p>
+<pre class="language-"><code class="lang-makefile">.RECIPEPREFIX <span class="token operator">=</span> &gt;
+<span class="token target symbol">target ...</span> <span class="token punctuation">:</span> prerequisites ...
+&gt;  command
+&gt;  ...
+&gt;  ...
+</code></pre>
+<p>target:<br>&#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x4E2A;object file&#xFF08;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#xFF09;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x4E2A;&#x6267;&#x884C;&#x6587;&#x4EF6;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x4E2A;&#x6807;&#x7B7E;&#xFF08;label&#xFF09;&#x3002;&#x5BF9;&#x4E8E;&#x6807;&#x7B7E;&#x8FD9;&#x79CD;&#x7279;&#x6027;&#xFF0C;&#x5728;&#x540E;&#x7EED;&#x7684;&quot;&#x4F2A;&#x76EE;&#x6807;&quot;&#x7AE0;&#x8282;&#x4E2D;&#x4F1A;&#x6709;&#x53D9;&#x8FF0;&#x3002;</p>
+<p>prerequisites:<br>&#x751F;&#x6210;&#x8BE5;target&#x6240;&#x4F9D;&#x8D56;&#x7684;&#x6587;&#x4EF6;&#x548C;/&#x6216;target</p>
+<p>command:<br>&#x8BE5;target&#x8981;&#x6267;&#x884C;&#x7684;&#x547D;&#x4EE4;&#xFF08;&#x4EFB;&#x610F;&#x7684;shell&#x547D;&#x4EE4;&#xFF09;</p>
+<p>&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;target&#x8FD9;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x7684;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x4F9D;&#x8D56;&#x4E8E;prerequisites&#x4E2D;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x5176;&#x751F;&#x6210;&#x89C4;&#x5219;&#x5B9A;&#x4E49;&#x5728;command&#x4E2D;&#x3002;&#x8BF4;&#x767D;&#x4E00;&#x70B9;&#x5C31;&#x662F;&#x8BF4;:</p>
+<pre class="language-"><code>prerequisites&#x4E2D;&#x5982;&#x679C;&#x6709;&#x4E00;&#x4E2A;&#x4EE5;&#x4E0A;&#x7684;&#x6587;&#x4EF6;&#x6BD4;target&#x6587;&#x4EF6;&#x8981;&#x65B0;&#x7684;&#x8BDD;&#xFF0C;command&#x6240;&#x5B9A;&#x4E49;&#x7684;&#x547D;&#x4EE4;&#x5C31;&#x4F1A;&#x88AB;&#x6267;&#x884C;&#x3002;
+</code></pre><p>&#x8FD9;&#x5C31;&#x662F;makefile&#x7684;&#x89C4;&#x5219;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;makefile&#x4E2D;&#x6700;&#x6838;&#x5FC3;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
+<p>&#x8BF4;&#x5230;&#x5E95;&#xFF0C;makefile&#x7684;&#x4E1C;&#x897F;&#x5C31;&#x662F;&#x8FD9;&#x6837;&#x4E00;&#x70B9;&#xFF0C;&#x597D;&#x50CF;&#x6211;&#x7684;&#x8FD9;&#x7BC7;&#x6587;&#x6863;&#x4E5F;&#x8BE5;&#x7ED3;&#x675F;&#x4E86;&#x3002;&#x5475;&#x5475;&#x3002;&#x8FD8;&#x4E0D;&#x5C3D;&#x7136;&#xFF0C;&#x8FD9;&#x662F;makefile&#x7684;&#x4E3B;&#x7EBF;&#x548C;&#x6838;&#x5FC3;&#xFF0C;&#x4F46;&#x8981;&#x5199;&#x597D;&#x4E00;&#x4E2A;makefile&#x8FD8;&#x4E0D;&#x591F;&#xFF0C;&#x6211;&#x4F1A;&#x5728;&#x540E;&#x9762;&#x4E00;&#x70B9;&#x4E00;&#x70B9;&#x5730;&#x7ED3;&#x5408;&#x6211;&#x7684;&#x5DE5;&#x4F5C;&#x7ECF;&#x9A8C;&#x7ED9;&#x4F60;&#x6162;&#x6162;&#x9053;&#x6765;&#x3002;&#x5185;&#x5BB9;&#x8FD8;&#x591A;&#x7740;&#x5462;&#x3002;:)</p>
+<h2 id="22-&#x4E00;&#x4E2A;&#x793A;&#x4F8B;"><a name="22-&#x4E00;&#x4E2A;&#x793A;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#22-&#x4E00;&#x4E2A;&#x793A;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>2.2 &#x4E00;&#x4E2A;&#x793A;&#x4F8B;</h2>
+<p>&#x6B63;&#x5982;&#x524D;&#x9762;&#x6240;&#x8BF4;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x5DE5;&#x7A0B;&#x6709;3&#x4E2A;&#x5934;&#x6587;&#x4EF6;&#x548C;8&#x4E2A;c&#x6587;&#x4EF6;&#xFF0C;&#x4E3A;&#x4E86;&#x5B8C;&#x6210;&#x524D;&#x9762;&#x6240;&#x8FF0;&#x7684;&#x90A3;&#x4E09;&#x4E2A;&#x89C4;&#x5219;&#xFF0C;&#x6211;&#x4EEC;&#x7684;makefile&#x5E94;&#x8BE5;&#x662F;&#x4E0B;&#x9762;&#x7684;&#x8FD9;&#x4E2A;&#x6837;&#x5B50;&#x7684;&#x3002;</p>
+<pre class="language-"><code class="lang-makefile">.RECIPEPREFIX <span class="token operator">=</span> &gt;
+<span class="token target symbol">edit</span> <span class="token punctuation">:</span> main.o kbd.o command.o display.o \
+        insert.o search.o files.o utils.o
+&gt;  cc -o edit main.o kbd.o command.o display.o \
+        insert.o search.o files.o utils.o
+
+<span class="token target symbol">main.o</span> <span class="token punctuation">:</span> main.c defs.h
+&gt;  cc -c main.c
+<span class="token target symbol">kbd.o</span> <span class="token punctuation">:</span> kbd.c defs.h command.h
+&gt;  cc -c kbd.c
+<span class="token target symbol">command.o</span> <span class="token punctuation">:</span> command.c defs.h command.h
+&gt;  cc -c command.c
+<span class="token target symbol">display.o</span> <span class="token punctuation">:</span> display.c defs.h buffer.h
+&gt;  cc -c display.c
+<span class="token target symbol">insert.o</span> <span class="token punctuation">:</span> insert.c defs.h buffer.h
+&gt;  cc -c insert.c
+<span class="token target symbol">search.o</span> <span class="token punctuation">:</span> search.c defs.h buffer.h
+&gt;  cc -c search.c
+<span class="token target symbol">files.o</span> <span class="token punctuation">:</span> files.c defs.h buffer.h command.h
+&gt;  cc -c files.c
+<span class="token target symbol">utils.o</span> <span class="token punctuation">:</span> utils.c defs.h
+&gt;  cc -c utils.c
+<span class="token target symbol">clean</span> <span class="token punctuation">:</span>
+&gt;  rm edit main.o kbd.o command.o display.o \
+        insert.o search.o files.o utils.o
+</code></pre>
+<p>&#x53CD;&#x659C;&#x6760;&#xFF08; <code>\</code> &#xFF09;&#x662F;&#x6362;&#x884C;&#x7B26;&#x7684;&#x610F;&#x601D;&#x3002;&#x8FD9;&#x6837;&#x6BD4;&#x8F83;&#x4FBF;&#x4E8E;makefile&#x7684;&#x9605;&#x8BFB;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x628A;&#x8FD9;&#x4E2A;&#x5185;&#x5BB9;&#x4FDD;&#x5B58;&#x5728;&#x540D;&#x5B57;&#x4E3A;&quot;makefile&quot;&#x6216;&quot;Makefile&quot;&#x7684;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x8BE5;&#x76EE;&#x5F55;&#x4E0B;&#x76F4;&#x63A5;&#x8F93;&#x5165;&#x547D;&#x4EE4; <code>make</code> &#x5C31;&#x53EF;&#x4EE5;&#x751F;&#x6210;&#x6267;&#x884C;&#x6587;&#x4EF6;edit&#x3002;&#x5982;&#x679C;&#x8981;&#x5220;&#x9664;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x548C;&#x6240;&#x6709;&#x7684;&#x4E2D;&#x95F4;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;&#x53EA;&#x8981;&#x7B80;&#x5355;&#x5730;&#x6267;&#x884C;&#x4E00;&#x4E0B; <code>make clean</code> &#x5C31; &#x53EF;&#x4EE5;&#x4E86;&#x3002;</p>
+<p>&#x5728;&#x8FD9;&#x4E2A;makefile&#x4E2D;&#xFF0C;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#xFF08;target&#xFF09;&#x5305;&#x542B;&#xFF1A;&#x6267;&#x884C;&#x6587;&#x4EF6;edit&#x548C;&#x4E2D;&#x95F4;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#xFF08; <code>*.o</code> &#xFF09;&#xFF0C;&#x4F9D;&#x8D56;&#x6587; &#x4EF6;&#xFF08;prerequisites&#xFF09;&#x5C31;&#x662F;&#x5192;&#x53F7;&#x540E;&#x9762;&#x7684;&#x90A3;&#x4E9B; <code>.c</code> &#x6587;&#x4EF6;&#x548C; <code>.h</code> &#x6587;&#x4EF6;&#x3002;&#x6BCF;&#x4E00;&#x4E2A; <code>.o</code> &#x6587;&#x4EF6;&#x90FD;&#x6709; &#x4E00;&#x7EC4;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#xFF0C;&#x800C;&#x8FD9;&#x4E9B; <code>.o</code> &#x6587;&#x4EF6;&#x53C8;&#x662F;&#x6267;&#x884C;&#x6587;&#x4EF6; <code>edit</code> &#x7684;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x3002;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x7684;&#x5B9E;&#x8D28;&#x5C31;&#x662F;&#x8BF4;&#x660E;&#x4E86;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x662F;&#x7531;&#x54EA;&#x4E9B;&#x6587;&#x4EF6;&#x751F;&#x6210;&#x7684;&#xFF0C;&#x6362;&#x8A00;&#x4E4B;&#xFF0C;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x662F;&#x54EA;&#x4E9B;&#x6587;&#x4EF6;&#x66F4;&#x65B0;&#x7684;&#x3002;</p>
+<p>&#x5728;&#x5B9A;&#x4E49;&#x597D;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x540E;&#xFF0C;&#x540E;&#x7EED;&#x7684;&#x90A3;&#x4E00;&#x884C;&#x5B9A;&#x4E49;&#x4E86;&#x5982;&#x4F55;&#x751F;&#x6210;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x547D;&#x4EE4;&#xFF0C;&#x4E00;&#x5B9A;&#x8981;&#x4EE5;&#x4E00;&#x4E2A; <code>Tab</code> &#x952E;&#x4F5C;&#x4E3A;&#x5F00;&#x5934;&#x3002;&#x8BB0;&#x4F4F;&#xFF0C;make&#x5E76;&#x4E0D;&#x7BA1;&#x547D;&#x4EE4;&#x662F;&#x600E;&#x4E48;&#x5DE5;&#x4F5C;&#x7684;&#xFF0C;&#x4ED6;&#x53EA;&#x7BA1;&#x6267;&#x884C;&#x6240;&#x5B9A;&#x4E49;&#x7684;&#x547D;&#x4EE4;&#x3002;make&#x4F1A;&#x6BD4;&#x8F83;targets&#x6587;&#x4EF6;&#x548C;prerequisites&#x6587;&#x4EF6;&#x7684;&#x4FEE;&#x6539;&#x65E5;&#x671F;&#xFF0C;&#x5982;&#x679C;prerequisites&#x6587;&#x4EF6;&#x7684;&#x65E5;&#x671F;&#x8981;&#x6BD4;targets&#x6587;&#x4EF6;&#x7684;&#x65E5;&#x671F;&#x8981;&#x65B0;&#xFF0C;&#x6216;&#x8005;target&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x8BDD;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;make&#x5C31;&#x4F1A;&#x6267;&#x884C;&#x540E;&#x7EED;&#x5B9A;&#x4E49;&#x7684;&#x547D;&#x4EE4;&#x3002;</p>
+<p>&#x8FD9;&#x91CC;&#x8981;&#x8BF4;&#x660E;&#x4E00;&#x70B9;&#x7684;&#x662F;&#xFF0C; <code>clean</code> &#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x5B83;&#x53EA;&#x4E0D;&#x8FC7;&#x662F;&#x4E00;&#x4E2A;&#x52A8;&#x4F5C;&#x540D;&#x5B57;&#xFF0C;&#x6709;&#x70B9;&#x50CF;c&#x8BED;&#x8A00;&#x4E2D;&#x7684;label&#x4E00;&#x6837;&#xFF0C;&#x5176;&#x5192;&#x53F7;&#x540E;&#x4EC0;&#x4E48;&#x4E5F;&#x6CA1;&#x6709;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;make&#x5C31;&#x4E0D;&#x4F1A;&#x81EA;&#x52A8;&#x53BB;&#x627E;&#x5B83;&#x7684;&#x4F9D;&#x8D56;&#x6027;&#xFF0C;&#x4E5F;&#x5C31;&#x4E0D;&#x4F1A;&#x81EA;&#x52A8;&#x6267;&#x884C;&#x5176;&#x540E;&#x6240;&#x5B9A;&#x4E49;&#x7684;&#x547D;&#x4EE4;&#x3002;&#x8981;&#x6267;&#x884C;&#x5176;&#x540E;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x5C31;&#x8981;&#x5728;make&#x547D;&#x4EE4;&#x540E;&#x660E;&#x663E;&#x5F97;&#x6307;&#x51FA;&#x8FD9;&#x4E2A;label&#x7684;&#x540D;&#x5B57;&#x3002;&#x8FD9;&#x6837;&#x7684;&#x65B9;&#x6CD5;&#x975E;&#x5E38;&#x6709;&#x7528;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x4E00;&#x4E2A;makefile&#x4E2D;&#x5B9A;&#x4E49;&#x4E0D;&#x7528;&#x7684;&#x7F16;&#x8BD1;&#x6216;&#x662F;&#x548C;&#x7F16;&#x8BD1;&#x65E0;&#x5173;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x6BD4;&#x5982;&#x7A0B;&#x5E8F;&#x7684;&#x6253;&#x5305;&#xFF0C;&#x7A0B;&#x5E8F;&#x7684;&#x5907;&#x4EFD;&#xFF0C;&#x7B49;&#x7B49;&#x3002;</p>
+<h2 id="23-make&#x662F;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;&#x7684;"><a name="23-make&#x662F;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;&#x7684;" class="anchor-navigation-ex-anchor" href="#23-make&#x662F;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;&#x7684;"><i class="fa fa-link" aria-hidden="true"></i></a>2.3 make&#x662F;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;&#x7684;</h2>
+<p>&#x5728;&#x9ED8;&#x8BA4;&#x7684;&#x65B9;&#x5F0F;&#x4E0B;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x53EA;&#x8F93;&#x5165; <code>make</code> &#x547D;&#x4EE4;&#x3002;&#x90A3;&#x4E48;&#xFF0C;</p>
+<ol>
+<li>make&#x4F1A;&#x5728;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x627E;&#x540D;&#x5B57;&#x53EB;&quot;Makefile&quot;&#x6216;&quot;makefile&quot;&#x7684;&#x6587;&#x4EF6;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x627E;&#x5230;&#xFF0C;&#x5B83;&#x4F1A;&#x627E;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#xFF08;target&#xFF09;&#xFF0C;&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x4ED6;&#x4F1A;&#x627E;&#x5230;&quot;edit&quot;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x628A;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x4F5C;&#x4E3A;&#x6700;&#x7EC8;&#x7684;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x3002;</li>
+<li>&#x5982;&#x679C;edit&#x6587;&#x4EF6;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x6216;&#x662F;edit&#x6240;&#x4F9D;&#x8D56;&#x7684;&#x540E;&#x9762;&#x7684; <code>.o</code> &#x6587;&#x4EF6;&#x7684;&#x6587;&#x4EF6;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&#x8981;&#x6BD4; <code>edit</code> &#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x65B0;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;&#x4ED6;&#x5C31;&#x4F1A;&#x6267;&#x884C;&#x540E;&#x9762;&#x6240;&#x5B9A;&#x4E49;&#x7684;&#x547D;&#x4EE4;&#x6765;&#x751F;&#x6210; <code>edit</code> &#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x3002;</li>
+<li>&#x5982;&#x679C; <code>edit</code> &#x6240;&#x4F9D;&#x8D56;&#x7684; <code>.o</code> &#x6587;&#x4EF6;&#x4E5F;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x90A3;&#x4E48;make&#x4F1A;&#x5728;&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x4E2D;&#x627E;&#x76EE;&#x6807;&#x4E3A; <code>.o</code> &#x6587;&#x4EF6;&#x7684;&#x4F9D;&#x8D56;&#x6027;&#xFF0C;&#x5982;&#x679C;&#x627E;&#x5230;&#x5219;&#x518D;&#x6839;&#x636E;&#x90A3;&#x4E00;&#x4E2A;&#x89C4;&#x5219;&#x751F;&#x6210; <code>.o</code> &#x6587;&#x4EF6;&#x3002;&#xFF08;&#x8FD9;&#x6709;&#x70B9;&#x50CF;&#x4E00;&#x4E2A;&#x5806;&#x6808;&#x7684;&#x8FC7;&#x7A0B;&#xFF09;</li>
+<li>&#x5F53;&#x7136;&#xFF0C;&#x4F60;&#x7684;C&#x6587;&#x4EF6;&#x548C;H&#x6587;&#x4EF6;&#x662F;&#x5B58;&#x5728;&#x7684;&#x5566;&#xFF0C;&#x4E8E;&#x662F;make&#x4F1A;&#x751F;&#x6210; <code>.o</code> &#x6587;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x7528; <code>.o</code> &#x6587;&#x4EF6;&#x751F; &#x6210;make&#x7684;&#x7EC8;&#x6781;&#x4EFB;&#x52A1;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x6267;&#x884C;&#x6587;&#x4EF6; <code>edit</code> &#x4E86;&#x3002;</li>
+</ol>
+<p>&#x8FD9;&#x5C31;&#x662F;&#x6574;&#x4E2A;make&#x7684;&#x4F9D;&#x8D56;&#x6027;&#xFF0C;make&#x4F1A;&#x4E00;&#x5C42;&#x53C8;&#x4E00;&#x5C42;&#x5730;&#x53BB;&#x627E;&#x6587;&#x4EF6;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#xFF0C;&#x76F4;&#x5230;&#x6700;&#x7EC8;&#x7F16;&#x8BD1;&#x51FA;&#x7B2C;&#x4E00;&#x4E2A;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x3002;&#x5728;&#x627E;&#x5BFB;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x51FA;&#x73B0;&#x9519;&#x8BEF;&#xFF0C;&#x6BD4;&#x5982;&#x6700;&#x540E;&#x88AB;&#x4F9D;&#x8D56;&#x7684;&#x6587;&#x4EF6;&#x627E;&#x4E0D;&#x5230;&#xFF0C;&#x90A3;&#x4E48;make&#x5C31;&#x4F1A;&#x76F4;&#x63A5;&#x9000;&#x51FA;&#xFF0C;&#x5E76;&#x62A5;&#x9519;&#xFF0C;&#x800C;&#x5BF9;&#x4E8E;&#x6240;&#x5B9A;&#x4E49;&#x7684;&#x547D;&#x4EE4;&#x7684;&#x9519;&#x8BEF;&#xFF0C;&#x6216;&#x662F;&#x7F16;&#x8BD1;&#x4E0D;&#x6210;&#x529F;&#xFF0C;make&#x6839;&#x672C;&#x4E0D;&#x7406;&#x3002;make&#x53EA;&#x7BA1;&#x6587;&#x4EF6;&#x7684;&#x4F9D;&#x8D56;&#x6027;&#xFF0C;&#x5373;&#xFF0C;&#x5982;&#x679C;&#x5728;&#x6211;&#x627E;&#x4E86;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x4E4B;&#x540E;&#xFF0C;&#x5192;&#x53F7;&#x540E;&#x9762;&#x7684;&#x6587;&#x4EF6;&#x8FD8;&#x662F;&#x4E0D;&#x5728;&#xFF0C;&#x90A3;&#x4E48;&#x5BF9;&#x4E0D;&#x8D77;&#xFF0C;&#x6211;&#x5C31;&#x4E0D;&#x5DE5;&#x4F5C;&#x5566;&#x3002;</p>
+<p>&#x901A;&#x8FC7;&#x4E0A;&#x8FF0;&#x5206;&#x6790;&#xFF0C;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#xFF0C;&#x50CF;clean&#x8FD9;&#x79CD;&#xFF0C;&#x6CA1;&#x6709;&#x88AB;&#x7B2C;&#x4E00;&#x4E2A;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x76F4;&#x63A5;&#x6216;&#x95F4;&#x63A5;&#x5173;&#x8054;&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x540E;&#x9762;&#x6240;&#x5B9A;&#x4E49;&#x7684;&#x547D;&#x4EE4;&#x5C06;&#x4E0D;&#x4F1A;&#x88AB;&#x81EA;&#x52A8;&#x6267;&#x884C;&#xFF0C;&#x4E0D;&#x8FC7;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x663E;&#x793A;&#x8981;make&#x6267;&#x884C;&#x3002;&#x5373;&#x547D;&#x4EE4;------ <code>make clean</code> &#xFF0C;&#x4EE5;&#x6B64;&#x6765;&#x6E05;&#x9664;&#x6240;&#x6709; &#x7684;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#xFF0C;&#x4EE5;&#x4FBF;&#x91CD;&#x7F16;&#x8BD1;&#x3002;</p>
+<p>&#x4E8E;&#x662F;&#x5728;&#x6211;&#x4EEC;&#x7F16;&#x7A0B;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x8FD9;&#x4E2A;&#x5DE5;&#x7A0B;&#x5DF2;&#x88AB;&#x7F16;&#x8BD1;&#x8FC7;&#x4E86;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x4FEE;&#x6539;&#x4E86;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x6E90;&#x6587;&#x4EF6;&#xFF0C;&#x6BD4;&#x5982; <code>file.c</code> &#xFF0C; &#x90A3;&#x4E48;&#x6839;&#x636E;&#x6211;&#x4EEC;&#x7684;&#x4F9D;&#x8D56;&#x6027;&#xFF0C;&#x6211;&#x4EEC;&#x7684;&#x76EE;&#x6807; <code>file.o</code> &#x4F1A;&#x88AB;&#x91CD;&#x7F16;&#x8BD1;&#xFF08;&#x4E5F;&#x5C31;&#x662F;&#x5728;&#x8FD9;&#x4E2A;&#x4F9D;&#x6027;&#x5173;&#x7CFB;&#x540E;&#x9762;&#x6240;&#x5B9A;&#x4E49;&#x7684;&#x547D;&#x4EE4;&#xFF09;&#xFF0C; &#x4E8E;&#x662F; <code>file.o</code> &#x7684;&#x6587;&#x4EF6;&#x4E5F;&#x662F;&#x6700;&#x65B0;&#x7684;&#x5566;&#xFF0C;&#x4E8E;&#x662F; <code>file.o</code> &#x7684;&#x6587;&#x4EF6;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&#x8981;&#x6BD4; <code>edit</code> &#x8981;&#x65B0;&#xFF0C;&#x6240;&#x4EE5; <code>edit</code> &#x4E5F;&#x4F1A;&#x88AB;&#x91CD;&#x65B0;&#x94FE;&#x63A5;&#x4E86;&#xFF08;&#x8BE6;&#x89C1; <code>edit</code> &#x76EE;&#x6807;&#x6587;&#x4EF6;&#x540E;&#x5B9A;&#x4E49;&#x7684;&#x547D;&#x4EE4;&#xFF09;&#x3002;</p>
+<p>&#x800C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x6539;&#x53D8;&#x4E86; <code>command.h</code> &#xFF0C;&#x90A3;&#x4E48;&#xFF0C; <code>kdb.o</code> &#x3001; <code>command.o</code> &#x548C; <code>files.o</code> &#x90FD; &#x4F1A;&#x88AB;&#x91CD;&#x7F16;&#x8BD1;&#xFF0C;&#x5E76;&#x4E14;&#xFF0C; <code>edit</code> &#x4F1A;&#x88AB;&#x91CD;&#x94FE;&#x63A5;&#x3002;</p>
+<h2 id="24-makefile&#x4E2D;&#x4F7F;&#x7528;&#x53D8;&#x91CF;"><a name="24-makefile&#x4E2D;&#x4F7F;&#x7528;&#x53D8;&#x91CF;" class="anchor-navigation-ex-anchor" href="#24-makefile&#x4E2D;&#x4F7F;&#x7528;&#x53D8;&#x91CF;"><i class="fa fa-link" aria-hidden="true"></i></a>2.4 makefile&#x4E2D;&#x4F7F;&#x7528;&#x53D8;&#x91CF;</h2>
+<p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x5148;&#x8BA9;&#x6211;&#x4EEC;&#x770B;&#x770B;edit&#x7684;&#x89C4;&#x5219;&#xFF1A;</p>
+<pre class="language-"><code class="lang-makefile">.RECIPEPREFIX <span class="token operator">=</span> &gt;
+<span class="token target symbol">edit</span> <span class="token punctuation">:</span> main.o kbd.o command.o display.o \
+        insert.o search.o files.o utils.o
+&gt;  cc -o edit main.o kbd.o command.o display.o \
+        insert.o search.o files.o utils.o
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230; <code>.o</code> &#x6587;&#x4EF6;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x88AB;&#x91CD;&#x590D;&#x4E86;&#x4E24;&#x6B21;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x7684;&#x5DE5;&#x7A0B;&#x9700;&#x8981;&#x52A0;&#x5165;&#x4E00;&#x4E2A;&#x65B0;&#x7684; <code>.o</code> &#x6587;&#x4EF6;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5728;&#x4E24;&#x4E2A;&#x5730;&#x65B9;&#x52A0;&#xFF08;&#x5E94;&#x8BE5;&#x662F;&#x4E09;&#x4E2A;&#x5730;&#x65B9;&#xFF0C;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x5730;&#x65B9;&#x5728;clean&#x4E2D;&#xFF09;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x6211;&#x4EEC;&#x7684;makefile&#x5E76;&#x4E0D;&#x590D;&#x6742;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x4E24;&#x4E2A;&#x5730;&#x65B9;&#x52A0;&#x4E5F;&#x4E0D;&#x7D2F;&#xFF0C;&#x4F46;&#x5982;&#x679C;makefile&#x53D8;&#x5F97;&#x590D;&#x6742;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x5C31;&#x6709;&#x53EF;&#x80FD;&#x4F1A;&#x5FD8;&#x6389;&#x4E00;&#x4E2A;&#x9700;&#x8981;&#x52A0;&#x5165;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x800C;&#x5BFC;&#x81F4;&#x7F16;&#x8BD1;&#x5931;&#x8D25;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x4E3A;&#x4E86;makefile&#x7684;&#x6613;&#x7EF4;&#x62A4;&#xFF0C;&#x5728;makefile&#x4E2D;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x53D8;&#x91CF;&#x3002;makefile&#x7684;&#x53D8;&#x91CF;&#x4E5F;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x7406;&#x89E3;&#x6210;C&#x8BED;&#x8A00;&#x4E2D;&#x7684;&#x5B8F;&#x53EF;&#x80FD;&#x4F1A;&#x66F4;&#x597D;&#x3002;</p>
+<p>&#x6BD4;&#x5982;&#xFF0C;&#x6211;&#x4EEC;&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;&#x53EB; <code>objects</code> &#xFF0C; <code>OBJECTS</code> &#xFF0C; <code>objs</code> &#xFF0C; <code>OBJS</code> &#xFF0C; <code>obj</code> &#x6216;&#x662F; <code>OBJ</code> &#xFF0C;&#x53CD;&#x6B63;&#x4E0D;&#x7BA1;&#x4EC0;&#x4E48;&#x5566;&#xFF0C;&#x53EA;&#x8981;&#x80FD;&#x591F;&#x8868;&#x793A;obj&#x6587;&#x4EF6;&#x5C31;&#x884C;&#x4E86;&#x3002;&#x6211;&#x4EEC;&#x5728;makefile&#x4E00;&#x5F00;&#x59CB;&#x5C31;&#x8FD9;&#x6837;&#x5B9A;&#x4E49;&#xFF1A;</p>
+<pre class="language-"><code class="lang-makefile">.RECIPEPREFIX <span class="token operator">=</span> &gt;
+objects <span class="token operator">=</span> main.o kbd.o command.o display.o \
+     insert.o search.o files.o utils.o
+</code></pre>
+<p>&#x4E8E;&#x662F;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x5F88;&#x65B9;&#x4FBF;&#x5730;&#x5728;&#x6211;&#x4EEC;&#x7684;makefile&#x4E2D;&#x4EE5; <code>$(objects)</code> &#x7684;&#x65B9;&#x5F0F;&#x6765;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x4E86;&#xFF0C;&#x4E8E;&#x662F; &#x6211;&#x4EEC;&#x7684;&#x6539;&#x826F;&#x7248;makefile&#x5C31;&#x53D8;&#x6210;&#x4E0B;&#x9762;&#x8FD9;&#x4E2A;&#x6837;&#x5B50;&#xFF1A;</p>
+<pre class="language-"><code class="lang-makefile">.RECIPEPREFIX <span class="token operator">=</span> &gt;
+objects <span class="token operator">=</span> main.o kbd.o command.o display.o \
+    insert.o search.o files.o utils.o
+
+<span class="token target symbol">edit</span> <span class="token punctuation">:</span> <span class="token variable">$</span><span class="token punctuation">(</span>objects<span class="token punctuation">)</span>
+&gt;  cc -o edit <span class="token variable">$</span><span class="token punctuation">(</span>objects<span class="token punctuation">)</span>
+<span class="token target symbol">main.o</span> <span class="token punctuation">:</span> main.c defs.h
+&gt;  cc -c main.c
+<span class="token target symbol">kbd.o</span> <span class="token punctuation">:</span> kbd.c defs.h command.h
+&gt;  cc -c kbd.c
+<span class="token target symbol">command.o</span> <span class="token punctuation">:</span> command.c defs.h command.h
+&gt;  cc -c command.c
+<span class="token target symbol">display.o</span> <span class="token punctuation">:</span> display.c defs.h buffer.h
+&gt;  cc -c display.c
+<span class="token target symbol">insert.o</span> <span class="token punctuation">:</span> insert.c defs.h buffer.h
+&gt;  cc -c insert.c
+<span class="token target symbol">search.o</span> <span class="token punctuation">:</span> search.c defs.h buffer.h
+&gt;  cc -c search.c
+<span class="token target symbol">files.o</span> <span class="token punctuation">:</span> files.c defs.h buffer.h command.h
+&gt;  cc -c files.c
+<span class="token target symbol">utils.o</span> <span class="token punctuation">:</span> utils.c defs.h
+&gt;  cc -c utils.c
+<span class="token target symbol">clean</span> <span class="token punctuation">:</span>
+&gt;  rm edit <span class="token variable">$</span><span class="token punctuation">(</span>objects<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x4E8E;&#x662F;&#x5982;&#x679C;&#x6709;&#x65B0;&#x7684; <code>.o</code> &#x6587;&#x4EF6;&#x52A0;&#x5165;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x7B80;&#x5355;&#x5730;&#x4FEE;&#x6539;&#x4E00;&#x4E0B; <code>objects</code> &#x53D8;&#x91CF;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;</p>
+<p>&#x5173;&#x4E8E;&#x53D8;&#x91CF;&#x66F4;&#x591A;&#x7684;&#x8BDD;&#x9898;&#xFF0C;&#x6211;&#x4F1A;&#x5728;&#x540E;&#x7EED;&#x7ED9;&#x4F60;&#x4E00;&#x4E00;&#x9053;&#x6765;&#x3002;</p>
+<h2 id="25-&#x8BA9;make&#x81EA;&#x52A8;&#x63A8;&#x5BFC;"><a name="25-&#x8BA9;make&#x81EA;&#x52A8;&#x63A8;&#x5BFC;" class="anchor-navigation-ex-anchor" href="#25-&#x8BA9;make&#x81EA;&#x52A8;&#x63A8;&#x5BFC;"><i class="fa fa-link" aria-hidden="true"></i></a>2.5 &#x8BA9;make&#x81EA;&#x52A8;&#x63A8;&#x5BFC;</h2>
+<p>GNU&#x7684;make&#x5F88;&#x5F3A;&#x5927;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x6587;&#x4EF6;&#x4EE5;&#x53CA;&#x6587;&#x4EF6;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x540E;&#x9762;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x4E8E;&#x662F;&#x6211;&#x4EEC;&#x5C31;&#x6CA1;&#x5FC5;&#x8981;&#x53BB;&#x5728;&#x6BCF;&#x4E00;&#x4E2A; <code>.o</code> &#x6587;&#x4EF6;&#x540E;&#x90FD;&#x5199;&#x4E0A;&#x7C7B;&#x4F3C;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x56E0;&#x4E3A;&#xFF0C;&#x6211;&#x4EEC;&#x7684;make&#x4F1A;&#x81EA;&#x52A8;&#x8BC6;&#x522B;&#xFF0C;&#x5E76;&#x81EA;&#x5DF1;&#x63A8;&#x5BFC;&#x547D;&#x4EE4;&#x3002;</p>
+<p>&#x53EA;&#x8981;make&#x770B;&#x5230;&#x4E00;&#x4E2A; <code>.o</code> &#x6587;&#x4EF6;&#xFF0C;&#x5B83;&#x5C31;&#x4F1A;&#x81EA;&#x52A8;&#x7684;&#x628A; <code>.c</code> &#x6587;&#x4EF6;&#x52A0;&#x5728;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x4E2D;&#xFF0C;&#x5982;&#x679C;make&#x627E;&#x5230;&#x4E00;&#x4E2A; <code>whatever.o</code> &#xFF0C;&#x90A3;&#x4E48; <code>whatever.c</code> &#x5C31;&#x4F1A;&#x662F; <code>whatever.o</code> &#x7684;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x3002;&#x5E76;&#x4E14; <code>cc -c whatever.c</code> &#x4E5F;&#x4F1A;&#x88AB;&#x63A8;&#x5BFC;&#x51FA;&#x6765;&#xFF0C;&#x4E8E;&#x662F;&#xFF0C;&#x6211;&#x4EEC;&#x7684;makefile&#x518D;&#x4E5F;&#x4E0D;&#x7528;&#x5199;&#x5F97;&#x8FD9;&#x4E48;&#x590D;&#x6742;&#x3002;&#x6211;&#x4EEC;&#x7684;&#x65B0;makefile&#x53C8;&#x51FA;&#x7089;&#x4E86;&#x3002;</p>
+<pre class="language-"><code class="lang-makefile">.RECIPEPREFIX <span class="token operator">=</span> &gt;
+objects <span class="token operator">=</span> main.o kbd.o command.o display.o \
+    insert.o search.o files.o utils.o
+
+<span class="token target symbol">edit</span> <span class="token punctuation">:</span> <span class="token variable">$</span><span class="token punctuation">(</span>objects<span class="token punctuation">)</span>
+&gt;  cc -o edit <span class="token variable">$</span><span class="token punctuation">(</span>objects<span class="token punctuation">)</span>
+
+<span class="token target symbol">main.o</span> <span class="token punctuation">:</span> defs.h
+<span class="token target symbol">kbd.o</span> <span class="token punctuation">:</span> defs.h command.h
+<span class="token target symbol">command.o</span> <span class="token punctuation">:</span> defs.h command.h
+<span class="token target symbol">display.o</span> <span class="token punctuation">:</span> defs.h buffer.h
+<span class="token target symbol">insert.o</span> <span class="token punctuation">:</span> defs.h buffer.h
+<span class="token target symbol">search.o</span> <span class="token punctuation">:</span> defs.h buffer.h
+<span class="token target symbol">files.o</span> <span class="token punctuation">:</span> defs.h buffer.h command.h
+<span class="token target symbol">utils.o</span> <span class="token punctuation">:</span> defs.h
+
+<span class="token builtin-target builtin">.PHONY</span> <span class="token punctuation">:</span> clean
+<span class="token target symbol">clean</span> <span class="token punctuation">:</span>
+&gt;  rm edit <span class="token variable">$</span><span class="token punctuation">(</span>objects<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;make&#x7684;&quot;&#x9690;&#x6666;&#x89C4;&#x5219;&quot;&#x3002;&#x4E0A;&#x9762;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x4E2D;&#xFF0C; <code>.PHONY</code> &#x8868;&#x793A; <code>clean</code> &#x662F;&#x4E2A;&#x4F2A;&#x76EE;&#x6807; &#x6587;&#x4EF6;&#x3002;</p>
+<p>&#x5173;&#x4E8E;&#x66F4;&#x4E3A;&#x8BE6;&#x7EC6;&#x7684;&quot;&#x9690;&#x6666;&#x89C4;&#x5219;&quot;&#x548C;&quot;&#x4F2A;&#x76EE;&#x6807;&#x6587;&#x4EF6;&quot;&#xFF0C;&#x6211;&#x4F1A;&#x5728;&#x540E;&#x7EED;&#x7ED9;&#x4F60;&#x4E00;&#x4E00;&#x9053;&#x6765;&#x3002;</p>
+<h2 id="26-&#x53E6;&#x7C7B;&#x98CE;&#x683C;&#x7684;makefiles"><a name="26-&#x53E6;&#x7C7B;&#x98CE;&#x683C;&#x7684;makefiles" class="anchor-navigation-ex-anchor" href="#26-&#x53E6;&#x7C7B;&#x98CE;&#x683C;&#x7684;makefiles"><i class="fa fa-link" aria-hidden="true"></i></a>2.6 &#x53E6;&#x7C7B;&#x98CE;&#x683C;&#x7684;makefiles</h2>
+<p>&#x65E2;&#x7136;&#x6211;&#x4EEC;&#x7684;make&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x547D;&#x4EE4;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x770B;&#x5230;&#x90A3;&#x5806; <code>.o</code> &#x548C; <code>.h</code> &#x7684;&#x4F9D;&#x8D56;&#x5C31;&#x6709;&#x70B9;&#x4E0D;&#x723D;&#xFF0C;&#x90A3;&#x4E48;&#x591A;&#x7684; &#x91CD;&#x590D;&#x7684; <code>.h</code> &#xFF0C;&#x80FD;&#x4E0D;&#x80FD;&#x628A;&#x5176;&#x6536;&#x62E2;&#x8D77;&#x6765;&#xFF0C;&#x597D;&#x5427;&#xFF0C;&#x6CA1;&#x6709;&#x95EE;&#x9898;&#xFF0C;&#x8FD9;&#x4E2A;&#x5BF9;&#x4E8E;make&#x6765;&#x8BF4;&#x5F88;&#x5BB9;&#x6613;&#xFF0C;&#x8C01;&#x53EB;&#x5B83;&#x63D0;&#x4F9B;&#x4E86;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x547D;&#x4EE4;&#x548C;&#x6587;&#x4EF6;&#x7684;&#x529F;&#x80FD;&#x5462;&#xFF1F;&#x6765;&#x770B;&#x770B;&#x6700;&#x65B0;&#x98CE;&#x683C;&#x7684;makefile&#x5427;&#x3002;</p>
+<pre class="language-"><code class="lang-makefile">.RECIPEPREFIX <span class="token operator">=</span> &gt;
+objects <span class="token operator">=</span> main.o kbd.o command.o display.o \
+    insert.o search.o files.o utils.o
+
+<span class="token target symbol">edit</span> <span class="token punctuation">:</span> <span class="token variable">$</span><span class="token punctuation">(</span>objects<span class="token punctuation">)</span>
+&gt;  cc -o edit <span class="token variable">$</span><span class="token punctuation">(</span>objects<span class="token punctuation">)</span>
+
+<span class="token target symbol"><span class="token variable">$</span>(objects)</span> <span class="token punctuation">:</span> defs.h
+<span class="token target symbol">kbd.o command.o files.o</span> <span class="token punctuation">:</span> command.h
+<span class="token target symbol">display.o insert.o search.o files.o</span> <span class="token punctuation">:</span> buffer.h
+
+<span class="token builtin-target builtin">.PHONY</span> <span class="token punctuation">:</span> clean
+<span class="token target symbol">clean</span> <span class="token punctuation">:</span>
+&gt;  rm edit <span class="token variable">$</span><span class="token punctuation">(</span>objects<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x8FD9;&#x79CD;&#x98CE;&#x683C;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x7684;makefile&#x53D8;&#x5F97;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x4F46;&#x6211;&#x4EEC;&#x7684;&#x6587;&#x4EF6;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x5C31;&#x663E;&#x5F97;&#x6709;&#x70B9;&#x51CC;&#x4E71;&#x4E86;&#x3002;&#x9C7C;&#x548C;&#x718A;&#x638C;&#x4E0D;&#x53EF;&#x517C;&#x5F97;&#x3002;&#x8FD8;&#x770B;&#x4F60;&#x7684;&#x559C;&#x597D;&#x4E86;&#x3002;&#x6211;&#x662F;&#x4E0D;&#x559C;&#x6B22;&#x8FD9;&#x79CD;&#x98CE;&#x683C;&#x7684;&#xFF0C;&#x4E00;&#x662F;&#x6587;&#x4EF6;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x770B;&#x4E0D;&#x6E05;&#x695A;&#xFF0C;&#x4E8C;&#x662F;&#x5982;&#x679C;&#x6587;&#x4EF6;&#x4E00;&#x591A;&#xFF0C;&#x8981;&#x52A0;&#x5165;&#x51E0;&#x4E2A;&#x65B0;&#x7684; <code>.o</code> &#x6587;&#x4EF6;&#xFF0C;&#x90A3;&#x5C31;&#x7406;&#x4E0D;&#x6E05;&#x695A;&#x4E86;&#x3002;</p>
+<h2 id="27-&#x6E05;&#x7A7A;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x7684;&#x89C4;&#x5219;"><a name="27-&#x6E05;&#x7A7A;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x7684;&#x89C4;&#x5219;" class="anchor-navigation-ex-anchor" href="#27-&#x6E05;&#x7A7A;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x7684;&#x89C4;&#x5219;"><i class="fa fa-link" aria-hidden="true"></i></a>2.7 &#x6E05;&#x7A7A;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x7684;&#x89C4;&#x5219;</h2>
+<p>&#x6BCF;&#x4E2A;Makefile&#x4E2D;&#x90FD;&#x5E94;&#x8BE5;&#x5199;&#x4E00;&#x4E2A;&#x6E05;&#x7A7A;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#xFF08; <code>.o</code> &#x548C;&#x6267;&#x884C;&#x6587;&#x4EF6;&#xFF09;&#x7684;&#x89C4;&#x5219;&#xFF0C;&#x8FD9;&#x4E0D;&#x4EC5;&#x4FBF;&#x4E8E;&#x91CD;&#x7F16;&#x8BD1;&#xFF0C;&#x4E5F;&#x5F88;&#x5229;&#x4E8E;&#x4FDD;&#x6301;&#x6587;&#x4EF6;&#x7684;&#x6E05;&#x6D01;&#x3002;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&quot;&#x4FEE;&#x517B;&quot;&#xFF08;&#x5475;&#x5475;&#xFF0C;&#x8FD8;&#x8BB0;&#x5F97;&#x6211;&#x7684;&#x300A;&#x7F16;&#x7A0B;&#x4FEE;&#x517B;&#x300B;&#x5417;&#xFF09;&#x3002;&#x4E00;&#x822C;&#x7684;&#x98CE;&#x683C;&#x90FD;&#x662F;&#xFF1A;</p>
+<pre class="language-"><code class="lang-makefile">.RECIPEPREFIX <span class="token operator">=</span> &gt;
+<span class="token target symbol">clean</span><span class="token punctuation">:</span>
+&gt;  rm edit <span class="token variable">$</span><span class="token punctuation">(</span>objects<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x66F4;&#x4E3A;&#x7A33;&#x5065;&#x7684;&#x505A;&#x6CD5;&#x662F;&#xFF1A;</p>
+<pre class="language-"><code class="lang-makefile">.RECIPEPREFIX <span class="token operator">=</span> &gt;
+<span class="token builtin-target builtin">.PHONY</span> <span class="token punctuation">:</span> clean
+<span class="token target symbol">clean</span> <span class="token punctuation">:</span>
+&gt;  -rm edit <span class="token variable">$</span><span class="token punctuation">(</span>objects<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x524D;&#x9762;&#x8BF4;&#x8FC7;&#xFF0C; <code>.PHONY</code> &#x8868;&#x793A; <code>clean</code> &#x662F;&#x4E00;&#x4E2A;&quot;&#x4F2A;&#x76EE;&#x6807;&quot;&#x3002;&#x800C;&#x5728; <code>rm</code> &#x547D;&#x4EE4;&#x524D;&#x9762;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;&#x5C0F;&#x51CF;&#x53F7;&#x7684;&#x610F;&#x601D;&#x5C31;&#x662F;&#xFF0C;&#x4E5F;&#x8BB8;&#x67D0;&#x4E9B;&#x6587;&#x4EF6;&#x51FA;&#x73B0;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x4E0D;&#x8981;&#x7BA1;&#xFF0C;&#x7EE7;&#x7EED;&#x505A;&#x540E;&#x9762;&#x7684;&#x4E8B;&#x3002;&#x5F53;&#x7136;&#xFF0C; <code>clean</code> &#x7684;&#x89C4;&#x5219;&#x4E0D;&#x8981;&#x653E;&#x5728;&#x6587;&#x4EF6;&#x7684;&#x5F00;&#x5934;&#xFF0C;&#x4E0D;&#x7136;&#xFF0C;&#x8FD9;&#x5C31;&#x4F1A;&#x53D8;&#x6210;make&#x7684;&#x9ED8;&#x8BA4;&#x76EE;&#x6807;&#xFF0C;&#x76F8;&#x4FE1;&#x8C01;&#x4E5F;&#x4E0D;&#x613F;&#x610F;&#x8FD9;&#x6837;&#x3002;&#x4E0D;&#x6210;&#x6587;&#x7684;&#x89C4;&#x77E9;&#x662F;------&quot;clean&#x4ECE;&#x6765;&#x90FD;&#x662F;&#x653E;&#x5728;&#x6587;&#x4EF6;&#x7684;&#x6700;&#x540E;&quot;&#x3002;</p>
+<p>&#x4E0A;&#x9762;&#x5C31;&#x662F;&#x4E00;&#x4E2A;makefile&#x7684;&#x6982;&#x8C8C;&#xFF0C;&#x4E5F;&#x662F;makefile&#x7684;&#x57FA;&#x7840;&#xFF0C;&#x4E0B;&#x9762;&#x8FD8;&#x6709;&#x5F88;&#x591A;makefile&#x7684;&#x76F8;&#x5173;&#x7EC6;&#x8282;&#xFF0C;&#x51C6;&#x5907;&#x597D;&#x4E86;&#x5417;&#xFF1F;&#x51C6;&#x5907;&#x597D;&#x4E86;&#x5C31;&#x6765;&#x3002;</p>
+<h2 id="28-makefile&#x91CC;&#x6709;&#x4EC0;&#x4E48;&#xFF1F;"><a name="28-makefile&#x91CC;&#x6709;&#x4EC0;&#x4E48;&#xFF1F;" class="anchor-navigation-ex-anchor" href="#28-makefile&#x91CC;&#x6709;&#x4EC0;&#x4E48;&#xFF1F;"><i class="fa fa-link" aria-hidden="true"></i></a>2.8 Makefile&#x91CC;&#x6709;&#x4EC0;&#x4E48;&#xFF1F;</h2>
+<p>Makefile&#x91CC;&#x4E3B;&#x8981;&#x5305;&#x542B;&#x4E86;&#x4E94;&#x4E2A;&#x4E1C;&#x897F;&#xFF1A;&#x663E;&#x5F0F;&#x89C4;&#x5219;&#x3001;&#x9690;&#x6666;&#x89C4;&#x5219;&#x3001;&#x53D8;&#x91CF;&#x5B9A;&#x4E49;&#x3001;&#x6587;&#x4EF6;&#x6307;&#x793A;&#x548C;&#x6CE8;&#x91CA;&#x3002;</p>
+<ol>
+<li>&#x663E;&#x5F0F;&#x89C4;&#x5219;&#x3002;&#x663E;&#x5F0F;&#x89C4;&#x5219;&#x8BF4;&#x660E;&#x4E86;&#x5982;&#x4F55;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x3002;&#x8FD9;&#x662F;&#x7531;Makefile&#x7684;&#x4E66;&#x5199;&#x8005;&#x660E;&#x663E;&#x6307;&#x51FA;&#x8981;&#x751F;&#x6210;&#x7684;&#x6587;&#x4EF6;&#x3001;&#x6587;&#x4EF6;&#x7684;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x548C;&#x751F;&#x6210;&#x7684;&#x547D;&#x4EE4;&#x3002;</li>
+<li>&#x9690;&#x6666;&#x89C4;&#x5219;&#x3002;&#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x7684;make&#x6709;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x6240;&#x4EE5;&#x9690;&#x6666;&#x7684;&#x89C4;&#x5219;&#x53EF;&#x4EE5;&#x8BA9;&#x6211;&#x4EEC;&#x6BD4;&#x8F83;&#x7B80;&#x7565;&#x5730;&#x4E66;&#x5199;Makefile&#xFF0C;&#x8FD9;&#x662F;&#x7531;make&#x6240;&#x652F;&#x6301;&#x7684;&#x3002;</li>
+<li>&#x53D8;&#x91CF;&#x7684;&#x5B9A;&#x4E49;&#x3002;&#x5728;Makefile&#x4E2D;&#x6211;&#x4EEC;&#x8981;&#x5B9A;&#x4E49;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x53D8;&#x91CF;&#x4E00;&#x822C;&#x90FD;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x8FD9;&#x4E2A;&#x6709;&#x70B9;&#x50CF;&#x4F60;C&#x8BED;&#x8A00;&#x4E2D;&#x7684;&#x5B8F;&#xFF0C;&#x5F53;Makefile&#x88AB;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5176;&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x90FD;&#x4F1A;&#x88AB;&#x6269;&#x5C55;&#x5230;&#x76F8;&#x5E94;&#x7684;&#x5F15;&#x7528;&#x4F4D;&#x7F6E;&#x4E0A;&#x3002;</li>
+<li>&#x6587;&#x4EF6;&#x6307;&#x793A;&#x3002;&#x5176;&#x5305;&#x62EC;&#x4E86;&#x4E09;&#x4E2A;&#x90E8;&#x5206;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;&#x5728;&#x4E00;&#x4E2A;Makefile&#x4E2D;&#x5F15;&#x7528;&#x53E6;&#x4E00;&#x4E2A;Makefile&#xFF0C;&#x5C31;&#x50CF;C&#x8BED;&#x8A00;&#x4E2D;&#x7684;include&#x4E00;&#x6837;&#xFF1B;&#x53E6;&#x4E00;&#x4E2A;&#x662F;&#x6307;&#x6839;&#x636E;&#x67D0;&#x4E9B;&#x60C5;&#x51B5;&#x6307;&#x5B9A;Makefile&#x4E2D;&#x7684;&#x6709;&#x6548;&#x90E8;&#x5206;&#xFF0C;&#x5C31;&#x50CF;C&#x8BED;&#x8A00;&#x4E2D;&#x7684;&#x9884;&#x7F16;&#x8BD1;#if&#x4E00;&#x6837;&#xFF1B;&#x8FD8;&#x6709;&#x5C31;&#x662F;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x591A;&#x884C;&#x7684;&#x547D;&#x4EE4;&#x3002;&#x6709;&#x5173;&#x8FD9;&#x4E00;&#x90E8;&#x5206;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x6211;&#x4F1A;&#x5728;&#x540E;&#x7EED;&#x7684;&#x90E8;&#x5206;&#x4E2D;&#x8BB2;&#x8FF0;&#x3002;</li>
+<li>&#x6CE8;&#x91CA;&#x3002;Makefile&#x4E2D;&#x53EA;&#x6709;&#x884C;&#x6CE8;&#x91CA;&#xFF0C;&#x548C;UNIX&#x7684;Shell&#x811A;&#x672C;&#x4E00;&#x6837;&#xFF0C;&#x5176;&#x6CE8;&#x91CA;&#x662F;&#x7528; <code>#</code> &#x5B57;&#x7B26;&#xFF0C;&#x8FD9;&#x4E2A;&#x5C31; &#x50CF;C/C++&#x4E2D;&#x7684; <code>//</code> &#x4E00;&#x6837;&#x3002;&#x5982;&#x679C;&#x4F60;&#x8981;&#x5728;&#x4F60;&#x7684;Makefile&#x4E2D;&#x4F7F;&#x7528; <code>#</code> &#x5B57;&#x7B26;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x53CD;&#x659C;&#x6760;&#x8FDB;&#x884C; &#x8F6C;&#x4E49;&#xFF0C;&#x5982;&#xFF1A; <code>\#</code> &#x3002;</li>
+</ol>
+<p>&#x6700;&#x540E;&#xFF0C;&#x8FD8;&#x503C;&#x5F97;&#x4E00;&#x63D0;&#x7684;&#x662F;&#xFF0C;&#x5728;Makefile&#x4E2D;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x5FC5;&#x987B;&#x8981;&#x4EE5; <code>Tab</code> &#x952E;&#x5F00;&#x59CB;&#x3002;</p>
+<h2 id="29-makefile&#x7684;&#x6587;&#x4EF6;&#x540D;"><a name="29-makefile&#x7684;&#x6587;&#x4EF6;&#x540D;" class="anchor-navigation-ex-anchor" href="#29-makefile&#x7684;&#x6587;&#x4EF6;&#x540D;"><i class="fa fa-link" aria-hidden="true"></i></a>2.9 Makefile&#x7684;&#x6587;&#x4EF6;&#x540D;</h2>
+<p>&#x9ED8;&#x8BA4;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;make&#x547D;&#x4EE4;&#x4F1A;&#x5728;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x6309;&#x987A;&#x5E8F;&#x627E;&#x5BFB;&#x6587;&#x4EF6;&#x540D;&#x4E3A;&quot;GNUmakefile&quot;&#x3001; &quot;makefile&quot;&#x3001;&quot;Makefile&quot;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x627E;&#x5230;&#x4E86;&#x89E3;&#x91CA;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x3002;&#x5728;&#x8FD9;&#x4E09;&#x4E2A;&#x6587;&#x4EF6;&#x540D;&#x4E2D;&#xFF0C;&#x6700;&#x597D;&#x4F7F;&#x7528;&quot;Makefile&quot;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x540D;&#xFF0C;&#x56E0;&#x4E3A;&#xFF0C;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x540D;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E3A;&#x5927;&#x5199;&#xFF0C;&#x8FD9;&#x6837;&#x6709;&#x4E00;&#x79CD;&#x663E;&#x76EE;&#x7684;&#x611F;&#x89C9;&#x3002;&#x6700;&#x597D;&#x4E0D;&#x8981;&#x7528;&quot;GNUmakefile&quot;&#xFF0C;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x662F;GNU&#x7684;make&#x8BC6;&#x522B;&#x7684;&#x3002;&#x6709;&#x53E6;&#x5916;&#x4E00;&#x4E9B;make&#x53EA;&#x5BF9;&#x5168;&#x5C0F;&#x5199;&#x7684;&quot;makefile&quot;&#x6587;&#x4EF6;&#x540D;&#x654F;&#x611F;&#xFF0C;&#x4F46;&#x662F;&#x57FA;&#x672C;&#x4E0A;&#x6765;&#x8BF4;&#xFF0C;&#x5927;&#x591A;&#x6570;&#x7684;make&#x90FD;&#x652F;&#x6301;&quot;makefile&quot;&#x548C;&quot;Makefile&quot;&#x8FD9;&#x4E24;&#x79CD;&#x9ED8;&#x8BA4;&#x6587;&#x4EF6;&#x540D;&#x3002;</p>
+<p>&#x5F53;&#x7136;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x522B;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x6765;&#x4E66;&#x5199;Makefile&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;&quot;Make.Linux&quot;&#xFF0C;&quot;Make.Solaris&quot;&#xFF0C;&quot;Make.AIX&quot;&#x7B49;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x6307;&#x5B9A;&#x7279;&#x5B9A;&#x7684;Makefile&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;make&#x7684; <code>-f</code> &#x548C; <code>--file</code> &#x53C2;&#x6570;&#xFF0C; &#x5982;&#xFF1A; <code>make -f Make.Linux</code> &#x6216; <code>make --file Make.AIX</code> &#x3002;</p>
+<h2 id="210-&#x5F15;&#x7528;&#x5176;&#x5B83;&#x7684;makefile"><a name="210-&#x5F15;&#x7528;&#x5176;&#x5B83;&#x7684;makefile" class="anchor-navigation-ex-anchor" href="#210-&#x5F15;&#x7528;&#x5176;&#x5B83;&#x7684;makefile"><i class="fa fa-link" aria-hidden="true"></i></a>2.10 &#x5F15;&#x7528;&#x5176;&#x5B83;&#x7684;Makefile</h2>
+<p>&#x5728;Makefile&#x4F7F;&#x7528; <code>include</code> &#x5173;&#x952E;&#x5B57;&#x53EF;&#x4EE5;&#x628A;&#x522B;&#x7684;Makefile&#x5305;&#x542B;&#x8FDB;&#x6765;&#xFF0C;&#x8FD9;&#x5F88;&#x50CF;C&#x8BED;&#x8A00;&#x7684; <code>#include</code> &#xFF0C;&#x88AB;&#x5305;&#x542B;&#x7684;&#x6587;&#x4EF6;&#x4F1A;&#x539F;&#x6A21;&#x539F;&#x6837;&#x7684;&#x653E;&#x5728;&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x7684;&#x5305;&#x542B;&#x4F4D;&#x7F6E;&#x3002; <code>include</code> &#x7684;&#x8BED;&#x6CD5;&#x662F;&#xFF1A;</p>
+<pre class="language-"><code class="lang-makefile"><span class="token keyword">include</span> &lt;filename&gt;
+</code></pre>
+<p><code>filename</code> &#x53EF;&#x4EE5;&#x662F;&#x5F53;&#x524D;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;Shell&#x7684;&#x6587;&#x4EF6;&#x6A21;&#x5F0F;&#xFF08;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x8DEF;&#x5F84;&#x548C;&#x901A;&#x914D;&#x7B26;&#xFF09;&#x3002;</p>
+<p>&#x5728; <code>include</code> &#x524D;&#x9762;&#x53EF;&#x4EE5;&#x6709;&#x4E00;&#x4E9B;&#x7A7A;&#x5B57;&#x7B26;&#xFF0C;&#x4F46;&#x662F;&#x7EDD;&#x4E0D;&#x80FD;&#x662F; <code>Tab</code> &#x952E;&#x5F00;&#x59CB;&#x3002; <code>include</code> &#x548C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filename</span><span class="token punctuation">&gt;</span></span></code> &#x53EF;&#x4EE5;&#x7528;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x7A7A;&#x683C;&#x9694;&#x5F00;&#x3002;&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x4F60;&#x6709;&#x8FD9;&#x6837;&#x51E0;&#x4E2A;Makefile&#xFF1A; <code>a.mk</code> &#x3001; <code>b.mk</code> &#x3001; <code>c.mk</code> &#xFF0C;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x53EB; <code>foo.make</code> &#xFF0C;&#x4EE5;&#x53CA;&#x4E00;&#x4E2A;&#x53D8;&#x91CF; <code>$(bar)</code>
+&#xFF0C;&#x5176;&#x5305;&#x542B; &#x4E86; <code>e.mk</code> &#x548C; <code>f.mk</code> &#xFF0C;&#x90A3;&#x4E48;&#xFF0C;&#x4E0B;&#x9762;&#x7684;&#x8BED;&#x53E5;&#xFF1A;</p>
+<pre class="language-"><code class="lang-makefile"><span class="token keyword">include</span> foo.make *.mk <span class="token variable">$</span><span class="token punctuation">(</span>bar<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x7B49;&#x4EF7;&#x4E8E;&#xFF1A;</p>
+<pre class="language-"><code class="lang-makefile"><span class="token keyword">include</span> foo.make a.mk b.mk c.mk e.mk f.mk
+</code></pre>
+<p>make&#x547D;&#x4EE4;&#x5F00;&#x59CB;&#x65F6;&#xFF0C;&#x4F1A;&#x627E;&#x5BFB; <code>include</code> &#x6240;&#x6307;&#x51FA;&#x7684;&#x5176;&#x5B83;Makefile&#xFF0C;&#x5E76;&#x628A;&#x5176;&#x5185;&#x5BB9;&#x5B89;&#x7F6E;&#x5728;&#x5F53;&#x524D;&#x7684;&#x4F4D;&#x7F6E;&#x3002;&#x5C31;&#x597D; &#x50CF;C/C++&#x7684; <code>#include</code> &#x6307;&#x4EE4;&#x4E00;&#x6837;&#x3002;&#x5982;&#x679C;&#x6587;&#x4EF6;&#x90FD;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x6216;&#x662F;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;&#x7684;&#x8BDD;&#xFF0C;make&#x4F1A;&#x5728;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x9996;&#x5148;&#x5BFB;&#x627E;&#xFF0C;&#x5982;&#x679C;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x6CA1;&#x6709;&#x627E;&#x5230;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;make&#x8FD8;&#x4F1A;&#x5728;&#x4E0B;&#x9762;&#x7684;&#x51E0;&#x4E2A;&#x76EE;&#x5F55;&#x4E0B;&#x627E;&#xFF1A;</p>
+<ol>
+<li>&#x5982;&#x679C;make&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x6709; <code>-I</code> &#x6216; <code>--include-dir</code> &#x53C2;&#x6570;&#xFF0C;&#x90A3;&#x4E48;make&#x5C31;&#x4F1A;&#x5728;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x6240;&#x6307;&#x5B9A;&#x7684;&#x76EE; &#x5F55;&#x4E0B;&#x53BB;&#x5BFB;&#x627E;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x76EE;&#x5F55; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>prefix</span><span class="token punctuation">&gt;</span></span>/include</code> &#xFF08;&#x4E00;&#x822C;&#x662F;&#xFF1A; <code>/usr/local/bin</code> &#x6216; <code>/usr/include</code> &#xFF09;&#x5B58;&#x5728;&#x7684;&#x8BDD;&#xFF0C;make&#x4E5F;&#x4F1A;&#x53BB;&#x627E;&#x3002;</li>
+</ol>
+<p>&#x5982;&#x679C;&#x6709;&#x6587;&#x4EF6;&#x6CA1;&#x6709;&#x627E;&#x5230;&#x7684;&#x8BDD;&#xFF0C;make&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x6761;&#x8B66;&#x544A;&#x4FE1;&#x606F;&#xFF0C;&#x4F46;&#x4E0D;&#x4F1A;&#x9A6C;&#x4E0A;&#x51FA;&#x73B0;&#x81F4;&#x547D;&#x9519;&#x8BEF;&#x3002;&#x5B83;&#x4F1A;&#x7EE7;&#x7EED;&#x8F7D;&#x5165;&#x5176;&#x5B83;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x4E00;&#x65E6;&#x5B8C;&#x6210;makefile&#x7684;&#x8BFB;&#x53D6;&#xFF0C;make&#x4F1A;&#x518D;&#x91CD;&#x8BD5;&#x8FD9;&#x4E9B;&#x6CA1;&#x6709;&#x627E;&#x5230;&#xFF0C;&#x6216;&#x662F;&#x4E0D;&#x80FD;&#x8BFB;&#x53D6;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x5982;&#x679C;&#x8FD8;&#x662F;&#x4E0D;&#x884C;&#xFF0C;make&#x624D;&#x4F1A;&#x51FA;&#x73B0;&#x4E00;&#x6761;&#x81F4;&#x547D;&#x4FE1;&#x606F;&#x3002;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x8BA9;make&#x4E0D;&#x7406;&#x90A3;&#x4E9B;&#x65E0;&#x6CD5;&#x8BFB;&#x53D6;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x800C;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5728;include&#x524D;&#x52A0;&#x4E00;&#x4E2A;&#x51CF;&#x53F7;&quot;-&quot;&#x3002;&#x5982;&#xFF1A;</p>
+<pre class="language-"><code class="lang-makefile"><span class="token keyword">-include</span> &lt;filename&gt;
+</code></pre>
+<p>&#x5176;&#x8868;&#x793A;&#xFF0C;&#x65E0;&#x8BBA;include&#x8FC7;&#x7A0B;&#x4E2D;&#x51FA;&#x73B0;&#x4EC0;&#x4E48;&#x9519;&#x8BEF;&#xFF0C;&#x90FD;&#x4E0D;&#x8981;&#x62A5;&#x9519;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x3002;&#x548C;&#x5176;&#x5B83;&#x7248;&#x672C;make&#x517C;&#x5BB9;&#x7684;&#x76F8;&#x5173;&#x547D;&#x4EE4;&#x662F;sinclude&#xFF0C;&#x5176;&#x4F5C;&#x7528;&#x548C;&#x8FD9;&#x4E00;&#x4E2A;&#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;</p>
+<h2 id="211-&#x73AF;&#x5883;&#x53D8;&#x91CF;makefiles"><a name="211-&#x73AF;&#x5883;&#x53D8;&#x91CF;makefiles" class="anchor-navigation-ex-anchor" href="#211-&#x73AF;&#x5883;&#x53D8;&#x91CF;makefiles"><i class="fa fa-link" aria-hidden="true"></i></a>2.11 &#x73AF;&#x5883;&#x53D8;&#x91CF;MAKEFILES</h2>
+<p>&#x5982;&#x679C;&#x4F60;&#x7684;&#x5F53;&#x524D;&#x73AF;&#x5883;&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;&#x73AF;&#x5883;&#x53D8;&#x91CF; <code>MAKEFILES</code> &#xFF0C;&#x90A3;&#x4E48;&#xFF0C;make&#x4F1A;&#x628A;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x4E2D;&#x7684;&#x503C;&#x505A;&#x4E00;&#x4E2A;&#x7C7B;&#x4F3C;&#x4E8E; <code>include</code> &#x7684;&#x52A8;&#x4F5C;&#x3002;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x4E2D;&#x7684;&#x503C;&#x662F;&#x5176;&#x5B83;&#x7684;Makefile&#xFF0C;&#x7528;&#x7A7A;&#x683C;&#x5206;&#x9694;&#x3002;&#x53EA;&#x662F;&#xFF0C;&#x5B83;&#x548C; <code>include</code> &#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;&#x4ECE;&#x8FD9;&#x4E2A;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4E2D;&#x5F15;&#x5165;&#x7684;Makefile&#x7684;&quot;&#x76EE;&#x6807;&quot;&#x4E0D;&#x4F1A;&#x8D77;&#x4F5C;&#x7528;&#xFF0C;&#x5982;&#x679C;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x6587;&#x4EF6;&#x53D1;&#x73B0;&#x9519;&#x8BEF;&#xFF0C;make&#x4E5F;&#x4F1A;&#x4E0D;&#x7406;&#x3002;</p>
+<p>&#x4F46;&#x662F;&#x5728;&#x8FD9;&#x91CC;&#x6211;&#x8FD8;&#x662F;&#x5EFA;&#x8BAE;&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF0C;&#x56E0;&#x4E3A;&#x53EA;&#x8981;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x4E00;&#x88AB;&#x5B9A;&#x4E49;&#xFF0C;&#x90A3;&#x4E48;&#x5F53;&#x4F60;&#x4F7F;&#x7528;make&#x65F6;&#xFF0C;&#x6240;&#x6709;&#x7684;Makefile&#x90FD;&#x4F1A;&#x53D7;&#x5230;&#x5B83;&#x7684;&#x5F71;&#x54CD;&#xFF0C;&#x8FD9;&#x7EDD;&#x4E0D;&#x662F;&#x4F60;&#x60F3;&#x770B;&#x5230;&#x7684;&#x3002;&#x5728;&#x8FD9;&#x91CC;&#x63D0;&#x8FD9;&#x4E2A;&#x4E8B;&#xFF0C;&#x53EA;&#x662F;&#x4E3A;&#x4E86;&#x544A;&#x8BC9;&#x5927;&#x5BB6;&#xFF0C;&#x4E5F;&#x8BB8;&#x6709;&#x65F6;&#x5019;&#x4F60;&#x7684;Makefile&#x51FA;&#x73B0;&#x4E86;&#x602A;&#x4E8B;&#xFF0C;&#x90A3;&#x4E48;&#x4F60;&#x53EF;&#x4EE5;&#x770B;&#x770B;&#x5F53;&#x524D;&#x73AF;&#x5883;&#x4E2D;&#x6709;&#x6CA1;&#x6709;&#x5B9A;&#x4E49;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x3002;</p>
+<h2 id="212-make&#x7684;&#x5DE5;&#x4F5C;&#x65B9;&#x5F0F;"><a name="212-make&#x7684;&#x5DE5;&#x4F5C;&#x65B9;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#212-make&#x7684;&#x5DE5;&#x4F5C;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>2.12 make&#x7684;&#x5DE5;&#x4F5C;&#x65B9;&#x5F0F;</h2>
+<p>GNU&#x7684;make&#x5DE5;&#x4F5C;&#x65F6;&#x7684;&#x6267;&#x884C;&#x6B65;&#x9AA4;&#x5982;&#x4E0B;&#xFF1A;&#xFF08;&#x60F3;&#x6765;&#x5176;&#x5B83;&#x7684;make&#x4E5F;&#x662F;&#x7C7B;&#x4F3C;&#xFF09;</p>
+<ol>
+<li>&#x8BFB;&#x5165;&#x6240;&#x6709;&#x7684;Makefile&#x3002;</li>
+<li>&#x8BFB;&#x5165;&#x88AB;include&#x7684;&#x5176;&#x5B83;Makefile&#x3002;</li>
+<li>&#x521D;&#x59CB;&#x5316;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x3002;</li>
+<li>&#x63A8;&#x5BFC;&#x9690;&#x6666;&#x89C4;&#x5219;&#xFF0C;&#x5E76;&#x5206;&#x6790;&#x6240;&#x6709;&#x89C4;&#x5219;&#x3002;</li>
+<li>&#x4E3A;&#x6240;&#x6709;&#x7684;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x521B;&#x5EFA;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x94FE;&#x3002;</li>
+<li>&#x6839;&#x636E;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#xFF0C;&#x51B3;&#x5B9A;&#x54EA;&#x4E9B;&#x76EE;&#x6807;&#x8981;&#x91CD;&#x65B0;&#x751F;&#x6210;&#x3002;</li>
+<li>&#x6267;&#x884C;&#x751F;&#x6210;&#x547D;&#x4EE4;&#x3002;</li>
+</ol>
+<p>1-5&#x6B65;&#x4E3A;&#x7B2C;&#x4E00;&#x4E2A;&#x9636;&#x6BB5;&#xFF0C;6-7&#x4E3A;&#x7B2C;&#x4E8C;&#x4E2A;&#x9636;&#x6BB5;&#x3002;&#x7B2C;&#x4E00;&#x4E2A;&#x9636;&#x6BB5;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x5B9A;&#x4E49;&#x7684;&#x53D8;&#x91CF;&#x88AB;&#x4F7F;&#x7528;&#x4E86;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;make&#x4F1A;&#x628A;&#x5176;&#x5C55;&#x5F00;&#x5728;&#x4F7F;&#x7528;&#x7684;&#x4F4D;&#x7F6E;&#x3002;&#x4F46;make&#x5E76;&#x4E0D;&#x4F1A;&#x5B8C;&#x5168;&#x9A6C;&#x4E0A;&#x5C55;&#x5F00;&#xFF0C;make&#x4F7F;&#x7528;&#x7684;&#x662F;&#x62D6;&#x5EF6;&#x6218;&#x672F;&#xFF0C;&#x5982;&#x679C;&#x53D8;&#x91CF;&#x51FA;&#x73B0;&#x5728;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x7684;&#x89C4;&#x5219;&#x4E2D;&#xFF0C;&#x90A3;&#x4E48;&#x4EC5;&#x5F53;&#x8FD9;&#x6761;&#x4F9D;&#x8D56;&#x88AB;&#x51B3;&#x5B9A;&#x8981;&#x4F7F;&#x7528;&#x4E86;&#xFF0C;&#x53D8;&#x91CF;&#x624D;&#x4F1A;&#x5728;&#x5176;&#x5185;&#x90E8;&#x5C55;&#x5F00;&#x3002;</p>
+<p>&#x5F53;&#x7136;&#xFF0C;&#x8FD9;&#x4E2A;&#x5DE5;&#x4F5C;&#x65B9;&#x5F0F;&#x4F60;&#x4E0D;&#x4E00;&#x5B9A;&#x8981;&#x6E05;&#x695A;&#xFF0C;&#x4F46;&#x662F;&#x77E5;&#x9053;&#x8FD9;&#x4E2A;&#x65B9;&#x5F0F;&#x4F60;&#x4E5F;&#x4F1A;&#x5BF9;make&#x66F4;&#x4E3A;&#x719F;&#x6089;&#x3002;&#x6709;&#x4E86;&#x8FD9;&#x4E2A;&#x57FA;&#x7840;&#xFF0C;&#x540E;&#x7EED;&#x90E8;&#x5206;&#x4E5F;&#x5C31;&#x5BB9;&#x6613;&#x770B;&#x61C2;&#x4E86;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="chapter-01-overview.html" class="navigation navigation-prev " aria-label="Previous page: 第一章　　概述">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="chapter-03-rules.html" class="navigation navigation-next " aria-label="Next page: 第三章　　书写规则">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第二章　　Makefile 介绍","level":"1.3","depth":1,"next":{"title":"第三章　　书写规则","level":"1.4","depth":1,"path":"articles/chapter-03-rules.md","ref":"./articles/chapter-03-rules.md","articles":[]},"previous":{"title":"第一章　　概述","level":"1.2","depth":1,"path":"articles/chapter-01-overview.md","ref":"./articles/chapter-01-overview.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","-highlight","prism","-sharing","github","anchor-navigation-ex","edit-link","theme-comscore","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/lewis1573/write-makefile-with-me"},"search-pro":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"night","family":"sans"},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"theme-comscore":{},"ga":{"configuration":"auto","token":""},"edit-link":{"label":"Edit This Page","base":"https://github.com/lewis1573/write-makefile-with-me/edit/master/book_sources/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","gitbook":"*"},"file":{"path":"articles/chapter-02-introduction.md","mtime":"2024-05-29T11:48:45.527Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-05-29T11:49:16.297Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

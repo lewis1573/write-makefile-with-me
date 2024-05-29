@@ -1,0 +1,739 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第七章　　使用函数 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="chapter-08-invoke.html" />
+    
+    
+    <link rel="prev" href="chapter-06-conditionals.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="chapter-01-overview.html">
+            
+                <a href="chapter-01-overview.html">
+            
+                    
+                    第一章　　概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="chapter-02-introduction.html">
+            
+                <a href="chapter-02-introduction.html">
+            
+                    
+                    第二章　　Makefile 介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="chapter-03-rules.html">
+            
+                <a href="chapter-03-rules.html">
+            
+                    
+                    第三章　　书写规则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="chapter-04-recipes.html">
+            
+                <a href="chapter-04-recipes.html">
+            
+                    
+                    第四章　　书写命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="chapter-05-variables.html">
+            
+                <a href="chapter-05-variables.html">
+            
+                    
+                    第五章　　使用变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="chapter-06-conditionals.html">
+            
+                <a href="chapter-06-conditionals.html">
+            
+                    
+                    第六章　　使用条件判断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8" data-path="chapter-07-functions.html">
+            
+                <a href="chapter-07-functions.html">
+            
+                    
+                    第七章　　使用函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="chapter-08-invoke.html">
+            
+                <a href="chapter-08-invoke.html">
+            
+                    
+                    第八章　　make的运行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="chapter-09-implicit_rules.html">
+            
+                <a href="chapter-09-implicit_rules.html">
+            
+                    
+                    第九章　　隐含规则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="chapter-10-archives.html">
+            
+                <a href="chapter-10-archives.html">
+            
+                    
+                    第十章　　使用make更新函数库文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="chapter-11-postscript.html">
+            
+                <a href="chapter-11-postscript.html">
+            
+                    
+                    第十一章　后序
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >第七章　　使用函数</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#7-&#x4F7F;&#x7528;&#x51FD;&#x6570;"><b></b>7. &#x4F7F;&#x7528;&#x51FD;&#x6570;</a></li><ul><li><span class="title-icon "></span><a href="#71-&#x51FD;&#x6570;&#x7684;&#x8C03;&#x7528;&#x8BED;&#x6CD5;"><b></b>7.1 &#x51FD;&#x6570;&#x7684;&#x8C03;&#x7528;&#x8BED;&#x6CD5;</a></li><li><span class="title-icon "></span><a href="#72-&#x5B57;&#x7B26;&#x4E32;&#x5904;&#x7406;&#x51FD;&#x6570;"><b></b>7.2 &#x5B57;&#x7B26;&#x4E32;&#x5904;&#x7406;&#x51FD;&#x6570;</a></li><ul><li><span class="title-icon "></span><a href="#721-subst"><b></b>7.2.1 subst</a></li><li><span class="title-icon "></span><a href="#722-patsubst"><b></b>7.2.2 patsubst</a></li><li><span class="title-icon "></span><a href="#723-strip"><b></b>7.2.3 strip</a></li><li><span class="title-icon "></span><a href="#724-findstring"><b></b>7.2.4 findstring</a></li><li><span class="title-icon "></span><a href="#725-filter"><b></b>7.2.5 filter</a></li><li><span class="title-icon "></span><a href="#726-filter-out"><b></b>7.2.6 filter-out</a></li><li><span class="title-icon "></span><a href="#727-sort"><b></b>7.2.7 sort</a></li><li><span class="title-icon "></span><a href="#728-word"><b></b>7.2.8 word</a></li><li><span class="title-icon "></span><a href="#729-wordlist"><b></b>7.2.9 wordlist</a></li><li><span class="title-icon "></span><a href="#7210-words"><b></b>7.2.10 words</a></li><li><span class="title-icon "></span><a href="#7211-firstword"><b></b>7.2.11 firstword</a></li></ul><li><span class="title-icon "></span><a href="#73-&#x6587;&#x4EF6;&#x540D;&#x64CD;&#x4F5C;&#x51FD;&#x6570;"><b></b>7.3 &#x6587;&#x4EF6;&#x540D;&#x64CD;&#x4F5C;&#x51FD;&#x6570;</a></li><ul><li><span class="title-icon "></span><a href="#731-dir"><b></b>7.3.1 dir</a></li><li><span class="title-icon "></span><a href="#732-notdir"><b></b>7.3.2 notdir</a></li><li><span class="title-icon "></span><a href="#733-suffix"><b></b>7.3.3 suffix</a></li><li><span class="title-icon "></span><a href="#734-basename"><b></b>7.3.4 basename</a></li><li><span class="title-icon "></span><a href="#735-addsuffix"><b></b>7.3.5 addsuffix</a></li><li><span class="title-icon "></span><a href="#736-addprefix"><b></b>7.3.6 addprefix</a></li><li><span class="title-icon "></span><a href="#737-join"><b></b>7.3.7 join</a></li></ul><li><span class="title-icon "></span><a href="#74-foreach-&#x51FD;&#x6570;"><b></b>7.4 foreach &#x51FD;&#x6570;</a></li><li><span class="title-icon "></span><a href="#75-if-&#x51FD;&#x6570;"><b></b>7.5 if &#x51FD;&#x6570;</a></li><li><span class="title-icon "></span><a href="#76-call&#x51FD;&#x6570;"><b></b>7.6 call&#x51FD;&#x6570;</a></li><li><span class="title-icon "></span><a href="#77-origin&#x51FD;&#x6570;"><b></b>7.7 origin&#x51FD;&#x6570;</a></li><li><span class="title-icon "></span><a href="#78-shell&#x51FD;&#x6570;"><b></b>7.8 shell&#x51FD;&#x6570;</a></li><li><span class="title-icon "></span><a href="#79-&#x63A7;&#x5236;make&#x7684;&#x51FD;&#x6570;"><b></b>7.9 &#x63A7;&#x5236;make&#x7684;&#x51FD;&#x6570;</a></li></ul></ul></div><a href="#7-&#x4F7F;&#x7528;&#x51FD;&#x6570;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="7-&#x4F7F;&#x7528;&#x51FD;&#x6570;"><a name="7-&#x4F7F;&#x7528;&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#7-&#x4F7F;&#x7528;&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>7. &#x4F7F;&#x7528;&#x51FD;&#x6570;</h1>
+<p>&#x5728;Makefile&#x4E2D;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x51FD;&#x6570;&#x6765;&#x5904;&#x7406;&#x53D8;&#x91CF;&#xFF0C;&#x4ECE;&#x800C;&#x8BA9;&#x6211;&#x4EEC;&#x7684;&#x547D;&#x4EE4;&#x6216;&#x662F;&#x89C4;&#x5219;&#x66F4;&#x4E3A;&#x7684;&#x7075;&#x6D3B;&#x548C;&#x5177;&#x6709;&#x667A;&#x80FD;&#x3002;make &#x6240;&#x652F;&#x6301;&#x7684;&#x51FD;&#x6570;&#x4E5F;&#x4E0D;&#x7B97;&#x5F88;&#x591A;&#xFF0C;&#x4E0D;&#x8FC7;&#x5DF2;&#x7ECF;&#x8DB3;&#x591F;&#x6211;&#x4EEC;&#x7684;&#x64CD;&#x4F5C;&#x4E86;&#x3002;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x540E;&#xFF0C;&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x53EF;&#x4EE5;&#x5F53;&#x505A;&#x53D8;&#x91CF;&#x6765;&#x4F7F;&#x7528;&#x3002;</p>
+<h2 id="71-&#x51FD;&#x6570;&#x7684;&#x8C03;&#x7528;&#x8BED;&#x6CD5;"><a name="71-&#x51FD;&#x6570;&#x7684;&#x8C03;&#x7528;&#x8BED;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#71-&#x51FD;&#x6570;&#x7684;&#x8C03;&#x7528;&#x8BED;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>7.1 &#x51FD;&#x6570;&#x7684;&#x8C03;&#x7528;&#x8BED;&#x6CD5;</h2>
+<p>&#x51FD;&#x6570;&#x8C03;&#x7528;&#xFF0C;&#x5F88;&#x50CF;&#x53D8;&#x91CF;&#x7684;&#x4F7F;&#x7528;&#xFF0C;&#x4E5F;&#x662F;&#x4EE5; <code>$</code> &#x6765;&#x6807;&#x8BC6;&#x7684;&#xFF0C;&#x5176;&#x8BED;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-makefile"><span class="token variable">$</span><span class="token punctuation">(</span>&lt;function&gt; &lt;arguments&gt;<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x6216;&#x662F;:</p>
+<pre class="language-"><code class="lang-makefile"><span class="token variable">$</span><span class="token punctuation">{</span>&lt;function&gt; &lt;arguments&gt;<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#xFF0C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>function</span><span class="token punctuation">&gt;</span></span></code> &#x5C31;&#x662F;&#x51FD;&#x6570;&#x540D;&#xFF0C;make&#x652F;&#x6301;&#x7684;&#x51FD;&#x6570;&#x4E0D;&#x591A;&#x3002; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>arguments</span><span class="token punctuation">&gt;</span></span></code> &#x4E3A;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#xFF0C; &#x53C2;&#x6570;&#x95F4;&#x4EE5;&#x9017;&#x53F7; <code>,</code> &#x5206;&#x9694;&#xFF0C;&#x800C;&#x51FD;&#x6570;&#x540D;&#x548C;&#x53C2;&#x6570;&#x4E4B;&#x95F4;&#x4EE5;&quot;&#x7A7A;&#x683C;&quot;&#x5206;&#x9694;&#x3002;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x4EE5; <code>$</code> &#x5F00;&#x5934;&#xFF0C;&#x4EE5;&#x5706;&#x62EC;&#x53F7;&#x6216;&#x82B1;&#x62EC;&#x53F7;&#x628A;&#x51FD;&#x6570;&#x540D;&#x548C;&#x53C2;&#x6570;&#x62EC;&#x8D77;&#x3002;&#x611F;&#x89C9;&#x5F88;&#x50CF;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;&#x662F;&#x4E0D;&#x662F;&#xFF1F;&#x51FD;&#x6570;&#x4E2D;&#x7684;&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x53D8;&#x91CF;&#xFF0C;&#x4E3A;&#x4E86;&#x98CE;&#x683C;&#x7684;&#x7EDF;&#x4E00;&#xFF0C;&#x51FD;&#x6570;&#x548C;&#x53D8;&#x91CF;&#x7684;&#x62EC;&#x53F7;&#x6700;&#x597D;&#x4E00;&#x6837;&#xFF0C;&#x5982;&#x4F7F;&#x7528; <code>$(subst a,b,$(x))</code> &#x8FD9;&#x6837;&#x7684;&#x5F62;&#x5F0F;&#xFF0C;&#x800C;&#x4E0D;&#x662F; <code>$(subst a,b, ${x})</code> &#x7684;&#x5F62;&#x5F0F;&#x3002;&#x56E0;&#x4E3A;&#x7EDF;&#x4E00;&#x4F1A;&#x66F4;&#x6E05;&#x695A;&#xFF0C;&#x4E5F;&#x4F1A;&#x51CF;&#x5C11;&#x4E00;&#x4E9B;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x9EBB;&#x70E6;&#x3002;</p>
+<p>&#x8FD8;&#x662F;&#x6765;&#x770B;&#x4E00;&#x4E2A;&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-makefile">comma<span class="token operator">:=</span> ,
+empty<span class="token operator">:=</span>
+space<span class="token operator">:=</span> <span class="token variable">$</span><span class="token punctuation">(</span>empty<span class="token punctuation">)</span> <span class="token variable">$</span><span class="token punctuation">(</span>empty<span class="token punctuation">)</span>
+foo<span class="token operator">:=</span> a b c
+bar<span class="token operator">:=</span> <span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">subst</span> <span class="token variable">$</span><span class="token punctuation">(</span>space<span class="token punctuation">)</span>,<span class="token variable">$</span><span class="token punctuation">(</span>comma<span class="token punctuation">)</span>,<span class="token variable">$</span><span class="token punctuation">(</span>foo<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<p>&#x5728;&#x8FD9;&#x4E2A;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C; <code>$(comma)</code> &#x7684;&#x503C;&#x662F;&#x4E00;&#x4E2A;&#x9017;&#x53F7;&#x3002; <code>$(space)</code> &#x4F7F;&#x7528;&#x4E86; <code>$(empty)</code> &#x5B9A;&#x4E49;&#x4E86; &#x4E00;&#x4E2A;&#x7A7A;&#x683C;&#xFF0C; <code>$(foo)</code> &#x7684;&#x503C;&#x662F; <code>a b c</code> &#xFF0C; <code>$(bar)</code>
+&#x7684;&#x5B9A;&#x4E49;&#x7528;&#xFF0C;&#x8C03;&#x7528;&#x4E86;&#x51FD;&#x6570; <code>subst</code> &#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x66FF;&#x6362;&#x51FD;&#x6570;&#xFF0C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x6709;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x88AB;&#x66FF;&#x6362;&#x5B57;&#x4E32;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x66FF;&#x6362;&#x5B57;&#x4E32;&#xFF0C;&#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x66FF;&#x6362;&#x64CD;&#x4F5C;&#x4F5C;&#x7528;&#x7684;&#x5B57;&#x4E32;&#x3002;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x4E5F;&#x5C31;&#x662F;&#x628A; <code>$(foo)</code> &#x4E2D;&#x7684;&#x7A7A;&#x683C;&#x66FF;&#x6362;&#x6210;&#x9017;&#x53F7;&#xFF0C;&#x6240;&#x4EE5;<code>$(bar)</code> &#x7684;&#x503C; &#x662F; <code>a,b,c</code> &#x3002;</p>
+<h2 id="72-&#x5B57;&#x7B26;&#x4E32;&#x5904;&#x7406;&#x51FD;&#x6570;"><a name="72-&#x5B57;&#x7B26;&#x4E32;&#x5904;&#x7406;&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#72-&#x5B57;&#x7B26;&#x4E32;&#x5904;&#x7406;&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>7.2 &#x5B57;&#x7B26;&#x4E32;&#x5904;&#x7406;&#x51FD;&#x6570;</h2>
+<h3 id="721-subst"><a name="721-subst" class="anchor-navigation-ex-anchor" href="#721-subst"><i class="fa fa-link" aria-hidden="true"></i></a>7.2.1 subst</h3>
+<pre class="language-"><code class="lang-makefile"><span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">subst</span> &lt;from&gt;,&lt;to&gt;,&lt;text&gt;<span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li><p>&#x540D;&#x79F0;&#xFF1A;&#x5B57;&#x7B26;&#x4E32;&#x66FF;&#x6362;&#x51FD;&#x6570;</p>
+</li>
+<li><p>&#x529F;&#x80FD;&#xFF1A;&#x628A;&#x5B57;&#x4E32; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span><span class="token punctuation">&gt;</span></span></code> &#x4E2D;&#x7684; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>from</span><span class="token punctuation">&gt;</span></span></code> &#x5B57;&#x7B26;&#x4E32;&#x66FF;&#x6362;&#x6210; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>to</span><span class="token punctuation">&gt;</span></span></code> &#x3002;</p>
+</li>
+<li><p>&#x8FD4;&#x56DE;&#xFF1A;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x88AB;&#x66FF;&#x6362;&#x8FC7;&#x540E;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<blockquote>
+<pre class="language-"><code class="lang-makefile"><span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">subst</span> ee,EE,feet on the street<span class="token punctuation">)</span>
+</code></pre>
+</blockquote>
+</li>
+</ul>
+<p>&#x628A; <code>feet on the street</code> &#x4E2D;&#x7684; <code>ee</code> &#x66FF;&#x6362;&#x6210; <code>EE</code> &#xFF0C;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x662F; <code>fEEt on the strEEt</code> &#x3002;</p>
+<h3 id="722-patsubst"><a name="722-patsubst" class="anchor-navigation-ex-anchor" href="#722-patsubst"><i class="fa fa-link" aria-hidden="true"></i></a>7.2.2 patsubst</h3>
+<pre class="language-"><code class="lang-makefile"><span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">patsubst</span> &lt;pattern&gt;,&lt;replacement&gt;,&lt;text&gt;<span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li><p>&#x540D;&#x79F0;&#xFF1A;&#x6A21;&#x5F0F;&#x5B57;&#x7B26;&#x4E32;&#x66FF;&#x6362;&#x51FD;&#x6570;&#x3002;</p>
+</li>
+<li><p>&#x529F;&#x80FD;&#xFF1A;&#x67E5;&#x627E; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span><span class="token punctuation">&gt;</span></span></code>
+&#x4E2D;&#x7684;&#x5355;&#x8BCD;&#xFF08;&#x5355;&#x8BCD;&#x4EE5;&quot;&#x7A7A;&#x683C;&quot;&#x3001;&quot;Tab&quot;&#x6216;&quot;&#x56DE;&#x8F66;&quot;&quot;&#x6362;&#x884C;&quot;&#x5206;&#x9694;&#xFF09;&#x662F;&#x5426;&#x7B26;&#x5408;&#x6A21;&#x5F0F; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pattern</span><span class="token punctuation">&gt;</span></span></code> &#xFF0C;&#x5982;&#x679C;&#x5339;&#x914D;&#x7684;&#x8BDD;&#xFF0C;&#x5219;&#x4EE5; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>replacement</span><span class="token punctuation">&gt;</span></span></code> &#x66FF;&#x6362;&#x3002;&#x8FD9;&#x91CC;&#xFF0C;<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pattern</span><span class="token punctuation">&gt;</span></span></code> &#x53EF;&#x4EE5; &#x5305;&#x62EC;&#x901A;&#x914D;&#x7B26; <code>%</code> &#xFF0C;&#x8868;&#x793A;&#x4EFB;&#x610F;&#x957F;&#x5EA6;&#x7684;&#x5B57;&#x4E32;&#x3002;&#x5982;&#x679C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>replacement</span><span class="token punctuation">&gt;</span></span></code> &#x4E2D;&#x4E5F;&#x5305;&#x542B; <code>%</code> &#xFF0C;&#x90A3;&#x4E48;&#xFF0C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>replacement</span><span class="token punctuation">&gt;</span></span></code> &#x4E2D;&#x7684;&#x8FD9;&#x4E2A; <code>%</code> &#x5C06;&#x662F; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pattern</span><span class="token punctuation">&gt;</span></span></code> &#x4E2D;&#x7684;&#x90A3;&#x4E2A; <code>%</code> &#x6240;&#x4EE3;&#x8868;&#x7684;&#x5B57;&#x4E32;&#x3002; &#xFF08;&#x53EF;&#x4EE5;&#x7528; <code>\</code> &#x6765;&#x8F6C;&#x4E49;&#xFF0C;&#x4EE5; <code>\%</code> &#x6765;&#x8868;&#x793A;&#x771F;&#x5B9E;&#x542B;&#x4E49;&#x7684; <code>%</code> &#x5B57;&#x7B26;&#xFF09;</p>
+</li>
+<li><p>&#x8FD4;&#x56DE;&#xFF1A;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x88AB;&#x66FF;&#x6362;&#x8FC7;&#x540E;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<blockquote>
+<pre class="language-"><code class="lang-makefile"><span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">patsubst</span> %.c,%.o,x.c.c bar.c<span class="token punctuation">)</span>
+</code></pre>
+</blockquote>
+</li>
+</ul>
+<p>&#x628A;&#x5B57;&#x4E32; <code>x.c.c bar.c</code> &#x7B26;&#x5408;&#x6A21;&#x5F0F; <code>%.c</code> &#x7684;&#x5355;&#x8BCD;&#x66FF;&#x6362;&#x6210; <code>%.o</code> &#xFF0C;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x662F; <code>x.c.o bar.o</code></p>
+<ul>
+<li><p>&#x5907;&#x6CE8;&#xFF1A;&#x8FD9;&#x548C;&#x6211;&#x4EEC;&#x524D;&#x9762;&quot;&#x53D8;&#x91CF;&#x7AE0;&#x8282;&quot;&#x8BF4;&#x8FC7;&#x7684;&#x76F8;&#x5173;&#x77E5;&#x8BC6;&#x6709;&#x70B9;&#x76F8;&#x4F3C;&#x3002;&#x5982; <code>$(var:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pattern</span><span class="token punctuation">&gt;</span></span>=<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>replacement</span><span class="token punctuation">&gt;</span></span>;)</code> &#x76F8;&#x5F53;&#x4E8E; <code>$(patsubst <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pattern</span><span class="token punctuation">&gt;</span></span>,<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>replacement</span><span class="token punctuation">&gt;</span></span>,$(var))</code> &#xFF0C;&#x800C; <code>$(var: <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>suffix</span><span class="token punctuation">&gt;</span></span>=<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>replacement</span><span class="token punctuation">&gt;</span></span>)</code> &#x5219;&#x76F8;&#x5F53;&#x4E8E; <code>$(patsubst %<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>suffix</span><span class="token punctuation">&gt;</span></span>,%<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>replacement</span><span class="token punctuation">&gt;</span></span>,$(var))</code> &#x3002;</p>
+<p>&#x4F8B;&#x5982;&#x6709;:</p>
+<pre class="language-"><code>objects = foo.o bar.o baz.o&#xFF0C;
+</code></pre><p>&#x90A3;&#x4E48;&#xFF0C; <code>$(objects:.o=.c)</code> &#x548C; <code>$(patsubst %.o,%.c,$(objects))</code> &#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;</p>
+</li>
+</ul>
+<h3 id="723-strip"><a name="723-strip" class="anchor-navigation-ex-anchor" href="#723-strip"><i class="fa fa-link" aria-hidden="true"></i></a>7.2.3 strip</h3>
+<pre class="language-"><code class="lang-makefile"><span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">strip</span> &lt;string&gt;<span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li><p>&#x540D;&#x79F0;&#xFF1A;&#x53BB;&#x7A7A;&#x683C;&#x51FD;&#x6570;&#x3002;</p>
+</li>
+<li><p>&#x529F;&#x80FD;&#xFF1A;&#x53BB;&#x6389; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>string</span><span class="token punctuation">&gt;</span></span></code> &#x5B57;&#x4E32;&#x4E2D;&#x5F00;&#x5934;&#x548C;&#x7ED3;&#x5C3E;&#x7684;&#x7A7A;&#x5B57;&#x7B26;&#x3002;</p>
+</li>
+<li><p>&#x8FD4;&#x56DE;&#xFF1A;&#x8FD4;&#x56DE;&#x88AB;&#x53BB;&#x6389;&#x7A7A;&#x683C;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x503C;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<blockquote>
+<pre class="language-"><code class="lang-makefile"><span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">strip</span> a b c <span class="token punctuation">)</span>
+</code></pre>
+</blockquote>
+<p>&#x628A;&#x5B57;&#x4E32; &#x53BB;&#x6389;&#x5F00;&#x5934;&#x548C;&#x7ED3;&#x5C3E;&#x7684;&#x7A7A;&#x683C;&#xFF0C;&#x7ED3;&#x679C;&#x662F; <code>a b c</code>&#x3002;</p>
+</li>
+</ul>
+<h3 id="724-findstring"><a name="724-findstring" class="anchor-navigation-ex-anchor" href="#724-findstring"><i class="fa fa-link" aria-hidden="true"></i></a>7.2.4 findstring</h3>
+<pre class="language-"><code class="lang-makefile"><span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">findstring</span> &lt;find&gt;,&lt;in&gt;<span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li><p>&#x540D;&#x79F0;&#xFF1A;&#x67E5;&#x627E;&#x5B57;&#x7B26;&#x4E32;&#x51FD;&#x6570;</p>
+</li>
+<li><p>&#x529F;&#x80FD;&#xFF1A;&#x5728;&#x5B57;&#x4E32; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>in</span><span class="token punctuation">&gt;</span></span></code> &#x4E2D;&#x67E5;&#x627E; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>find</span><span class="token punctuation">&gt;</span></span></code> &#x5B57;&#x4E32;&#x3002;</p>
+</li>
+<li><p>&#x8FD4;&#x56DE;&#xFF1A;&#x5982;&#x679C;&#x627E;&#x5230;&#xFF0C;&#x90A3;&#x4E48;&#x8FD4;&#x56DE; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>find</span><span class="token punctuation">&gt;</span></span></code> &#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<blockquote>
+<pre class="language-"><code class="lang-makefile"><span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">findstring</span> a,a b c<span class="token punctuation">)</span>
+<span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">findstring</span> a,b c<span class="token punctuation">)</span>
+</code></pre>
+</blockquote>
+</li>
+</ul>
+<p>&#x7B2C;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x8FD4;&#x56DE; <code>a</code> &#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x8FD4;&#x56DE;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;</p>
+<h3 id="725-filter"><a name="725-filter" class="anchor-navigation-ex-anchor" href="#725-filter"><i class="fa fa-link" aria-hidden="true"></i></a>7.2.5 filter</h3>
+<pre class="language-"><code class="lang-makefile"><span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">filter</span> &lt;pattern...&gt;,&lt;text&gt;<span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li><p>&#x540D;&#x79F0;&#xFF1A;&#x8FC7;&#x6EE4;&#x51FD;&#x6570;</p>
+</li>
+<li><p>&#x529F;&#x80FD;&#xFF1A;&#x4EE5; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pattern</span><span class="token punctuation">&gt;</span></span></code> &#x6A21;&#x5F0F;&#x8FC7;&#x6EE4; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span><span class="token punctuation">&gt;</span></span></code> &#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7684;&#x5355;&#x8BCD;&#xFF0C;&#x4FDD;&#x7559;&#x7B26;&#x5408;&#x6A21;&#x5F0F; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pattern</span><span class="token punctuation">&gt;</span></span></code> &#x7684;&#x5355;&#x8BCD;&#x3002;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;&#x6A21;&#x5F0F;&#x3002;</p>
+</li>
+<li><p>&#x8FD4;&#x56DE;&#xFF1A;&#x8FD4;&#x56DE;&#x7B26;&#x5408;&#x6A21;&#x5F0F; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pattern</span><span class="token punctuation">&gt;</span></span></code> &#x7684;&#x5B57;&#x4E32;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<blockquote>
+<pre class="language-"><code class="lang-makefile">.RECIPEPREFIX <span class="token operator">=</span> &gt;
+sources <span class="token operator">:=</span> foo.c bar.c baz.s ugh.h
+<span class="token target symbol">foo</span><span class="token punctuation">:</span> <span class="token variable">$</span><span class="token punctuation">(</span>sources<span class="token punctuation">)</span>
+&gt;  cc <span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">filter</span> %.c %.s,<span class="token variable">$</span><span class="token punctuation">(</span>sources<span class="token punctuation">)</span><span class="token punctuation">)</span> -o foo
+</code></pre>
+</blockquote>
+<p><code>$(filter %.c %.s,$(sources))</code> &#x8FD4;&#x56DE;&#x7684;&#x503C;&#x662F; <code>foo.c bar.c baz.s</code>&#x3002;</p>
+</li>
+</ul>
+<h3 id="726-filter-out"><a name="726-filter-out" class="anchor-navigation-ex-anchor" href="#726-filter-out"><i class="fa fa-link" aria-hidden="true"></i></a>7.2.6 filter-out</h3>
+<pre class="language-"><code class="lang-makefile"><span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">filter-out</span> &lt;pattern...&gt;,&lt;text&gt;<span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li><p>&#x540D;&#x79F0;&#xFF1A;&#x53CD;&#x8FC7;&#x6EE4;&#x51FD;&#x6570;</p>
+</li>
+<li><p>&#x529F;&#x80FD;&#xFF1A;&#x4EE5; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pattern</span><span class="token punctuation">&gt;</span></span></code> &#x6A21;&#x5F0F;&#x8FC7;&#x6EE4; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span><span class="token punctuation">&gt;</span></span></code> &#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7684;&#x5355;&#x8BCD;&#xFF0C;&#x53BB;&#x9664;&#x7B26;&#x5408;&#x6A21;&#x5F0F; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pattern</span><span class="token punctuation">&gt;</span></span></code> &#x7684;&#x5355;&#x8BCD;&#x3002;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;&#x6A21;&#x5F0F;&#x3002;</p>
+</li>
+<li><p>&#x8FD4;&#x56DE;&#xFF1A;&#x8FD4;&#x56DE;&#x4E0D;&#x7B26;&#x5408;&#x6A21;&#x5F0F; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pattern</span><span class="token punctuation">&gt;</span></span></code> &#x7684;&#x5B57;&#x4E32;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<blockquote>
+<pre class="language-"><code class="lang-makefile">objects<span class="token operator">=</span>main1.o foo.o main2.o bar.o
+mains<span class="token operator">=</span>main1.o main2.o
+</code></pre>
+</blockquote>
+<p><code>$(filter-out $(mains),$(objects))</code> &#x8FD4;&#x56DE;&#x503C;&#x662F; <code>foo.o bar.o</code> &#x3002;</p>
+</li>
+</ul>
+<h3 id="727-sort"><a name="727-sort" class="anchor-navigation-ex-anchor" href="#727-sort"><i class="fa fa-link" aria-hidden="true"></i></a>7.2.7 sort</h3>
+<pre class="language-"><code class="lang-makefile"><span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">sort</span> &lt;list&gt;<span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>&#x540D;&#x79F0;&#xFF1A;&#x6392;&#x5E8F;&#x51FD;&#x6570;</li>
+<li>&#x529F;&#x80FD;&#xFF1A;&#x7ED9;&#x5B57;&#x7B26;&#x4E32; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>list</span><span class="token punctuation">&gt;</span></span></code> &#x4E2D;&#x7684;&#x5355;&#x8BCD;&#x6392;&#x5E8F;&#xFF08;&#x5347;&#x5E8F;&#xFF09;&#x3002;</li>
+<li>&#x8FD4;&#x56DE;&#xFF1A;&#x8FD4;&#x56DE;&#x6392;&#x5E8F;&#x540E;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;</li>
+<li>&#x793A;&#x4F8B;&#xFF1A; <code>$(sort foo bar lose)</code> &#x8FD4;&#x56DE; <code>bar foo lose</code> &#x3002;</li>
+<li>&#x5907;&#x6CE8;&#xFF1A; <code>sort</code> &#x51FD;&#x6570;&#x4F1A;&#x53BB;&#x6389; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>list</span><span class="token punctuation">&gt;</span></span></code> &#x4E2D;&#x76F8;&#x540C;&#x7684;&#x5355;&#x8BCD;&#x3002;</li>
+</ul>
+<h3 id="728-word"><a name="728-word" class="anchor-navigation-ex-anchor" href="#728-word"><i class="fa fa-link" aria-hidden="true"></i></a>7.2.8 word</h3>
+<pre class="language-"><code class="lang-makefile"><span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">word</span> &lt;n&gt;,&lt;text&gt;<span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>&#x540D;&#x79F0;&#xFF1A;&#x53D6;&#x5355;&#x8BCD;&#x51FD;&#x6570;</li>
+<li>&#x529F;&#x80FD;&#xFF1A;&#x53D6;&#x5B57;&#x7B26;&#x4E32; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span><span class="token punctuation">&gt;</span></span></code> &#x4E2D;&#x7B2C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span></code> &#x4E2A;&#x5355;&#x8BCD;&#x3002;&#xFF08;&#x4ECE;&#x4E00;&#x5F00;&#x59CB;&#xFF09;</li>
+<li>&#x8FD4;&#x56DE;&#xFF1A;&#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x4E32; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span><span class="token punctuation">&gt;</span></span></code> &#x4E2D;&#x7B2C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span></code> &#x4E2A;&#x5355;&#x8BCD;&#x3002;&#x5982;&#x679C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span></code> &#x6BD4; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span><span class="token punctuation">&gt;</span></span></code> &#x4E2D;&#x7684; &#x5355;&#x8BCD;&#x6570;&#x8981;&#x5927;&#xFF0C;&#x90A3;&#x4E48;&#x8FD4;&#x56DE;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#x3002;</li>
+<li>&#x793A;&#x4F8B;&#xFF1A; <code>$(word 2, foo bar baz)</code> &#x8FD4;&#x56DE;&#x503C;&#x662F; <code>bar</code> &#x3002;</li>
+</ul>
+<h3 id="729-wordlist"><a name="729-wordlist" class="anchor-navigation-ex-anchor" href="#729-wordlist"><i class="fa fa-link" aria-hidden="true"></i></a>7.2.9 wordlist</h3>
+<pre class="language-"><code class="lang-makefile"><span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">wordlist</span> &lt;ss&gt;,&lt;e&gt;,&lt;text&gt;<span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>&#x540D;&#x79F0;&#xFF1A;&#x53D6;&#x5355;&#x8BCD;&#x4E32;&#x51FD;&#x6570;</li>
+<li>&#x529F;&#x80FD;&#xFF1A;&#x4ECE;&#x5B57;&#x7B26;&#x4E32; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span><span class="token punctuation">&gt;</span></span></code> &#x4E2D;&#x53D6;&#x4ECE; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ss</span><span class="token punctuation">&gt;</span></span></code> &#x5F00;&#x59CB;&#x5230; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>e</span><span class="token punctuation">&gt;</span></span></code> &#x7684;&#x5355;&#x8BCD;&#x4E32;&#x3002; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ss</span><span class="token punctuation">&gt;</span></span></code>
+&#x548C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>e</span><span class="token punctuation">&gt;</span></span></code> &#x662F;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#x3002;</li>
+<li>&#x8FD4;&#x56DE;&#xFF1A;&#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x4E32; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span><span class="token punctuation">&gt;</span></span></code> &#x4E2D;&#x4ECE; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ss</span><span class="token punctuation">&gt;</span></span></code> &#x5230; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>e</span><span class="token punctuation">&gt;</span></span></code> &#x7684;&#x5355;&#x8BCD;&#x5B57;&#x4E32;&#x3002;&#x5982;&#x679C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ss</span><span class="token punctuation">&gt;</span></span></code> &#x6BD4; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span><span class="token punctuation">&gt;</span></span></code> &#x4E2D;&#x7684;&#x5355;&#x8BCD;&#x6570;&#x8981;&#x5927;&#xFF0C;&#x90A3;&#x4E48;&#x8FD4;&#x56DE;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x5982;&#x679C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>e</span><span class="token punctuation">&gt;</span></span></code> &#x5927;&#x4E8E; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span><span class="token punctuation">&gt;</span></span></code> &#x7684;&#x5355;&#x8BCD;&#x6570;&#xFF0C; &#x90A3;&#x4E48;&#x8FD4;&#x56DE;&#x4ECE; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ss</span><span class="token punctuation">&gt;</span></span></code> &#x5F00;&#x59CB;&#xFF0C;&#x5230; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span><span class="token punctuation">&gt;</span></span></code> &#x7ED3;&#x675F;&#x7684;&#x5355;&#x8BCD;&#x4E32;&#x3002;</li>
+<li>&#x793A;&#x4F8B;&#xFF1A; <code>$(wordlist 2, 3, foo bar baz)</code> &#x8FD4;&#x56DE;&#x503C;&#x662F; <code>bar baz</code> &#x3002;</li>
+</ul>
+<h3 id="7210-words"><a name="7210-words" class="anchor-navigation-ex-anchor" href="#7210-words"><i class="fa fa-link" aria-hidden="true"></i></a>7.2.10 words</h3>
+<pre class="language-"><code class="lang-makefile"><span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">words</span> &lt;text&gt;<span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>&#x540D;&#x79F0;&#xFF1A;&#x5355;&#x8BCD;&#x4E2A;&#x6570;&#x7EDF;&#x8BA1;&#x51FD;&#x6570;</li>
+<li>&#x529F;&#x80FD;&#xFF1A;&#x7EDF;&#x8BA1; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span><span class="token punctuation">&gt;</span></span></code> &#x4E2D;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7684;&#x5355;&#x8BCD;&#x4E2A;&#x6570;&#x3002;</li>
+<li>&#x8FD4;&#x56DE;&#xFF1A;&#x8FD4;&#x56DE; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span><span class="token punctuation">&gt;</span></span></code> &#x4E2D;&#x7684;&#x5355;&#x8BCD;&#x6570;&#x3002;</li>
+<li>&#x793A;&#x4F8B;&#xFF1A; <code>$(words, foo bar baz)</code> &#x8FD4;&#x56DE;&#x503C;&#x662F; <code>3</code> &#x3002;</li>
+<li>&#x5907;&#x6CE8;&#xFF1A;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x8981;&#x53D6; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span><span class="token punctuation">&gt;</span></span></code> &#x4E2D;&#x6700;&#x540E;&#x7684;&#x4E00;&#x4E2A;&#x5355;&#x8BCD;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#xFF1A;
+<code>$(word $(words <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span><span class="token punctuation">&gt;</span></span>),<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span><span class="token punctuation">&gt;</span></span>)</code> &#x3002;</li>
+</ul>
+<h3 id="7211-firstword"><a name="7211-firstword" class="anchor-navigation-ex-anchor" href="#7211-firstword"><i class="fa fa-link" aria-hidden="true"></i></a>7.2.11 firstword</h3>
+<pre class="language-"><code class="lang-makefile"><span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">firstword</span> &lt;text&gt;<span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>&#x540D;&#x79F0;&#xFF1A;&#x9996;&#x5355;&#x8BCD;&#x51FD;&#x6570;------firstword&#x3002;</li>
+<li>&#x529F;&#x80FD;&#xFF1A;&#x53D6;&#x5B57;&#x7B26;&#x4E32; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span><span class="token punctuation">&gt;</span></span></code> &#x4E2D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5355;&#x8BCD;&#x3002;</li>
+<li>&#x8FD4;&#x56DE;&#xFF1A;&#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x4E32; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span><span class="token punctuation">&gt;</span></span></code> &#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5355;&#x8BCD;&#x3002;</li>
+<li>&#x793A;&#x4F8B;&#xFF1A; <code>$(firstword foo bar)</code> &#x8FD4;&#x56DE;&#x503C;&#x662F; <code>foo</code>&#x3002;</li>
+<li>&#x5907;&#x6CE8;&#xFF1A;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x7528; <code>word</code> &#x51FD;&#x6570;&#x6765;&#x5B9E;&#x73B0;&#xFF1A; <code>$(word 1,<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span><span class="token punctuation">&gt;</span></span>)</code> &#x3002;</li>
+</ul>
+<p>&#x4EE5;&#x4E0A;&#xFF0C;&#x662F;&#x6240;&#x6709;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x64CD;&#x4F5C;&#x51FD;&#x6570;&#xFF0C;&#x5982;&#x679C;&#x642D;&#x914D;&#x6DF7;&#x5408;&#x4F7F;&#x7528;&#xFF0C;&#x53EF;&#x4EE5;&#x5B8C;&#x6210;&#x6BD4;&#x8F83;&#x590D;&#x6742;&#x7684;&#x529F;&#x80FD;&#x3002;&#x8FD9;&#x91CC;&#xFF0C;&#x4E3E;&#x4E00;&#x4E2A;&#x73B0;&#x5B9E;&#x4E2D;&#x5E94;&#x7528;&#x7684;&#x4F8B;&#x5B50;&#x3002;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#xFF0C;make&#x4F7F;&#x7528; <code>VPATH</code> &#x53D8;&#x91CF;&#x6765;&#x6307;&#x5B9A;&quot;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&quot;&#x7684;&#x641C;&#x7D22;&#x8DEF;&#x5F84;&#x3002;&#x4E8E;&#x662F;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x8FD9;&#x4E2A;&#x641C;&#x7D22;&#x8DEF;&#x5F84;&#x6765;&#x6307;&#x5B9A;&#x7F16;&#x8BD1;&#x5668;&#x5BF9;&#x5934;&#x6587;&#x4EF6;&#x7684;&#x641C;&#x7D22;&#x8DEF;&#x5F84;&#x53C2;&#x6570; <code>CFLAGS</code> &#xFF0C;&#x5982;&#xFF1A;</p>
+<pre class="language-"><code class="lang-makefile"><span class="token keyword">override</span> CFLAGS <span class="token operator">+=</span> <span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">patsubst</span> %,-I%,<span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">subst</span> <span class="token punctuation">:</span>, ,<span class="token variable">$</span><span class="token punctuation">(</span>VPATH<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x7684; <code>$(VPATH)</code> &#x503C;&#x662F; <code>src:../headers</code> &#xFF0C;&#x90A3;&#x4E48; <code>$(patsubst %,-I%,$(subst :, ,$(VPATH)))</code> &#x5C06;&#x8FD4;&#x56DE; <code>-Isrc -I../headers</code> &#xFF0C;&#x8FD9;&#x6B63;&#x662F;cc&#x6216;gcc&#x641C;&#x7D22;&#x5934;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x7684;&#x53C2;&#x6570;&#x3002;</p>
+<h2 id="73-&#x6587;&#x4EF6;&#x540D;&#x64CD;&#x4F5C;&#x51FD;&#x6570;"><a name="73-&#x6587;&#x4EF6;&#x540D;&#x64CD;&#x4F5C;&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#73-&#x6587;&#x4EF6;&#x540D;&#x64CD;&#x4F5C;&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>7.3 &#x6587;&#x4EF6;&#x540D;&#x64CD;&#x4F5C;&#x51FD;&#x6570;</h2>
+<p>&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x8981;&#x4ECB;&#x7ECD;&#x7684;&#x51FD;&#x6570;&#x4E3B;&#x8981;&#x662F;&#x5904;&#x7406;&#x6587;&#x4EF6;&#x540D;&#x7684;&#x3002;&#x6BCF;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x5B57;&#x7B26;&#x4E32;&#x90FD;&#x4F1A;&#x88AB;&#x5F53;&#x505A;&#x4E00;&#x4E2A;&#x6216;&#x662F;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x6765;&#x5BF9;&#x5F85;&#x3002;</p>
+<h3 id="731-dir"><a name="731-dir" class="anchor-navigation-ex-anchor" href="#731-dir"><i class="fa fa-link" aria-hidden="true"></i></a>7.3.1 dir</h3>
+<pre class="language-"><code class="lang-makefile"><span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">dir</span> &lt;names...&gt;<span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>&#x540D;&#x79F0;&#xFF1A;&#x53D6;&#x76EE;&#x5F55;&#x51FD;&#x6570;------dir&#x3002;</li>
+<li>&#x529F;&#x80FD;&#xFF1A;&#x4ECE;&#x6587;&#x4EF6;&#x540D;&#x5E8F;&#x5217; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>names</span><span class="token punctuation">&gt;</span></span></code> &#x4E2D;&#x53D6;&#x51FA;&#x76EE;&#x5F55;&#x90E8;&#x5206;&#x3002;&#x76EE;&#x5F55;&#x90E8;&#x5206;&#x662F;&#x6307;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x53CD;&#x659C;&#x6760;&#xFF08; <code>/</code> &#xFF09;&#x4E4B;&#x524D; &#x7684;&#x90E8;&#x5206;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x53CD;&#x659C;&#x6760;&#xFF0C;&#x90A3;&#x4E48;&#x8FD4;&#x56DE; <code>./</code> &#x3002;</li>
+<li>&#x8FD4;&#x56DE;&#xFF1A;&#x8FD4;&#x56DE;&#x6587;&#x4EF6;&#x540D;&#x5E8F;&#x5217; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>names</span><span class="token punctuation">&gt;</span></span></code> &#x7684;&#x76EE;&#x5F55;&#x90E8;&#x5206;&#x3002;</li>
+<li>&#x793A;&#x4F8B;&#xFF1A; <code>$(dir src/foo.c hacks)</code> &#x8FD4;&#x56DE;&#x503C;&#x662F; <code>src/ ./</code> &#x3002;</li>
+</ul>
+<h3 id="732-notdir"><a name="732-notdir" class="anchor-navigation-ex-anchor" href="#732-notdir"><i class="fa fa-link" aria-hidden="true"></i></a>7.3.2 notdir</h3>
+<pre class="language-"><code class="lang-makefile"><span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">notdir</span> &lt;names...&gt;<span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>&#x540D;&#x79F0;&#xFF1A;&#x53D6;&#x6587;&#x4EF6;&#x51FD;&#x6570;------notdir&#x3002;</li>
+<li>&#x529F;&#x80FD;&#xFF1A;&#x4ECE;&#x6587;&#x4EF6;&#x540D;&#x5E8F;&#x5217; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>names</span><span class="token punctuation">&gt;</span></span></code> &#x4E2D;&#x53D6;&#x51FA;&#x975E;&#x76EE;&#x5F55;&#x90E8;&#x5206;&#x3002;&#x975E;&#x76EE;&#x5F55;&#x90E8;&#x5206;&#x662F;&#x6307;&#x6700;&#x5F8C;&#x4E00;&#x4E2A;&#x53CD;&#x659C;&#x6760;&#xFF08; <code>/</code> &#xFF09; &#x4E4B;&#x540E;&#x7684;&#x90E8;&#x5206;&#x3002;</li>
+<li>&#x8FD4;&#x56DE;&#xFF1A;&#x8FD4;&#x56DE;&#x6587;&#x4EF6;&#x540D;&#x5E8F;&#x5217; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>names</span><span class="token punctuation">&gt;</span></span></code> &#x7684;&#x975E;&#x76EE;&#x5F55;&#x90E8;&#x5206;&#x3002;</li>
+<li>&#x793A;&#x4F8B;: <code>$(notdir src/foo.c hacks)</code> &#x8FD4;&#x56DE;&#x503C;&#x662F; <code>foo.c hacks</code> &#x3002;</li>
+</ul>
+<h3 id="733-suffix"><a name="733-suffix" class="anchor-navigation-ex-anchor" href="#733-suffix"><i class="fa fa-link" aria-hidden="true"></i></a>7.3.3 suffix</h3>
+<pre class="language-"><code class="lang-makefile"><span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">suffix</span> &lt;names...&gt;<span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>&#x540D;&#x79F0;&#xFF1A;&#x53D6;&#x5F8C;&#x7F00;&#x51FD;&#x6570;------suffix&#x3002;</li>
+<li>&#x529F;&#x80FD;&#xFF1A;&#x4ECE;&#x6587;&#x4EF6;&#x540D;&#x5E8F;&#x5217; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>names</span><span class="token punctuation">&gt;</span></span></code> &#x4E2D;&#x53D6;&#x51FA;&#x5404;&#x4E2A;&#x6587;&#x4EF6;&#x540D;&#x7684;&#x540E;&#x7F00;&#x3002;</li>
+<li>&#x8FD4;&#x56DE;&#xFF1A;&#x8FD4;&#x56DE;&#x6587;&#x4EF6;&#x540D;&#x5E8F;&#x5217; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>names</span><span class="token punctuation">&gt;</span></span></code> &#x7684;&#x540E;&#x7F00;&#x5E8F;&#x5217;&#xFF0C;&#x5982;&#x679C;&#x6587;&#x4EF6;&#x6CA1;&#x6709;&#x540E;&#x7F00;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x7A7A;&#x5B57;&#x4E32;&#x3002;</li>
+<li>&#x793A;&#x4F8B;&#xFF1A; <code>$(suffix src/foo.c src-1.0/bar.c hacks)</code> &#x8FD4;&#x56DE;&#x503C;&#x662F; <code>.c .c</code>&#x3002;</li>
+</ul>
+<h3 id="734-basename"><a name="734-basename" class="anchor-navigation-ex-anchor" href="#734-basename"><i class="fa fa-link" aria-hidden="true"></i></a>7.3.4 basename</h3>
+<pre class="language-"><code class="lang-makefile"><span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">basename</span> &lt;names...&gt;<span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>&#x540D;&#x79F0;&#xFF1A;&#x53D6;&#x524D;&#x7F00;&#x51FD;&#x6570;------basename&#x3002;</li>
+<li>&#x529F;&#x80FD;&#xFF1A;&#x4ECE;&#x6587;&#x4EF6;&#x540D;&#x5E8F;&#x5217; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>names</span><span class="token punctuation">&gt;</span></span></code> &#x4E2D;&#x53D6;&#x51FA;&#x5404;&#x4E2A;&#x6587;&#x4EF6;&#x540D;&#x7684;&#x524D;&#x7F00;&#x90E8;&#x5206;&#x3002;</li>
+<li>&#x8FD4;&#x56DE;&#xFF1A;&#x8FD4;&#x56DE;&#x6587;&#x4EF6;&#x540D;&#x5E8F;&#x5217; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>names</span><span class="token punctuation">&gt;</span></span></code>
+&#x7684;&#x524D;&#x7F00;&#x5E8F;&#x5217;&#xFF0C;&#x5982;&#x679C;&#x6587;&#x4EF6;&#x6CA1;&#x6709;&#x524D;&#x7F00;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x7A7A;&#x5B57;&#x4E32;&#x3002;</li>
+<li>&#x793A;&#x4F8B;&#xFF1A; <code>$(basename src/foo.c src-1.0/bar.c hacks)</code> &#x8FD4;&#x56DE;&#x503C;&#x662F;
+<code>src/foo src-1.0/bar hacks</code> &#x3002;</li>
+</ul>
+<h3 id="735-addsuffix"><a name="735-addsuffix" class="anchor-navigation-ex-anchor" href="#735-addsuffix"><i class="fa fa-link" aria-hidden="true"></i></a>7.3.5 addsuffix</h3>
+<pre class="language-"><code class="lang-makefile"><span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">addsuffix</span> &lt;suffix&gt;,&lt;names...&gt;<span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>&#x540D;&#x79F0;&#xFF1A;&#x52A0;&#x540E;&#x7F00;&#x51FD;&#x6570;------addsuffix&#x3002;</li>
+<li>&#x529F;&#x80FD;&#xFF1A;&#x628A;&#x540E;&#x7F00; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>suffix</span><span class="token punctuation">&gt;</span></span></code> &#x52A0;&#x5230; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>names</span><span class="token punctuation">&gt;</span></span></code> &#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x5355;&#x8BCD;&#x540E;&#x9762;&#x3002;</li>
+<li>&#x8FD4;&#x56DE;&#xFF1A;&#x8FD4;&#x56DE;&#x52A0;&#x8FC7;&#x540E;&#x7F00;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x5E8F;&#x5217;&#x3002;</li>
+<li>&#x793A;&#x4F8B;&#xFF1A; <code>$(addsuffix .c,foo bar)</code> &#x8FD4;&#x56DE;&#x503C;&#x662F; <code>foo.c bar.c</code> &#x3002;</li>
+</ul>
+<h3 id="736-addprefix"><a name="736-addprefix" class="anchor-navigation-ex-anchor" href="#736-addprefix"><i class="fa fa-link" aria-hidden="true"></i></a>7.3.6 addprefix</h3>
+<pre class="language-"><code class="lang-makefile"><span class="token variable">$</span><span class="token punctuation">(</span>addprefix &lt;prefix&gt;,&lt;names...&gt;<span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>&#x540D;&#x79F0;&#xFF1A;&#x52A0;&#x524D;&#x7F00;&#x51FD;&#x6570;------addprefix&#x3002;</li>
+<li>&#x529F;&#x80FD;&#xFF1A;&#x628A;&#x524D;&#x7F00; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>prefix</span><span class="token punctuation">&gt;</span></span></code> &#x52A0;&#x5230; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>names</span><span class="token punctuation">&gt;</span></span></code> &#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x5355;&#x8BCD;&#x524D;&#x9762;&#x3002;</li>
+<li>&#x8FD4;&#x56DE;&#xFF1A;&#x8FD4;&#x56DE;&#x52A0;&#x8FC7;&#x524D;&#x7F00;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x5E8F;&#x5217;&#x3002;</li>
+<li>&#x793A;&#x4F8B;&#xFF1A; <code>$(addprefix src/,foo bar)</code> &#x8FD4;&#x56DE;&#x503C;&#x662F; <code>src/foo src/bar</code> &#x3002;</li>
+</ul>
+<h3 id="737-join"><a name="737-join" class="anchor-navigation-ex-anchor" href="#737-join"><i class="fa fa-link" aria-hidden="true"></i></a>7.3.7 join</h3>
+<pre class="language-"><code class="lang-makefile"><span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">join</span> &lt;list1&gt;,&lt;list2&gt;<span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>&#x540D;&#x79F0;&#xFF1A;&#x8FDE;&#x63A5;&#x51FD;&#x6570;------join&#x3002;</li>
+<li>&#x529F;&#x80FD;&#xFF1A;&#x628A; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>list2</span><span class="token punctuation">&gt;</span></span></code> &#x4E2D;&#x7684;&#x5355;&#x8BCD;&#x5BF9;&#x5E94;&#x5730;&#x52A0;&#x5230; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>list1</span><span class="token punctuation">&gt;</span></span></code> &#x7684;&#x5355;&#x8BCD;&#x540E;&#x9762;&#x3002;&#x5982;&#x679C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>list1</span><span class="token punctuation">&gt;</span></span></code> &#x7684; &#x5355;&#x8BCD;&#x4E2A;&#x6570;&#x8981;&#x6BD4; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>list2</span><span class="token punctuation">&gt;</span></span></code> &#x7684;&#x591A;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>list1</span><span class="token punctuation">&gt;</span></span></code> &#x4E2D;&#x7684;&#x591A;&#x51FA;&#x6765;&#x7684;&#x5355;&#x8BCD;&#x5C06;&#x4FDD;&#x6301;&#x539F;&#x6837;&#x3002;&#x5982;&#x679C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>list2</span><span class="token punctuation">&gt;</span></span></code> &#x7684;&#x5355;&#x8BCD;&#x4E2A;&#x6570;&#x8981;&#x6BD4; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>list1</span><span class="token punctuation">&gt;</span></span></code> &#x591A;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>list2</span><span class="token punctuation">&gt;</span></span></code> &#x591A;&#x51FA;&#x6765;&#x7684;&#x5355;&#x8BCD;&#x5C06;&#x88AB;&#x590D;&#x5236;&#x5230; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>list1</span><span class="token punctuation">&gt;</span></span></code> &#x4E2D;&#x3002;</li>
+<li>&#x8FD4;&#x56DE;&#xFF1A;&#x8FD4;&#x56DE;&#x8FDE;&#x63A5;&#x8FC7;&#x540E;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;</li>
+<li>&#x793A;&#x4F8B;&#xFF1A; <code>$(join aaa bbb , 111 222 333)</code> &#x8FD4;&#x56DE;&#x503C;&#x662F; <code>aaa111 bbb222 333</code>&#x3002;</li>
+</ul>
+<h2 id="74-foreach-&#x51FD;&#x6570;"><a name="74-foreach-&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#74-foreach-&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>7.4 foreach &#x51FD;&#x6570;</h2>
+<p>foreach&#x51FD;&#x6570;&#x548C;&#x522B;&#x7684;&#x51FD;&#x6570;&#x975E;&#x5E38;&#x7684;&#x4E0D;&#x4E00;&#x6837;&#x3002;&#x56E0;&#x4E3A;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x662F;&#x7528;&#x6765;&#x505A;&#x5FAA;&#x73AF;&#x7528;&#x7684;&#xFF0C;Makefile&#x4E2D;&#x7684;foreach&#x51FD;&#x6570;&#x51E0;&#x4E4E;&#x662F;&#x4EFF;&#x7167;&#x4E8E;Unix&#x6807;&#x51C6;Shell&#xFF08;/bin/sh&#xFF09;&#x4E2D;&#x7684;for&#x8BED;&#x53E5;&#xFF0C;&#x6216;&#x662F;C-Shell&#xFF08;/bin/csh&#xFF09;&#x4E2D;&#x7684;foreach&#x8BED;&#x53E5;&#x800C;&#x6784;&#x5EFA;&#x7684;&#x3002;&#x5B83;&#x7684;&#x8BED;&#x6CD5;&#x662F;&#xFF1A;</p>
+<pre class="language-"><code class="lang-makefile"><span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">foreach</span> &lt;var&gt;,&lt;list&gt;,&lt;text&gt;<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x610F;&#x601D;&#x662F;&#xFF0C;&#x628A;&#x53C2;&#x6570; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>list</span><span class="token punctuation">&gt;</span></span></code> &#x4E2D;&#x7684;&#x5355;&#x8BCD;&#x9010;&#x4E00;&#x53D6;&#x51FA;&#x653E;&#x5230;&#x53C2;&#x6570; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>var</span><span class="token punctuation">&gt;</span></span></code> &#x6240;&#x6307;&#x5B9A;&#x7684;&#x53D8;&#x91CF;&#x4E2D;&#xFF0C; &#x7136;&#x540E;&#x518D;&#x6267;&#x884C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span><span class="token punctuation">&gt;</span></span></code> &#x6240;&#x5305;&#x542B;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x3002;&#x6BCF;&#x4E00;&#x6B21; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span><span class="token punctuation">&gt;</span></span></code> &#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5FAA;&#x73AF;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span><span class="token punctuation">&gt;</span></span></code> &#x7684;&#x6240;&#x8FD4;&#x56DE;&#x7684;&#x6BCF;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x4F1A;&#x4EE5;&#x7A7A;&#x683C;&#x5206;&#x9694;&#xFF0C;&#x6700;&#x540E;&#x5F53;&#x6574;&#x4E2A;&#x5FAA;&#x73AF;&#x7ED3;&#x675F;&#x65F6;&#xFF0C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span><span class="token punctuation">&gt;</span></span></code> &#x6240;&#x8FD4;&#x56DE;&#x7684;&#x6BCF;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6240;&#x7EC4;&#x6210;&#x7684;&#x6574;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF08;&#x4EE5;&#x7A7A;&#x683C;&#x5206;&#x9694;&#xFF09;&#x5C06;&#x4F1A;&#x662F;foreach&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#xFF0C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>var</span><span class="token punctuation">&gt;</span></span></code> &#x6700;&#x597D;&#x662F;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x540D;&#xFF0C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>list</span><span class="token punctuation">&gt;</span></span></code> &#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x800C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span><span class="token punctuation">&gt;</span></span></code> &#x4E2D;&#x4E00;&#x822C;&#x4F1A; &#x4F7F;&#x7528; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>var</span><span class="token punctuation">&gt;</span></span></code> &#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x6765;&#x4F9D;&#x6B21;&#x679A;&#x4E3E; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>list</span><span class="token punctuation">&gt;</span></span></code> &#x4E2D;&#x7684;&#x5355;&#x8BCD;&#x3002;&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre class="language-"><code class="lang-makefile">names <span class="token operator">:=</span> a b c d
+
+files <span class="token operator">:=</span> <span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">foreach</span> n,<span class="token variable">$</span><span class="token punctuation">(</span>names<span class="token punctuation">)</span>,<span class="token variable">$</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span>.o<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C; <code>$(name)</code> &#x4E2D;&#x7684;&#x5355;&#x8BCD;&#x4F1A;&#x88AB;&#x6328;&#x4E2A;&#x53D6;&#x51FA;&#xFF0C;&#x5E76;&#x5B58;&#x5230;&#x53D8;&#x91CF; <code>n</code> &#x4E2D;&#xFF0C;<code>$(n).o</code> &#x6BCF;&#x6B21; &#x6839;&#x636E; <code>$(n)</code> &#x8BA1;&#x7B97;&#x51FA;&#x4E00;&#x4E2A;&#x503C;&#xFF0C;&#x8FD9;&#x4E9B;&#x503C;&#x4EE5;&#x7A7A;&#x683C;&#x5206;&#x9694;&#xFF0C;&#x6700;&#x540E;&#x4F5C;&#x4E3A;foreach&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;<code>$(files)</code> &#x7684;&#x503C;&#x662F; <code>a.o b.o c.o d.o</code> &#x3002;</p>
+<p>&#x6CE8;&#x610F;&#xFF0C;foreach&#x4E2D;&#x7684; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>var</span><span class="token punctuation">&gt;</span></span></code> &#x53C2;&#x6570;&#x662F;&#x4E00;&#x4E2A;&#x4E34;&#x65F6;&#x7684;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#xFF0C;foreach&#x51FD;&#x6570;&#x6267;&#x884C;&#x5B8C;&#x540E;&#xFF0C;&#x53C2;&#x6570; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>var</span><span class="token punctuation">&gt;</span></span></code> &#x7684;&#x53D8;&#x91CF;&#x5C06;&#x4E0D;&#x5728;&#x4F5C;&#x7528;&#xFF0C;&#x5176;&#x4F5C;&#x7528;&#x57DF;&#x53EA;&#x5728;foreach&#x51FD;&#x6570;&#x5F53;&#x4E2D;&#x3002;</p>
+<h2 id="75-if-&#x51FD;&#x6570;"><a name="75-if-&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#75-if-&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>7.5 if &#x51FD;&#x6570;</h2>
+<p>if&#x51FD;&#x6570;&#x5F88;&#x50CF;GNU&#x7684;make&#x6240;&#x652F;&#x6301;&#x7684;&#x6761;&#x4EF6;&#x8BED;&#x53E5;------ifeq&#xFF08;&#x53C2;&#x89C1;&#x524D;&#x9762;&#x6240;&#x8FF0;&#x7684;&#x7AE0;&#x8282;&#xFF09;&#xFF0C;if&#x51FD;&#x6570;&#x7684;&#x8BED;&#x6CD5;&#x662F;&#xFF1A;</p>
+<pre class="language-"><code class="lang-makefile"><span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">if</span> &lt;condition&gt;,&lt;then-part&gt;<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x6216;&#x662F;</p>
+<pre class="language-"><code class="lang-makefile"><span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">if</span> &lt;condition&gt;,&lt;then-part&gt;,&lt;<span class="token keyword">else</span>-part&gt;<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x53EF;&#x89C1;&#xFF0C;if&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x5305;&#x542B;&quot;else&quot;&#x90E8;&#x5206;&#xFF0C;&#x6216;&#x662F;&#x4E0D;&#x542B;&#x3002;&#x5373;if&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x662F;&#x4E24;&#x4E2A;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x4E09;&#x4E2A;&#x3002;<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>condition</span><span class="token punctuation">&gt;</span></span></code>&#x53C2;&#x6570;&#x662F;if&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x5982;&#x679C;&#x5176;&#x8FD4;&#x56DE;&#x7684;&#x4E3A;&#x975E;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x5C31;&#x76F8;&#x5F53;&#x4E8E;&#x8FD4;&#x56DE;&#x771F;&#xFF0C;&#x4E8E;&#x662F;&#xFF0C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>then-part</span><span class="token punctuation">&gt;</span></span></code> &#x4F1A;&#x88AB;&#x8BA1;&#x7B97;&#xFF0C;&#x5426;&#x5219; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>else-part</span><span class="token punctuation">&gt;</span></span></code> &#x4F1A;&#x88AB;&#x8BA1;&#x7B97;&#x3002;</p>
+<p>&#x800C;if&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x662F;&#xFF0C;&#x5982;&#x679C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>condition</span><span class="token punctuation">&gt;</span></span></code> &#x4E3A;&#x771F;&#xFF08;&#x975E;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#xFF09;&#xFF0C;&#x90A3;&#x4E2A; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>then-part</span><span class="token punctuation">&gt;</span></span></code> &#x4F1A;&#x662F;&#x6574;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x5982;&#x679C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>condition</span><span class="token punctuation">&gt;</span></span></code> &#x4E3A;&#x5047;&#xFF08;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#xFF09;&#xFF0C;&#x90A3;&#x4E48; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>else-part</span><span class="token punctuation">&gt;</span></span></code> &#x4F1A;&#x662F; &#x6574;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x6B64;&#x65F6;&#x5982;&#x679C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>else-part</span><span class="token punctuation">&gt;</span></span></code> &#x6CA1;&#x6709;&#x88AB;&#x5B9A;&#x4E49;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;&#x6574;&#x4E2A;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7A7A;&#x5B57;&#x4E32;&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#xFF0C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>then-part</span><span class="token punctuation">&gt;</span></span></code> &#x548C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>else-part</span><span class="token punctuation">&gt;</span></span></code> &#x53EA;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;&#x88AB;&#x8BA1;&#x7B97;&#x3002;</p>
+<h2 id="76-call&#x51FD;&#x6570;"><a name="76-call&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#76-call&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>7.6 call&#x51FD;&#x6570;</h2>
+<p>call&#x51FD;&#x6570;&#x662F;&#x552F;&#x4E00;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x53C2;&#x6570;&#x5316;&#x7684;&#x51FD;&#x6570;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x5199;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x590D;&#x6742;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x8FD9;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x8BB8;&#x591A;&#x53C2;&#x6570;&#xFF0C;&#x7136;&#x540E;&#x4F60;&#x53EF;&#x4EE5;call&#x51FD;&#x6570;&#x6765;&#x5411;&#x8FD9;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x4F20;&#x9012;&#x53C2;&#x6570;&#x3002;&#x5176;&#x8BED;&#x6CD5;&#x662F;&#xFF1A;</p>
+<pre class="language-"><code class="lang-makefile"><span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">call</span> &lt;expression&gt;,&lt;parm1&gt;,&lt;parm2&gt;,...,&lt;parmn&gt;<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x5F53;make&#x6267;&#x884C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x65F6;&#xFF0C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>expression</span><span class="token punctuation">&gt;</span></span></code> &#x53C2;&#x6570;&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x5982; <code>$(1)</code> &#x3001; <code>$(2)</code> &#x7B49;&#xFF0C;&#x4F1A; &#x88AB;&#x53C2;&#x6570; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>parm1</span><span class="token punctuation">&gt;</span></span></code> &#x3001; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>parm2</span><span class="token punctuation">&gt;</span></span></code> &#x3001; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>parm3</span><span class="token punctuation">&gt;</span></span></code> &#x4F9D;&#x6B21;&#x53D6;&#x4EE3;&#x3002;&#x800C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>expression</span><span class="token punctuation">&gt;</span></span></code> &#x7684; &#x8FD4;&#x56DE;&#x503C;&#x5C31;&#x662F; call &#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre class="language-"><code class="lang-makefile">reverse <span class="token operator">=</span>  <span class="token variable">$</span><span class="token punctuation">(</span>1<span class="token punctuation">)</span> <span class="token variable">$</span><span class="token punctuation">(</span>2<span class="token punctuation">)</span>
+
+foo <span class="token operator">=</span> <span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">call</span> reverse,a,b<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x90A3;&#x4E48;&#xFF0C; <code>foo</code> &#x7684;&#x503C;&#x5C31;&#x662F; <code>a b</code>&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x53C2;&#x6570;&#x7684;&#x6B21;&#x5E8F;&#x662F;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#xFF0C;&#x4E0D;&#x4E00;&#x5B9A;&#x662F;&#x987A;&#x5E8F;&#x7684;&#xFF0C;&#x5982;&#xFF1A;</p>
+<pre class="language-"><code class="lang-makefile">reverse <span class="token operator">=</span>  <span class="token variable">$</span><span class="token punctuation">(</span>2<span class="token punctuation">)</span> <span class="token variable">$</span><span class="token punctuation">(</span>1<span class="token punctuation">)</span>
+
+foo <span class="token operator">=</span> <span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">call</span> reverse,a,b<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x6B64;&#x65F6;&#x7684; <code>foo</code> &#x7684;&#x503C;&#x5C31;&#x662F; <code>b a</code> &#x3002;</p>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF1A;&#x5728;&#x5411; call &#x51FD;&#x6570;&#x4F20;&#x9012;&#x53C2;&#x6570;&#x65F6;&#x8981;&#x5C24;&#x5176;&#x6CE8;&#x610F;&#x7A7A;&#x683C;&#x7684;&#x4F7F;&#x7528;&#x3002;call&#x51FD;&#x6570;&#x5728;&#x5904;&#x7406;&#x53C2;&#x6570;&#x65F6;&#xFF0C;&#x7B2C;2&#x4E2A;&#x53CA;&#x5176;&#x4E4B;&#x540E;&#x7684;&#x53C2;&#x6570;&#x4E2D;&#x7684;&#x7A7A;&#x683C;&#x4F1A;&#x88AB;&#x4FDD;&#x7559;&#xFF0C;&#x56E0;&#x800C;&#x53EF;&#x80FD;&#x9020;&#x6210;&#x4E00;&#x4E9B;&#x5947;&#x602A;&#x7684;&#x6548;&#x679C;&#x3002;&#x56E0;&#x800C;&#x5728;&#x5411;call&#x51FD;&#x6570;&#x63D0;&#x4F9B;&#x53C2;&#x6570;&#x65F6;&#xFF0C;&#x6700;&#x5B89;&#x5168;&#x7684;&#x505A;&#x6CD5;&#x662F;&#x53BB;&#x9664;&#x6240;&#x6709;&#x591A;&#x4F59;&#x7684;&#x7A7A;&#x683C;&#x3002;</p>
+<h2 id="77-origin&#x51FD;&#x6570;"><a name="77-origin&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#77-origin&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>7.7 origin&#x51FD;&#x6570;</h2>
+<p>origin&#x51FD;&#x6570;&#x4E0D;&#x50CF;&#x5176;&#x5B83;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x4ED6;&#x5E76;&#x4E0D;&#x64CD;&#x4F5C;&#x53D8;&#x91CF;&#x7684;&#x503C;&#xFF0C;&#x4ED6;&#x53EA;&#x662F;&#x544A;&#x8BC9;&#x4F60;&#x4F60;&#x7684;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x662F;&#x54EA;&#x91CC;&#x6765;&#x7684;&#xFF1F;&#x5176;&#x8BED;&#x6CD5;&#x662F;&#xFF1A;</p>
+<pre class="language-"><code class="lang-makefile"><span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">origin</span> &lt;variable&gt;<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x6CE8;&#x610F;&#xFF0C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>variable</span><span class="token punctuation">&gt;</span></span></code> &#x662F;&#x53D8;&#x91CF;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x4E0D;&#x5E94;&#x8BE5;&#x662F;&#x5F15;&#x7528;&#x3002;&#x6240;&#x4EE5;&#x4F60;&#x6700;&#x597D;&#x4E0D;&#x8981;&#x5728; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>variable</span><span class="token punctuation">&gt;</span></span></code> &#x4E2D;&#x4F7F;&#x7528;: <code>$</code>&#x5B57;&#x7B26;&#x3002;Origin&#x51FD;&#x6570;&#x4F1A;&#x4EE5;&#x5176;&#x8FD4;&#x56DE;&#x503C;&#x6765;&#x544A;&#x8BC9;&#x4F60;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x7684;&quot;&#x51FA;&#x751F;&#x60C5;&#x51B5;&quot;&#xFF0C;&#x4E0B;&#x9762;&#xFF0C;&#x662F;origin&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x503C;:</p>
+<p><code>undefined</code>:</p>
+<p>   &#x5982;&#x679C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>variable</span><span class="token punctuation">&gt;</span></span></code> &#x4ECE;&#x6765;&#x6CA1;&#x6709;&#x5B9A;&#x4E49;&#x8FC7;&#xFF0C;origin&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x8FD9;&#x4E2A;&#x503C; <code>undefined</code></p>
+<p><code>default</code>:</p>
+<p>   &#x5982;&#x679C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>variable</span><span class="token punctuation">&gt;</span></span></code>
+    &#x662F;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x7684;&#x5B9A;&#x4E49;&#xFF0C;&#x6BD4;&#x5982;&quot;CC&quot;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;&#x8FD9;&#x79CD;&#x53D8;&#x91CF;&#x6211;&#x4EEC;&#x5C06;&#x5728;&#x540E;&#x9762;&#x8BB2;&#x8FF0;&#x3002;</p>
+<p><code>environment</code>:</p>
+<p>   &#x5982;&#x679C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>variable</span><span class="token punctuation">&gt;</span></span></code> &#x662F;&#x4E00;&#x4E2A;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF0C;&#x5E76;&#x4E14;&#x5F53;Makefile&#x88AB;&#x6267;&#x884C;&#x65F6;&#xFF0C; <code>-e</code> &#x53C2;&#x6570;&#x6CA1;&#x6709;&#x88AB;&#x6253;&#x5F00;&#x3002;</p>
+<p><code>file</code>:</p>
+<p>   &#x5982;&#x679C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>variable</span><span class="token punctuation">&gt;</span></span></code> &#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x88AB;&#x5B9A;&#x4E49;&#x5728;Makefile&#x4E2D;&#x3002;</p>
+<p><code>command line</code>:</p>
+<p>   &#x5982;&#x679C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>variable</span><span class="token punctuation">&gt;</span></span></code> &#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x662F;&#x88AB;&#x547D;&#x4EE4;&#x884C;&#x5B9A;&#x4E49;&#x7684;&#x3002;</p>
+<p><code>override</code>:</p>
+<p>   &#x5982;&#x679C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>variable</span><span class="token punctuation">&gt;</span></span></code> &#x662F;&#x88AB;override&#x6307;&#x793A;&#x7B26;&#x91CD;&#x65B0;&#x5B9A;&#x4E49;&#x7684;&#x3002;</p>
+<p><code>automatic</code>:</p>
+<p>   &#x5982;&#x679C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>variable</span><span class="token punctuation">&gt;</span></span></code>&#x662F;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x8FD0;&#x884C;&#x4E2D;&#x7684;&#x81EA;&#x52A8;&#x5316;&#x53D8;&#x91CF;&#x3002;&#x5173;&#x4E8E;&#x81EA;&#x52A8;&#x5316;&#x53D8;&#x91CF;&#x5C06;&#x5728;&#x540E;&#x9762;&#x8BB2;&#x8FF0;&#x3002;</p>
+<p>&#x8FD9;&#x4E9B;&#x4FE1;&#x606F;&#x5BF9;&#x4E8E;&#x6211;&#x4EEC;&#x7F16;&#x5199;Makefile&#x662F;&#x975E;&#x5E38;&#x6709;&#x7528;&#x7684;&#xFF0C;&#x4F8B;&#x5982;&#xFF0C;&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x6709;&#x4E00;&#x4E2A;Makefile&#x5176;&#x5305;&#x4E86;&#x4E00;&#x4E2A;&#x5B9A;&#x4E49;&#x6587;&#x4EF6;Make.def&#xFF0C;&#x5728;Make.def&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&quot;bletch&quot;&#xFF0C;&#x800C;&#x6211;&#x4EEC;&#x7684;&#x73AF;&#x5883;&#x4E2D;&#x4E5F;&#x6709;&#x4E00;&#x4E2A;&#x73AF;&#x5883;&#x53D8;&#x91CF;&quot;bletch&quot;&#xFF0C;&#x6B64;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x60F3;&#x5224;&#x65AD;&#x4E00;&#x4E0B;&#xFF0C;&#x5982;&#x679C;&#x53D8;&#x91CF;&#x6765;&#x6E90;&#x4E8E;&#x73AF;&#x5883;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x5C31;&#x628A;&#x4E4B;&#x91CD;&#x5B9A;&#x4E49;&#x4E86;&#xFF0C;&#x5982;&#x679C;&#x6765;&#x6E90;&#x4E8E;Make.def&#x6216;&#x662F;&#x547D;&#x4EE4;&#x884C;&#x7B49;&#x975E;&#x73AF;&#x5883;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x5C31;&#x4E0D;&#x91CD;&#x65B0;&#x5B9A;&#x4E49;&#x5B83;&#x3002;&#x4E8E;&#x662F;&#xFF0C;&#x5728;&#x6211;&#x4EEC;&#x7684;Makefile&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x5199;&#xFF1A;</p>
+<pre class="language-"><code class="lang-makefile"><span class="token keyword">ifdef</span> bletch
+    <span class="token keyword">ifeq</span> <span class="token string">&quot;$(origin bletch)&quot;</span> <span class="token string">&quot;environment&quot;</span>
+        bletch <span class="token operator">=</span> barf, gag, etc.
+    <span class="token keyword">endif</span>
+<span class="token keyword">endif</span>
+</code></pre>
+<p>&#x5F53;&#x7136;&#xFF0C;&#x4F60;&#x4E5F;&#x8BB8;&#x4F1A;&#x8BF4;&#xFF0C;&#x4F7F;&#x7528; <code>override</code>&#x5173;&#x952E;&#x5B57;&#x4E0D;&#x5C31;&#x53EF;&#x4EE5;&#x91CD;&#x65B0;&#x5B9A;&#x4E49;&#x73AF;&#x5883;&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x4E86;&#x5417;&#xFF1F;&#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x8FD9;&#x6837;&#x7684;&#x6B65;&#x9AA4;&#xFF1F;&#x662F;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x7528; <code>override</code> &#x662F;&#x53EF;&#x4EE5;&#x8FBE;&#x5230;&#x8FD9;&#x6837;&#x7684;&#x6548;&#x679C;&#xFF0C;&#x53EF;&#x662F; <code>override</code>&#x8FC7;&#x4E8E;&#x7C97;&#x66B4;&#xFF0C;&#x5B83;&#x540C;&#x65F6;&#x4F1A;&#x628A;&#x4ECE;&#x547D;&#x4EE4;&#x884C;&#x5B9A;&#x4E49;&#x7684;&#x53D8;&#x91CF;&#x4E5F;&#x8986;&#x76D6;&#x4E86;&#xFF0C;&#x800C;&#x6211;&#x4EEC;&#x53EA;&#x60F3;&#x91CD;&#x65B0;&#x5B9A;&#x4E49;&#x73AF;&#x5883;&#x4F20;&#x6765;&#x7684;&#xFF0C;&#x800C;&#x4E0D;&#x60F3;&#x91CD;&#x65B0;&#x5B9A;&#x4E49;&#x547D;&#x4EE4;&#x884C;&#x4F20;&#x6765;&#x7684;&#x3002;</p>
+<h2 id="78-shell&#x51FD;&#x6570;"><a name="78-shell&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#78-shell&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>7.8 shell&#x51FD;&#x6570;</h2>
+<p>shell&#x51FD;&#x6570;&#x4E5F;&#x4E0D;&#x50CF;&#x5176;&#x5B83;&#x7684;&#x51FD;&#x6570;&#x3002;&#x987E;&#x540D;&#x601D;&#x4E49;&#xFF0C;&#x5B83;&#x7684;&#x53C2;&#x6570;&#x5E94;&#x8BE5;&#x5C31;&#x662F;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;Shell&#x7684;&#x547D;&#x4EE4;&#x3002;&#x5B83;&#x548C;&#x53CD;&#x5F15;&#x53F7;&quot;`&quot;&#x662F;&#x76F8;&#x540C;&#x7684;&#x529F;&#x80FD;&#x3002;&#x8FD9;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;shell&#x51FD;&#x6570;&#x628A;&#x6267;&#x884C;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x547D;&#x4EE4;&#x540E;&#x7684;&#x8F93;&#x51FA;&#x4F5C;&#x4E3A;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x3002;&#x4E8E;&#x662F;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x547D;&#x4EE4;&#x4EE5;&#x53CA;&#x5B57;&#x7B26;&#x4E32;&#x5904;&#x7406;&#x547D;&#x4EE4;awk&#xFF0C;sed&#x7B49;&#x7B49;&#x547D;&#x4EE4;&#x6765;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;&#x5982;&#xFF1A;</p>
+<pre class="language-"><code class="lang-makefile">contents <span class="token operator">:=</span> <span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">shell</span> cat foo<span class="token punctuation">)</span>
+files <span class="token operator">:=</span> <span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">shell</span> echo *.c<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x6CE8;&#x610F;&#xFF0C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x4F1A;&#x65B0;&#x751F;&#x6210;&#x4E00;&#x4E2A;Shell&#x7A0B;&#x5E8F;&#x6765;&#x6267;&#x884C;&#x547D;&#x4EE4;&#xFF0C;&#x6240;&#x4EE5;&#x4F60;&#x8981;&#x6CE8;&#x610F;&#x5176;&#x8FD0;&#x884C;&#x6027;&#x80FD;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x7684;Makefile&#x4E2D;&#x6709;&#x4E00;&#x4E9B;&#x6BD4;&#x8F83;&#x590D;&#x6742;&#x7684;&#x89C4;&#x5219;&#xFF0C;&#x5E76;&#x5927;&#x91CF;&#x4F7F;&#x7528;&#x4E86;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x90A3;&#x4E48;&#x5BF9;&#x4E8E;&#x4F60;&#x7684;&#x7CFB;&#x7EDF;&#x6027;&#x80FD;&#x662F;&#x6709;&#x5BB3;&#x7684;&#x3002;&#x7279;&#x522B;&#x662F;Makefile&#x7684;&#x9690;&#x6666;&#x7684;&#x89C4;&#x5219;&#x53EF;&#x80FD;&#x4F1A;&#x8BA9;&#x4F60;&#x7684;shell&#x51FD;&#x6570;&#x6267;&#x884C;&#x7684;&#x6B21;&#x6570;&#x6BD4;&#x4F60;&#x60F3;&#x50CF;&#x7684;&#x591A;&#x5F97;&#x591A;&#x3002;</p>
+<h2 id="79-&#x63A7;&#x5236;make&#x7684;&#x51FD;&#x6570;"><a name="79-&#x63A7;&#x5236;make&#x7684;&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#79-&#x63A7;&#x5236;make&#x7684;&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>7.9 &#x63A7;&#x5236;make&#x7684;&#x51FD;&#x6570;</h2>
+<p>make&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E9B;&#x51FD;&#x6570;&#x6765;&#x63A7;&#x5236;make&#x7684;&#x8FD0;&#x884C;&#x3002;&#x901A;&#x5E38;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x68C0;&#x6D4B;&#x4E00;&#x4E9B;&#x8FD0;&#x884C;Makefile&#x65F6;&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x4FE1;&#x606F;&#xFF0C;&#x5E76;&#x4E14;&#x6839;&#x636E;&#x8FD9;&#x4E9B;&#x4FE1;&#x606F;&#x6765;&#x51B3;&#x5B9A;&#xFF0C;&#x4F60;&#x662F;&#x8BA9;make&#x7EE7;&#x7EED;&#x6267;&#x884C;&#xFF0C;&#x8FD8;&#x662F;&#x505C;&#x6B62;&#x3002;</p>
+<pre class="language-"><code class="lang-makefile"><span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">error</span> &lt;text ...&gt;<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x81F4;&#x547D;&#x7684;&#x9519;&#x8BEF;&#xFF0C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span> <span class="token attr-name">...</span><span class="token punctuation">&gt;</span></span></code>&#x662F;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x3002;&#x6CE8;&#x610F;&#xFF0C;error&#x51FD;&#x6570;&#x4E0D;&#x4F1A;&#x5728;&#x4E00;&#x88AB;&#x4F7F;&#x7528;&#x5C31;&#x4F1A;&#x4EA7;&#x751F;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#xFF0C;&#x6240;&#x4EE5;&#x5982;&#x679C;&#x4F60;&#x628A;&#x5176;&#x5B9A;&#x4E49;&#x5728;&#x67D0;&#x4E2A;&#x53D8;&#x91CF;&#x4E2D;&#xFF0C;&#x5E76;&#x5728;&#x540E;&#x7EED;&#x7684;&#x811A;&#x672C;&#x4E2D;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;&#x90A3;&#x4E48;&#x4E5F;&#x662F;&#x53EF;&#x4EE5;&#x7684;&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
+<p>&#x793A;&#x4F8B;&#x4E00;&#xFF1A;</p>
+<pre class="language-"><code class="lang-makefile"><span class="token keyword">ifdef</span> ERROR_001
+    <span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">error</span> error is <span class="token variable">$</span><span class="token punctuation">(</span>ERROR_001<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">endif</span>
+</code></pre>
+<p>&#x793A;&#x4F8B;&#x4E8C;&#xFF1A;</p>
+<pre class="language-"><code class="lang-makefile">ERR <span class="token operator">=</span> <span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">error</span> found an error!<span class="token punctuation">)</span>
+
+<span class="token builtin-target builtin">.PHONY</span><span class="token punctuation">:</span> err
+
+<span class="token target symbol">err</span><span class="token punctuation">:</span> <span class="token variable">$</span><span class="token punctuation">(</span>ERR<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x793A;&#x4F8B;&#x4E00;&#x4F1A;&#x5728;&#x53D8;&#x91CF;ERROR_001&#x5B9A;&#x4E49;&#x4E86;&#x540E;&#x6267;&#x884C;&#x65F6;&#x4EA7;&#x751F;error&#x8C03;&#x7528;&#xFF0C;&#x800C;&#x793A;&#x4F8B;&#x4E8C;&#x5219;&#x5728;&#x76EE;&#x5F55;err&#x88AB;&#x6267;&#x884C;&#x65F6;&#x624D;&#x53D1;&#x751F;error&#x8C03;&#x7528;&#x3002;</p>
+<pre class="language-"><code class="lang-makefile"><span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">warning</span> &lt;text ...&gt;<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x5F88;&#x50CF;error&#x51FD;&#x6570;&#xFF0C;&#x53EA;&#x662F;&#x5B83;&#x5E76;&#x4E0D;&#x4F1A;&#x8BA9;make&#x9000;&#x51FA;&#xFF0C;&#x53EA;&#x662F;&#x8F93;&#x51FA;&#x4E00;&#x6BB5;&#x8B66;&#x544A;&#x4FE1;&#x606F;&#xFF0C;&#x800C;make&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="chapter-06-conditionals.html" class="navigation navigation-prev " aria-label="Previous page: 第六章　　使用条件判断">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="chapter-08-invoke.html" class="navigation navigation-next " aria-label="Next page: 第八章　　make的运行">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第七章　　使用函数","level":"1.8","depth":1,"next":{"title":"第八章　　make的运行","level":"1.9","depth":1,"path":"articles/chapter-08-invoke.md","ref":"./articles/chapter-08-invoke.md","articles":[]},"previous":{"title":"第六章　　使用条件判断","level":"1.7","depth":1,"path":"articles/chapter-06-conditionals.md","ref":"./articles/chapter-06-conditionals.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","-highlight","prism","-sharing","github","anchor-navigation-ex","edit-link","theme-comscore","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/lewis1573/write-makefile-with-me"},"search-pro":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"night","family":"sans"},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"theme-comscore":{},"ga":{"configuration":"auto","token":""},"edit-link":{"label":"Edit This Page","base":"https://github.com/lewis1573/write-makefile-with-me/edit/master/book_sources/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","gitbook":"*"},"file":{"path":"articles/chapter-07-functions.md","mtime":"2024-05-29T11:48:45.527Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-05-29T11:49:16.297Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

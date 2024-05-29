@@ -1,0 +1,657 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第九章　　隐含规则 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="chapter-10-archives.html" />
+    
+    
+    <link rel="prev" href="chapter-08-invoke.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="chapter-01-overview.html">
+            
+                <a href="chapter-01-overview.html">
+            
+                    
+                    第一章　　概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="chapter-02-introduction.html">
+            
+                <a href="chapter-02-introduction.html">
+            
+                    
+                    第二章　　Makefile 介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="chapter-03-rules.html">
+            
+                <a href="chapter-03-rules.html">
+            
+                    
+                    第三章　　书写规则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="chapter-04-recipes.html">
+            
+                <a href="chapter-04-recipes.html">
+            
+                    
+                    第四章　　书写命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="chapter-05-variables.html">
+            
+                <a href="chapter-05-variables.html">
+            
+                    
+                    第五章　　使用变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="chapter-06-conditionals.html">
+            
+                <a href="chapter-06-conditionals.html">
+            
+                    
+                    第六章　　使用条件判断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="chapter-07-functions.html">
+            
+                <a href="chapter-07-functions.html">
+            
+                    
+                    第七章　　使用函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="chapter-08-invoke.html">
+            
+                <a href="chapter-08-invoke.html">
+            
+                    
+                    第八章　　make的运行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.10" data-path="chapter-09-implicit_rules.html">
+            
+                <a href="chapter-09-implicit_rules.html">
+            
+                    
+                    第九章　　隐含规则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="chapter-10-archives.html">
+            
+                <a href="chapter-10-archives.html">
+            
+                    
+                    第十章　　使用make更新函数库文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="chapter-11-postscript.html">
+            
+                <a href="chapter-11-postscript.html">
+            
+                    
+                    第十一章　后序
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >第九章　　隐含规则</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#9-&#x9690;&#x542B;&#x89C4;&#x5219;"><b></b>9. &#x9690;&#x542B;&#x89C4;&#x5219;</a></li><ul><li><span class="title-icon "></span><a href="#91-&#x4F7F;&#x7528;&#x9690;&#x542B;&#x89C4;&#x5219;"><b></b>9.1 &#x4F7F;&#x7528;&#x9690;&#x542B;&#x89C4;&#x5219;</a></li><li><span class="title-icon "></span><a href="#92-&#x9690;&#x542B;&#x89C4;&#x5219;&#x4E00;&#x89C8;"><b></b>9.2 &#x9690;&#x542B;&#x89C4;&#x5219;&#x4E00;&#x89C8;</a></li><li><span class="title-icon "></span><a href="#93-&#x9690;&#x542B;&#x89C4;&#x5219;&#x4F7F;&#x7528;&#x7684;&#x53D8;&#x91CF;"><b></b>9.3 &#x9690;&#x542B;&#x89C4;&#x5219;&#x4F7F;&#x7528;&#x7684;&#x53D8;&#x91CF;</a></li><ul><li><span class="title-icon "></span><a href="#931-&#x5173;&#x4E8E;&#x547D;&#x4EE4;&#x7684;&#x53D8;&#x91CF;&#x3002;"><b></b>9.3.1 &#x5173;&#x4E8E;&#x547D;&#x4EE4;&#x7684;&#x53D8;&#x91CF;&#x3002;</a></li><li><span class="title-icon "></span><a href="#932-&#x5173;&#x4E8E;&#x547D;&#x4EE4;&#x53C2;&#x6570;&#x7684;&#x53D8;&#x91CF;"><b></b>9.3.2 &#x5173;&#x4E8E;&#x547D;&#x4EE4;&#x53C2;&#x6570;&#x7684;&#x53D8;&#x91CF;</a></li></ul><li><span class="title-icon "></span><a href="#94-&#x9690;&#x542B;&#x89C4;&#x5219;&#x94FE;"><b></b>9.4 &#x9690;&#x542B;&#x89C4;&#x5219;&#x94FE;</a></li><li><span class="title-icon "></span><a href="#95-&#x5B9A;&#x4E49;&#x6A21;&#x5F0F;&#x89C4;&#x5219;"><b></b>9.5 &#x5B9A;&#x4E49;&#x6A21;&#x5F0F;&#x89C4;&#x5219;</a></li><ul><li><span class="title-icon "></span><a href="#951-&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x4ECB;&#x7ECD;"><b></b>9.5.1 &#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x4ECB;&#x7ECD;</a></li><li><span class="title-icon "></span><a href="#952-&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x793A;&#x4F8B;"><b></b>9.5.2 &#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x793A;&#x4F8B;</a></li><li><span class="title-icon "></span><a href="#953-&#x81EA;&#x52A8;&#x5316;&#x53D8;&#x91CF;"><b></b>9.5.3 &#x81EA;&#x52A8;&#x5316;&#x53D8;&#x91CF;</a></li><li><span class="title-icon "></span><a href="#954-&#x6A21;&#x5F0F;&#x7684;&#x5339;&#x914D;"><b></b>9.5.4 &#x6A21;&#x5F0F;&#x7684;&#x5339;&#x914D;</a></li><li><span class="title-icon "></span><a href="#955-&#x91CD;&#x8F7D;&#x5185;&#x5EFA;&#x9690;&#x542B;&#x89C4;&#x5219;"><b></b>9.5.5 &#x91CD;&#x8F7D;&#x5185;&#x5EFA;&#x9690;&#x542B;&#x89C4;&#x5219;</a></li></ul><li><span class="title-icon "></span><a href="#96-&#x8001;&#x5F0F;&#x98CE;&#x683C;&#x7684;&#x540E;&#x7F00;&#x89C4;&#x5219;"><b></b>9.6 &#x8001;&#x5F0F;&#x98CE;&#x683C;&#x7684;&quot;&#x540E;&#x7F00;&#x89C4;&#x5219;&quot;</a></li><li><span class="title-icon "></span><a href="#97-&#x9690;&#x542B;&#x89C4;&#x5219;&#x641C;&#x7D22;&#x7B97;&#x6CD5;"><b></b>9.7 &#x9690;&#x542B;&#x89C4;&#x5219;&#x641C;&#x7D22;&#x7B97;&#x6CD5;</a></li></ul></ul></div><a href="#9-&#x9690;&#x542B;&#x89C4;&#x5219;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="9-&#x9690;&#x542B;&#x89C4;&#x5219;"><a name="9-&#x9690;&#x542B;&#x89C4;&#x5219;" class="anchor-navigation-ex-anchor" href="#9-&#x9690;&#x542B;&#x89C4;&#x5219;"><i class="fa fa-link" aria-hidden="true"></i></a>9. &#x9690;&#x542B;&#x89C4;&#x5219;</h1>
+<p>&#x5728;&#x6211;&#x4EEC;&#x4F7F;&#x7528;Makefile&#x65F6;&#xFF0C;&#x6709;&#x4E00;&#x4E9B;&#x6211;&#x4EEC;&#x4F1A;&#x7ECF;&#x5E38;&#x4F7F;&#x7528;&#xFF0C;&#x800C;&#x4E14;&#x4F7F;&#x7528;&#x9891;&#x7387;&#x975E;&#x5E38;&#x9AD8;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x6BD4;&#x5982;&#xFF0C;&#x6211;&#x4EEC;&#x7F16;&#x8BD1;C/C++&#x7684;&#x6E90;&#x7A0B;&#x5E8F;&#x4E3A;&#x4E2D;&#x95F4;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#xFF08;Unix&#x4E0B;&#x662F; <code>.o</code> &#x6587;&#x4EF6;&#xFF0C;Windows&#x4E0B;&#x662F; <code>.obj</code> &#x6587;&#x4EF6;&#xFF09;&#x3002;&#x672C;&#x7AE0;&#x8BB2;&#x8FF0;&#x7684;&#x5C31;&#x662F;&#x4E00;&#x4E9B;&#x5728;Makefile&#x4E2D;&#x7684;&quot;&#x9690;&#x542B;&#x7684;&quot;&#xFF0C;&#x65E9;&#x5148;&#x7EA6;&#x5B9A;&#x4E86;&#x7684;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x6211;&#x4EEC;&#x518D;&#x5199;&#x51FA;&#x6765;&#x7684;&#x89C4;&#x5219;&#x3002;</p>
+<p>&quot;&#x9690;&#x542B;&#x89C4;&#x5219;&quot;&#x4E5F;&#x5C31;&#x662F;&#x4E00;&#x79CD;&#x60EF;&#x4F8B;&#xFF0C;make&#x4F1A;&#x6309;&#x7167;&#x8FD9;&#x79CD;&quot;&#x60EF;&#x4F8B;&quot;&#x5FC3;&#x7167;&#x4E0D;&#x55A7;&#x5730;&#x6765;&#x8FD0;&#x884C;&#xFF0C;&#x90A3;&#x6015;&#x6211;&#x4EEC;&#x7684;Makefile&#x4E2D;&#x6CA1;&#x6709;&#x4E66;&#x5199;&#x8FD9;&#x6837;&#x7684;&#x89C4;&#x5219;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x628A; <code>.c</code> &#x6587;&#x4EF6;&#x7F16;&#x8BD1;&#x6210; <code>.o</code> &#x6587;&#x4EF6;&#x8FD9;&#x4E00;&#x89C4;&#x5219;&#xFF0C;&#x4F60;&#x6839;&#x672C;&#x5C31;&#x4E0D;&#x7528;&#x5199;&#x51FA;&#x6765;&#xFF0C;make&#x4F1A;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x51FA;&#x8FD9;&#x79CD;&#x89C4;&#x5219;&#xFF0C;&#x5E76;&#x751F;&#x6210;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7684; <code>.o</code> &#x6587;&#x4EF6;&#x3002;</p>
+<p>&quot;&#x9690;&#x542B;&#x89C4;&#x5219;&quot;&#x4F1A;&#x4F7F;&#x7528;&#x4E00;&#x4E9B;&#x6211;&#x4EEC;&#x7CFB;&#x7EDF;&#x53D8;&#x91CF;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6539;&#x53D8;&#x8FD9;&#x4E9B;&#x7CFB;&#x7EDF;&#x53D8;&#x91CF;&#x7684;&#x503C;&#x6765;&#x5B9A;&#x5236;&#x9690;&#x542B;&#x89C4;&#x5219;&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x7684;&#x53C2;&#x6570;&#x3002;&#x5982;&#x7CFB;&#x7EDF;&#x53D8;&#x91CF; <code>CFLAGS</code> &#x53EF;&#x4EE5;&#x63A7;&#x5236;&#x7F16;&#x8BD1;&#x65F6;&#x7684;&#x7F16;&#x8BD1;&#x5668;&#x53C2;&#x6570;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x8FD8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&quot;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&quot;&#x7684;&#x65B9;&#x5F0F;&#x5199;&#x4E0B;&#x81EA;&#x5DF1;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x3002;&#x7528;&quot;&#x540E;&#x7F00;&#x89C4;&#x5219;&quot;&#x6765;&#x5B9A;&#x4E49;&#x9690;&#x542B;&#x89C4;&#x5219;&#x4F1A;&#x6709;&#x8BB8;&#x591A;&#x7684;&#x9650;&#x5236;&#x3002;&#x4F7F;&#x7528;&quot;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&quot;&#x4F1A;&#x663E;&#x5F97;&#x66F4;&#x667A;&#x80FD;&#x548C;&#x6E05;&#x695A;&#xFF0C;&#x4F46;&quot;&#x540E;&#x7F00;&#x89C4;&#x5219;&quot;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x4FDD;&#x8BC1;&#x6211;&#x4EEC;Makefile&#x7684;&#x517C;&#x5BB9;&#x6027;&#x3002;&#x6211;&#x4EEC;&#x4E86;&#x89E3;&#x4E86;&quot;&#x9690;&#x542B;&#x89C4;&#x5219;&quot;&#xFF0C;&#x53EF;&#x4EE5;&#x8BA9;&#x5176;&#x4E3A;&#x6211;&#x4EEC;&#x66F4;&#x597D;&#x7684;&#x670D;&#x52A1;&#xFF0C;&#x4E5F;&#x4F1A;&#x8BA9;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x4E00;&#x4E9B;&quot;&#x7EA6;&#x5B9A;&#x4FD7;&#x6210;&quot;&#x4E86;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x800C;&#x4E0D;&#x81F3;&#x4E8E;&#x4F7F;&#x5F97;&#x6211;&#x4EEC;&#x5728;&#x8FD0;&#x884C;Makefile&#x65F6;&#x51FA;&#x73B0;&#x4E00;&#x4E9B;&#x6211;&#x4EEC;&#x89C9;&#x5F97;&#x83AB;&#x540D;&#x5176;&#x5999;&#x7684;&#x4E1C;&#x897F;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x4EFB;&#x4F55;&#x4E8B;&#x7269;&#x90FD;&#x662F;&#x77DB;&#x76FE;&#x7684;&#xFF0C;&#x6C34;&#x80FD;&#x8F7D;&#x821F;&#xFF0C;&#x4EA6;&#x53EF;&#x8986;&#x821F;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x6709;&#x65F6;&#x5019;&quot;&#x9690;&#x542B;&#x89C4;&#x5219;&quot;&#x4E5F;&#x4F1A;&#x7ED9;&#x6211;&#x4EEC;&#x9020;&#x6210;&#x4E0D;&#x5C0F;&#x7684;&#x9EBB;&#x70E6;&#x3002;&#x53EA;&#x6709;&#x4E86;&#x89E3;&#x4E86;&#x5B83;&#xFF0C;&#x6211;&#x4EEC;&#x624D;&#x80FD;&#x66F4;&#x597D;&#x5730;&#x4F7F;&#x7528;&#x5B83;&#x3002;</p>
+<h2 id="91-&#x4F7F;&#x7528;&#x9690;&#x542B;&#x89C4;&#x5219;"><a name="91-&#x4F7F;&#x7528;&#x9690;&#x542B;&#x89C4;&#x5219;" class="anchor-navigation-ex-anchor" href="#91-&#x4F7F;&#x7528;&#x9690;&#x542B;&#x89C4;&#x5219;"><i class="fa fa-link" aria-hidden="true"></i></a>9.1 &#x4F7F;&#x7528;&#x9690;&#x542B;&#x89C4;&#x5219;</h2>
+<p>&#x5982;&#x679C;&#x8981;&#x4F7F;&#x7528;&#x9690;&#x542B;&#x89C4;&#x5219;&#x751F;&#x6210;&#x4F60;&#x9700;&#x8981;&#x7684;&#x76EE;&#x6807;&#xFF0C;&#x4F60;&#x6240;&#x9700;&#x8981;&#x505A;&#x7684;&#x5C31;&#x662F;&#x4E0D;&#x8981;&#x5199;&#x51FA;&#x8FD9;&#x4E2A;&#x76EE;&#x6807;&#x7684;&#x89C4;&#x5219;&#x3002;&#x90A3;&#x4E48;&#xFF0C;make&#x4F1A;&#x8BD5;&#x56FE;&#x53BB;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x4EA7;&#x751F;&#x8FD9;&#x4E2A;&#x76EE;&#x6807;&#x7684;&#x89C4;&#x5219;&#x548C;&#x547D;&#x4EE4;&#xFF0C;&#x5982;&#x679C;make&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x751F;&#x6210;&#x8FD9;&#x4E2A;&#x76EE;&#x6807;&#x7684;&#x89C4;&#x5219;&#x548C;&#x547D;&#x4EE4;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x884C;&#x4E3A;&#x5C31;&#x662F;&#x9690;&#x542B;&#x89C4;&#x5219;&#x7684;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x9690;&#x542B;&#x89C4;&#x5219;&#x662F;make&#x4E8B;&#x5148;&#x7EA6;&#x5B9A;&#x597D;&#x7684;&#x4E00;&#x4E9B;&#x4E1C;&#x897F;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x6211;&#x4EEC;&#x6709;&#x4E0B;&#x9762;&#x7684;&#x4E00;&#x4E2A;Makefile&#xFF1A;</p>
+<pre class="language-"><code class="lang-makefile">.RECIPEPREFIX <span class="token operator">=</span> &gt;
+<span class="token target symbol">foo</span> <span class="token punctuation">:</span> foo.o bar.o
+&gt;  cc &#x2013;o foo foo.o bar.o <span class="token variable">$</span><span class="token punctuation">(</span>CFLAGS<span class="token punctuation">)</span> <span class="token variable">$</span><span class="token punctuation">(</span>LDFLAGS<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6CE8;&#x610F;&#x5230;&#xFF0C;&#x8FD9;&#x4E2A;Makefile&#x4E2D;&#x5E76;&#x6CA1;&#x6709;&#x5199;&#x4E0B;&#x5982;&#x4F55;&#x751F;&#x6210; <code>foo.o</code> &#x548C; <code>bar.o</code> &#x8FD9;&#x4E24;&#x76EE;&#x6807;&#x7684;&#x89C4;&#x5219;&#x548C;&#x547D;&#x4EE4;&#x3002;&#x56E0;&#x4E3A;make&#x7684;&quot;&#x9690;&#x542B;&#x89C4;&#x5219;&quot;&#x529F;&#x80FD;&#x4F1A;&#x81EA;&#x52A8;&#x4E3A;&#x6211;&#x4EEC;&#x81EA;&#x52A8;&#x53BB;&#x63A8;&#x5BFC;&#x8FD9;&#x4E24;&#x4E2A;&#x76EE;&#x6807;&#x7684;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x548C;&#x751F;&#x6210;&#x547D;&#x4EE4;&#x3002;</p>
+<p>make&#x4F1A;&#x5728;&#x81EA;&#x5DF1;&#x7684;&quot;&#x9690;&#x542B;&#x89C4;&#x5219;&quot;&#x5E93;&#x4E2D;&#x5BFB;&#x627E;&#x53EF;&#x4EE5;&#x7528;&#x7684;&#x89C4;&#x5219;&#xFF0C;&#x5982;&#x679C;&#x627E;&#x5230;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x4F1A;&#x4F7F;&#x7528;&#x3002;&#x5982;&#x679C;&#x627E;&#x4E0D;&#x5230;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x4F1A;&#x62A5;&#x9519;&#x3002;&#x5728;&#x4E0A;&#x9762;&#x7684;&#x90A3;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;make&#x8C03;&#x7528;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x662F;&#xFF0C;&#x628A; <code>.o</code> &#x7684;&#x76EE;&#x6807;&#x7684;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x7F6E;&#x6210; <code>.c</code> &#xFF0C;&#x5E76;&#x4F7F;&#x7528;C&#x7684; &#x7F16;&#x8BD1;&#x547D;&#x4EE4; <code>cc &#x2013;c $(CFLAGS)  foo.c</code> &#x6765;&#x751F;&#x6210; <code>foo.o</code> &#x7684;&#x76EE;&#x6807;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x6211;&#x4EEC;&#x5B8C;&#x5168;&#x6CA1;&#x6709;&#x5FC5;&#x8981; &#x5199;&#x4E0B;&#x4E0B;&#x9762;&#x7684;&#x4E24;&#x6761;&#x89C4;&#x5219;&#xFF1A;</p>
+<pre class="language-"><code class="lang-makefile">.RECIPEPREFIX <span class="token operator">=</span> &gt;
+<span class="token target symbol">foo.o</span> <span class="token punctuation">:</span> foo.c
+&gt;  cc &#x2013;c foo.c <span class="token variable">$</span><span class="token punctuation">(</span>CFLAGS<span class="token punctuation">)</span>
+<span class="token target symbol">bar.o</span> <span class="token punctuation">:</span> bar.c
+&gt;  cc &#x2013;c bar.c <span class="token variable">$</span><span class="token punctuation">(</span>CFLAGS<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x56E0;&#x4E3A;&#xFF0C;&#x8FD9;&#x5DF2;&#x7ECF;&#x662F;&quot;&#x7EA6;&#x5B9A;&quot;&#x597D;&#x4E86;&#x7684;&#x4E8B;&#x4E86;&#xFF0C;make&#x548C;&#x6211;&#x4EEC;&#x7EA6;&#x5B9A;&#x597D;&#x4E86;&#x7528;C&#x7F16;&#x8BD1;&#x5668; <code>cc</code> &#x751F;&#x6210; <code>.o</code> &#x6587;&#x4EF6;&#x7684;&#x89C4;&#x5219;&#xFF0C; &#x8FD9;&#x5C31;&#x662F;&#x9690;&#x542B;&#x89C4;&#x5219;&#x3002;</p>
+<p>&#x5F53;&#x7136;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x4E3A; <code>.o</code> &#x6587;&#x4EF6;&#x4E66;&#x5199;&#x4E86;&#x81EA;&#x5DF1;&#x7684;&#x89C4;&#x5219;&#xFF0C;&#x90A3;&#x4E48;make&#x5C31;&#x4E0D;&#x4F1A;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x5E76;&#x8C03;&#x7528;&#x9690;&#x542B;&#x89C4;&#x5219;&#xFF0C;&#x5B83;&#x4F1A;&#x6309;&#x7167;&#x6211;&#x4EEC;&#x5199;&#x597D;&#x7684;&#x89C4;&#x5219;&#x5FE0;&#x5B9E;&#x5730;&#x6267;&#x884C;&#x3002;</p>
+<p>&#x8FD8;&#x6709;&#xFF0C;&#x5728;make&#x7684;&quot;&#x9690;&#x542B;&#x89C4;&#x5219;&#x5E93;&quot;&#x4E2D;&#xFF0C;&#x6BCF;&#x4E00;&#x6761;&#x9690;&#x542B;&#x89C4;&#x5219;&#x90FD;&#x5728;&#x5E93;&#x4E2D;&#x6709;&#x5176;&#x987A;&#x5E8F;&#xFF0C;&#x8D8A;&#x9760;&#x524D;&#x7684;&#x5219;&#x662F;&#x8D8A;&#x88AB;&#x7ECF;&#x5E38;&#x4F7F;&#x7528;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x8FD9;&#x4F1A;&#x5BFC;&#x81F4;&#x6211;&#x4EEC;&#x6709;&#x4E9B;&#x65F6;&#x5019;&#x5373;&#x4F7F;&#x6211;&#x4EEC;&#x663E;&#x793A;&#x5730;&#x6307;&#x5B9A;&#x4E86;&#x76EE;&#x6807;&#x4F9D;&#x8D56;&#xFF0C;make&#x4E5F;&#x4E0D;&#x4F1A;&#x7BA1;&#x3002;&#x5982;&#x4E0B;&#x9762;&#x8FD9;&#x6761;&#x89C4;&#x5219;&#xFF08;&#x6CA1;&#x6709;&#x547D;&#x4EE4;&#xFF09;&#xFF1A;</p>
+<pre class="language-"><code class="lang-makefile"><span class="token target symbol">foo.o</span> <span class="token punctuation">:</span> foo.p
+</code></pre>
+<p>&#x4F9D;&#x8D56;&#x6587;&#x4EF6; <code>foo.p</code>
+&#xFF08;Pascal&#x7A0B;&#x5E8F;&#x7684;&#x6E90;&#x6587;&#x4EF6;&#xFF09;&#x6709;&#x53EF;&#x80FD;&#x53D8;&#x5F97;&#x6CA1;&#x6709;&#x610F;&#x4E49;&#x3002;&#x5982;&#x679C;&#x76EE;&#x5F55;&#x4E0B;&#x5B58;&#x5728;&#x4E86; <code>foo.c</code> &#x6587;&#x4EF6;&#xFF0C; &#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x4E00;&#x6837;&#x4F1A;&#x751F;&#x6548;&#xFF0C;&#x5E76;&#x4F1A;&#x901A;&#x8FC7; <code>foo.c</code> &#x8C03;&#x7528;C&#x7684;&#x7F16;&#x8BD1;&#x5668;&#x751F;&#x6210; <code>foo.o</code> &#x6587;&#x4EF6;&#x3002;&#x56E0;&#x4E3A;&#xFF0C;&#x5728;&#x9690;&#x542B;&#x89C4;&#x5219;&#x4E2D;&#xFF0C;Pascal&#x7684;&#x89C4;&#x5219;&#x51FA;&#x73B0;&#x5728;C&#x7684;&#x89C4;&#x5219;&#x4E4B;&#x540E;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;make&#x627E;&#x5230;&#x53EF;&#x4EE5;&#x751F;&#x6210;<code>foo.o</code> &#x7684;C&#x7684;&#x89C4;&#x5219;&#x5C31;&#x4E0D;&#x518D;&#x5BFB;&#x627E;&#x4E0B;&#x4E00;&#x6761;&#x89C4;&#x5219;&#x4E86;&#x3002;&#x5982;&#x679C;&#x4F60;&#x786E;&#x5B9E;&#x4E0D;&#x5E0C;&#x671B;&#x4EFB;&#x4F55;&#x9690;&#x542B;&#x89C4;&#x5219;&#x63A8;&#x5BFC;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;&#x4F60;&#x5C31;&#x4E0D;&#x8981;&#x53EA;&#x5199;&#x51FA;&quot;&#x4F9D;&#x8D56;&#x89C4;&#x5219;&quot;&#xFF0C;&#x800C;&#x4E0D;&#x5199;&#x547D;&#x4EE4;&#x3002;</p>
+<h2 id="92-&#x9690;&#x542B;&#x89C4;&#x5219;&#x4E00;&#x89C8;"><a name="92-&#x9690;&#x542B;&#x89C4;&#x5219;&#x4E00;&#x89C8;" class="anchor-navigation-ex-anchor" href="#92-&#x9690;&#x542B;&#x89C4;&#x5219;&#x4E00;&#x89C8;"><i class="fa fa-link" aria-hidden="true"></i></a>9.2 &#x9690;&#x542B;&#x89C4;&#x5219;&#x4E00;&#x89C8;</h2>
+<p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5C06;&#x8BB2;&#x8FF0;&#x6240;&#x6709;&#x9884;&#x5148;&#x8BBE;&#x7F6E;&#xFF08;&#x4E5F;&#x5C31;&#x662F;make&#x5185;&#x5EFA;&#xFF09;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x4E0D;&#x660E;&#x786E;&#x5730;&#x5199;&#x4E0B;&#x89C4;&#x5219;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;make&#x5C31;&#x4F1A;&#x5728;&#x8FD9;&#x4E9B;&#x89C4;&#x5219;&#x4E2D;&#x5BFB;&#x627E;&#x6240;&#x9700;&#x8981;&#x89C4;&#x5219;&#x548C;&#x547D;&#x4EE4;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;make&#x7684;&#x53C2;&#x6570; <code>-r</code> &#x6216; <code>--no-builtin-rules</code> &#x9009;&#x9879;&#x6765;&#x53D6;&#x6D88;&#x6240;&#x6709;&#x7684;&#x9884;&#x8BBE;&#x7F6E;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x3002;</p>
+<p>&#x5F53;&#x7136;&#xFF0C;&#x5373;&#x4F7F;&#x662F;&#x6211;&#x4EEC;&#x6307;&#x5B9A;&#x4E86; <code>-r</code> &#x53C2;&#x6570;&#xFF0C;&#x67D0;&#x4E9B;&#x9690;&#x542B;&#x89C4;&#x5219;&#x8FD8;&#x662F;&#x4F1A;&#x751F;&#x6548;&#xFF0C;&#x56E0;&#x4E3A;&#x6709;&#x8BB8;&#x591A;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x90FD;&#x662F;&#x4F7F;&#x7528;&#x4E86;&quot;&#x540E;&#x7F00;&#x89C4;&#x5219;&quot;&#x6765;&#x5B9A;&#x4E49;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x53EA;&#x8981;&#x9690;&#x542B;&#x89C4;&#x5219;&#x4E2D;&#x6709;&quot;&#x540E;&#x7F00;&#x5217;&#x8868;&quot;&#xFF08;&#x4E5F;&#x5C31;&#x4E00;&#x7CFB;&#x7EDF;&#x5B9A;&#x4E49;&#x5728;&#x76EE;&#x6807; <code>.SUFFIXES</code> &#x7684;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#xFF09;&#xFF0C;&#x90A3;&#x4E48;&#x9690;&#x542B;&#x89C4;&#x5219;&#x5C31;&#x4F1A;&#x751F;&#x6548;&#x3002;&#x9ED8;&#x8BA4;&#x7684;&#x540E;&#x7F00;&#x5217;&#x8868;&#x662F;&#xFF1A; .out, .a, .ln, .o, .c, .cc, .C, .p, .f, .F, .r, .y, .l, .s, .S, .mod, .sym, .def, .h, .info, .dvi, .tex, .texinfo, .texi, .txinfo, .w, .ch .web, .sh, .elc, .el&#x3002; &#x5177;&#x4F53;&#x7684;&#x7EC6;&#x8282;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x5728;&#x540E;&#x9762;&#x8BB2;&#x8FF0;&#x3002;</p>
+<p>&#x8FD8;&#x662F;&#x5148;&#x6765;&#x770B;&#x4E00;&#x770B;&#x5E38;&#x7528;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x5427;&#x3002;</p>
+<ol>
+<li><p>&#x7F16;&#x8BD1;C&#x7A0B;&#x5E8F;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x3002;</p>
+<p><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span>.o</code> &#x7684;&#x76EE;&#x6807;&#x7684;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x4F1A;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x4E3A; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span>.c</code> &#xFF0C;&#x5E76;&#x4E14;&#x5176;&#x751F;&#x6210;&#x547D;&#x4EE4;&#x662F; <code>$(CC) &#x2013;c $(CPPFLAGS) $(CFLAGS)</code></p>
+</li>
+<li><p>&#x7F16;&#x8BD1;C++&#x7A0B;&#x5E8F;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x3002;</p>
+<p><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span>.o</code> &#x7684;&#x76EE;&#x6807;&#x7684;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x4F1A;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x4E3A; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span>.cc</code> &#x6216;&#x662F; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span>.C</code> &#xFF0C;&#x5E76;&#x4E14;&#x5176;&#x751F;&#x6210;&#x547D;&#x4EE4;&#x662F; <code>$(CXX) &#x2013;c $(CPPFLAGS) $(CXXFLAGS)</code> &#x3002;&#xFF08;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528; <code>.cc</code> &#x4F5C;&#x4E3A;C++&#x6E90;&#x6587;&#x4EF6;&#x7684;&#x540E;&#x7F00;&#xFF0C;&#x800C;&#x4E0D;&#x662F; <code>.C</code> &#xFF09;</p>
+</li>
+<li><p>&#x7F16;&#x8BD1;Pascal&#x7A0B;&#x5E8F;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x3002;</p>
+<p><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span>.o</code> &#x7684;&#x76EE;&#x6807;&#x7684;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x4F1A;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x4E3A; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span>.p</code> &#xFF0C;&#x5E76;&#x4E14;&#x5176;&#x751F;&#x6210;&#x547D;&#x4EE4;&#x662F; <code>$(PC) &#x2013;c  $(PFLAGS)</code> &#x3002;</p>
+</li>
+<li><p>&#x7F16;&#x8BD1;Fortran/Ratfor&#x7A0B;&#x5E8F;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x3002;</p>
+<p><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span>.o</code> &#x7684;&#x76EE;&#x6807;&#x7684;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x4F1A;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x4E3A; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span>.r</code> &#x6216; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span>.F</code> &#x6216; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span>.f</code>&#xFF0C;&#x5E76;&#x4E14;&#x5176;&#x751F;&#x6210;&#x547D;&#x4EE4;&#x662F;:</p>
+<ul>
+<li><code>.f</code> <code>$(FC) &#x2013;c  $(FFLAGS)</code></li>
+<li><code>.F</code> <code>$(FC) &#x2013;c  $(FFLAGS) $(CPPFLAGS)</code></li>
+<li><code>.f</code> <code>$(FC) &#x2013;c  $(FFLAGS) $(RFLAGS)</code></li>
+</ul>
+</li>
+<li><p>&#x9884;&#x5904;&#x7406;Fortran/Ratfor&#x7A0B;&#x5E8F;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x3002;</p>
+<p><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span>.f</code> &#x7684;&#x76EE;&#x6807;&#x7684;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x4F1A;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x4E3A; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span>.r</code> &#x6216; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span>.F</code> &#x3002;&#x8FD9;&#x4E2A;&#x89C4;&#x5219;&#x53EA;&#x662F;&#x8F6C;&#x6362;Ratfor&#x6216;&#x6709;&#x9884;&#x5904;&#x7406;&#x7684;Fortran&#x7A0B;&#x5E8F;&#x5230;&#x4E00;&#x4E2A;&#x6807;&#x51C6;&#x7684;Fortran&#x7A0B;&#x5E8F;&#x3002;&#x5176;&#x4F7F;&#x7528;&#x7684;&#x547D;&#x4EE4;&#x662F;&#xFF1A;</p>
+<ul>
+<li><code>.F</code> <code>$(FC) &#x2013;F $(CPPFLAGS) $(FFLAGS)</code></li>
+<li><code>.r</code> <code>$(FC) &#x2013;F $(FFLAGS) $(RFLAGS)</code></li>
+</ul>
+</li>
+<li><p>&#x7F16;&#x8BD1;Modula-2&#x7A0B;&#x5E8F;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x3002;</p>
+<p><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span>.sym</code> &#x7684;&#x76EE;&#x6807;&#x7684;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x4F1A;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x4E3A; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span>.def</code>&#xFF0C;&#x5E76;&#x4E14;&#x5176;&#x751F;&#x6210;&#x547D;&#x4EE4;&#x662F;&#xFF1A; <code>$(M2C) $(M2FLAGS) $(DEFFLAGS)</code> &#x3002; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span>.o</code>&#x7684;&#x76EE;&#x6807;&#x7684;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x4F1A;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x4E3A; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span>.mod</code> &#xFF0C; &#x5E76;&#x4E14;&#x5176;&#x751F;&#x6210;&#x547D;&#x4EE4;&#x662F;&#xFF1A; <code>$(M2C) $(M2FLAGS) $(MODFLAGS)</code> &#x3002;</p>
+</li>
+<li><p>&#x6C47;&#x7F16;&#x548C;&#x6C47;&#x7F16;&#x9884;&#x5904;&#x7406;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x3002;</p>
+<p><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span>.o</code> &#x7684;&#x76EE;&#x6807;&#x7684;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x4F1A;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x4E3A; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span>.s</code> &#xFF0C;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;&#x7F16;&#x8BD1;&#x5668; <code>as</code>&#xFF0C;&#x5E76;&#x4E14;&#x5176;&#x751F;&#x6210; &#x547D;&#x4EE4;&#x662F;&#xFF1A; <code>$ (AS) $(ASFLAGS)</code> &#x3002; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span>.s</code>&#x7684;&#x76EE;&#x6807;&#x7684;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x4F1A;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x4E3A; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span>.S</code> &#xFF0C; &#x9ED8;&#x8BA4;&#x4F7F;&#x7528;C&#x9884;&#x7F16;&#x8BD1;&#x5668; <code>cpp</code> &#xFF0C;&#x5E76;&#x4E14;&#x5176;&#x751F;&#x6210;&#x547D;&#x4EE4;&#x662F;&#xFF1A; <code>$(AS) $(ASFLAGS)</code> &#x3002;</p>
+</li>
+<li><p>&#x94FE;&#x63A5;Object&#x6587;&#x4EF6;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x3002;</p>
+<p><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span></code> &#x76EE;&#x6807;&#x4F9D;&#x8D56;&#x4E8E; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span>.o</code>&#xFF0C;&#x901A;&#x8FC7;&#x8FD0;&#x884C;C&#x7684;&#x7F16;&#x8BD1;&#x5668;&#x6765;&#x8FD0;&#x884C;&#x94FE;&#x63A5;&#x7A0B;&#x5E8F;&#x751F;&#x6210;&#xFF08;&#x4E00;&#x822C;&#x662F; <code>ld</code> &#xFF09;&#xFF0C;&#x5176;&#x751F;&#x6210;&#x547D;&#x4EE4;&#x662F;&#xFF1A; <code>$(CC) $(LDFLAGS) <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span>.o $(LOADLIBES) $(LDLIBS)</code>&#x3002;&#x8FD9;&#x4E2A;&#x89C4;&#x5219;&#x5BF9;&#x4E8E;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x6E90;&#x6587;&#x4EF6;&#x7684;&#x5DE5;&#x7A0B;&#x6709;&#x6548;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x5BF9;&#x591A;&#x4E2A;Object&#x6587;&#x4EF6;&#xFF08;&#x7531;&#x4E0D;&#x540C;&#x7684;&#x6E90;&#x6587;&#x4EF6;&#x751F;&#x6210;&#xFF09;&#x7684;&#x4E5F;&#x6709;&#x6548;&#x3002;&#x4F8B;&#x5982;&#x5982;&#x4E0B;&#x89C4;&#x5219;:</p>
+<pre class="language-"><code>x : y.o z.o
+</code></pre><p>&#x5E76;&#x4E14; <code>x.c</code> &#x3001; <code>y.c</code> &#x548C; <code>z.c</code> &#x90FD;&#x5B58;&#x5728;&#x65F6;&#xFF0C;&#x9690;&#x542B;&#x89C4;&#x5219;&#x5C06;&#x6267;&#x884C;&#x5982;&#x4E0B;&#x547D;&#x4EE4;:</p>
+<pre class="language-"><code>cc -c x.c -o x.o
+cc -c y.c -o y.o
+cc -c z.c -o z.o
+cc x.o y.o z.o -o x
+rm -f x.o
+rm -f y.o
+rm -f z.o
+</code></pre><p>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x4E00;&#x4E2A;&#x6E90;&#x6587;&#x4EF6;&#xFF08;&#x5982;&#x4E0A;&#x4F8B;&#x4E2D;&#x7684;x.c&#xFF09;&#x548C;&#x4F60;&#x7684;&#x76EE;&#x6807;&#x540D;&#x5B57;&#xFF08;&#x5982;&#x4E0A;&#x4F8B;&#x4E2D;&#x7684;x&#xFF09;&#x76F8;&#x5173;&#x8054;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;&#x4F60;&#x6700;&#x597D;&#x5199;&#x51FA;&#x81EA;&#x5DF1;&#x7684;&#x751F;&#x6210;&#x89C4;&#x5219;&#xFF0C;&#x4E0D;&#x7136;&#xFF0C;&#x9690;&#x542B;&#x89C4;&#x5219;&#x4F1A;&#x62A5;&#x9519;&#x7684;&#x3002;</p>
+</li>
+<li><p>Yacc C&#x7A0B;&#x5E8F;&#x65F6;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x3002;</p>
+<p><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span>.c</code> &#x7684;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x88AB;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x4E3A; <code>n.y</code>&#xFF08;Yacc&#x751F;&#x6210;&#x7684;&#x6587;&#x4EF6;&#xFF09;&#xFF0C;&#x5176;&#x751F;&#x6210;&#x547D;&#x4EE4;&#x662F;&#xFF1A; <code>$(YACC) $(YFALGS)</code> &#x3002;&#xFF08;&quot;Yacc&quot;&#x662F;&#x4E00;&#x4E2A;&#x8BED;&#x6CD5;&#x5206;&#x6790;&#x5668;&#xFF0C;&#x5173;&#x4E8E;&#x5176;&#x7EC6;&#x8282;&#x8BF7;&#x67E5;&#x770B;&#x76F8;&#x5173;&#x8D44;&#x6599;&#xFF09;</p>
+</li>
+<li><p>Lex C&#x7A0B;&#x5E8F;&#x65F6;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x3002;</p>
+<p><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span>.c</code> &#x7684;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x88AB;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x4E3A; <code>n.l</code> Lex&#x751F;&#x6210;&#x7684;&#x6587;&#x4EF6;&#xFF09;&#xFF0C;&#x5176;&#x751F;&#x6210;&#x547D;&#x4EE4;&#x662F;&#xFF1A; <code>$(LEX) $(LFALGS)</code> &#x3002;&#xFF08;&#x5173;&#x4E8E;&quot;Lex&quot;&#x7684;&#x7EC6;&#x8282;&#x8BF7;&#x67E5;&#x770B;&#x76F8;&#x5173;&#x8D44;&#x6599;&#xFF09;</p>
+</li>
+<li><p>Lex Ratfor&#x7A0B;&#x5E8F;&#x65F6;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x3002;</p>
+<p><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span>.r</code> &#x7684;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x88AB;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x4E3A; <code>n.l</code>&#xFF08;Lex&#x751F;&#x6210;&#x7684;&#x6587;&#x4EF6;&#xFF09;&#xFF0C;&#x5176;&#x751F;&#x6210;&#x547D;&#x4EE4;&#x662F;&#xFF1A; <code>$(LEX) $(LFALGS)</code> &#x3002;</p>
+</li>
+<li><p>&#x4ECE;C&#x7A0B;&#x5E8F;&#x3001;Yacc&#x6587;&#x4EF6;&#x6216;Lex&#x6587;&#x4EF6;&#x521B;&#x5EFA;Lint&#x5E93;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x3002;</p>
+<p><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span>.ln</code> &#xFF08;lint&#x751F;&#x6210;&#x7684;&#x6587;&#x4EF6;&#xFF09;&#x7684;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x88AB;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x4E3A; <code>n.c</code>&#xFF0C;&#x5176;&#x751F;&#x6210;&#x547D;&#x4EE4;&#x662F;&#xFF1A; <code>$(LINT) $(LINTFALGS) $(CPPFLAGS) -i</code> &#x3002;&#x5BF9;&#x4E8E; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span>.y</code> &#x548C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span>.l</code> &#x4E5F;&#x662F;&#x540C;&#x6837;&#x7684;&#x89C4;&#x5219;&#x3002;</p>
+</li>
+</ol>
+<h2 id="93-&#x9690;&#x542B;&#x89C4;&#x5219;&#x4F7F;&#x7528;&#x7684;&#x53D8;&#x91CF;"><a name="93-&#x9690;&#x542B;&#x89C4;&#x5219;&#x4F7F;&#x7528;&#x7684;&#x53D8;&#x91CF;" class="anchor-navigation-ex-anchor" href="#93-&#x9690;&#x542B;&#x89C4;&#x5219;&#x4F7F;&#x7528;&#x7684;&#x53D8;&#x91CF;"><i class="fa fa-link" aria-hidden="true"></i></a>9.3 &#x9690;&#x542B;&#x89C4;&#x5219;&#x4F7F;&#x7528;&#x7684;&#x53D8;&#x91CF;</h2>
+<p>&#x5728;&#x9690;&#x542B;&#x89C4;&#x5219;&#x4E2D;&#x7684;&#x547D;&#x4EE4;&#x4E2D;&#xFF0C;&#x57FA;&#x672C;&#x4E0A;&#x90FD;&#x662F;&#x4F7F;&#x7528;&#x4E86;&#x4E00;&#x4E9B;&#x9884;&#x5148;&#x8BBE;&#x7F6E;&#x7684;&#x53D8;&#x91CF;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x4F60;&#x7684;makefile&#x4E2D;&#x6539;&#x53D8;&#x8FD9;&#x4E9B;&#x53D8;&#x91CF;&#x7684;&#x503C;&#xFF0C;&#x6216;&#x662F;&#x5728;make&#x7684;&#x547D;&#x4EE4;&#x884C;&#x4E2D;&#x4F20;&#x5165;&#x8FD9;&#x4E9B;&#x503C;&#xFF0C;&#x6216;&#x662F;&#x5728;&#x4F60;&#x7684;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4E2D;&#x8BBE;&#x7F6E;&#x8FD9;&#x4E9B;&#x503C;&#xFF0C;&#x65E0;&#x8BBA;&#x600E;&#x4E48;&#x6837;&#xFF0C;&#x53EA;&#x8981;&#x8BBE;&#x7F6E;&#x4E86;&#x8FD9;&#x4E9B;&#x7279;&#x5B9A;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x90A3;&#x4E48;&#x5176;&#x5C31;&#x4F1A;&#x5BF9;&#x9690;&#x542B;&#x89C4;&#x5219;&#x8D77;&#x4F5C;&#x7528;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x5229;&#x7528;make&#x7684; <code>-R</code> &#x6216; <code>--no&#x2013;builtin-variables</code> &#x53C2;&#x6570;&#x6765;&#x53D6;&#x6D88;&#x4F60;&#x6240;&#x5B9A;&#x4E49;&#x7684;&#x53D8;&#x91CF;&#x5BF9;&#x9690;&#x542B;&#x89C4;&#x5219;&#x7684;&#x4F5C;&#x7528;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x7B2C;&#x4E00;&#x6761;&#x9690;&#x542B;&#x89C4;&#x5219;------&#x7F16;&#x8BD1;C&#x7A0B;&#x5E8F;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x7684;&#x547D;&#x4EE4;&#x662F; <code>$(CC) &#x2013;c $(CFLAGS) $(CPPFLAGS)</code> &#x3002; Make&#x9ED8;&#x8BA4;&#x7684;&#x7F16;&#x8BD1;&#x547D;&#x4EE4;&#x662F; <code>cc</code>
+&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x628A;&#x53D8;&#x91CF; <code>$(CC)</code> &#x91CD;&#x5B9A;&#x4E49;&#x6210; <code>gcc</code> &#xFF0C;&#x628A;&#x53D8;&#x91CF; <code>$(CFLAGS)</code> &#x91CD;&#x5B9A;&#x4E49;&#x6210; <code>-g</code> &#xFF0C;&#x90A3;&#x4E48;&#xFF0C;&#x9690;&#x542B;&#x89C4;&#x5219;&#x4E2D;&#x7684;&#x547D;&#x4EE4;&#x5168;&#x90E8;&#x4F1A;&#x4EE5; <code>gcc &#x2013;c -g $(CPPFLAGS)</code> &#x7684;&#x6837;&#x5B50;&#x6765;&#x6267;&#x884C;&#x4E86;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x628A;&#x9690;&#x542B;&#x89C4;&#x5219;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x53D8;&#x91CF;&#x5206;&#x6210;&#x4E24;&#x79CD;&#xFF1A;&#x4E00;&#x79CD;&#x662F;&#x547D;&#x4EE4;&#x76F8;&#x5173;&#x7684;&#xFF0C;&#x5982; <code>CC</code> &#xFF1B;&#x4E00;&#x79CD;&#x662F;&#x53C2;&#x6570;&#x76F8;&#x7684;&#x5173;&#xFF0C;&#x5982; <code>CFLAGS</code> &#x3002;&#x4E0B;&#x9762;&#x662F;&#x6240;&#x6709;&#x9690;&#x542B;&#x89C4;&#x5219;&#x4E2D;&#x4F1A;&#x7528;&#x5230;&#x7684;&#x53D8;&#x91CF;&#xFF1A;</p>
+<h3 id="931-&#x5173;&#x4E8E;&#x547D;&#x4EE4;&#x7684;&#x53D8;&#x91CF;&#x3002;"><a name="931-&#x5173;&#x4E8E;&#x547D;&#x4EE4;&#x7684;&#x53D8;&#x91CF;&#x3002;" class="anchor-navigation-ex-anchor" href="#931-&#x5173;&#x4E8E;&#x547D;&#x4EE4;&#x7684;&#x53D8;&#x91CF;&#x3002;"><i class="fa fa-link" aria-hidden="true"></i></a>9.3.1 &#x5173;&#x4E8E;&#x547D;&#x4EE4;&#x7684;&#x53D8;&#x91CF;&#x3002;</h3>
+<ul>
+<li><code>AR</code> : &#x51FD;&#x6570;&#x5E93;&#x6253;&#x5305;&#x7A0B;&#x5E8F;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; <code>ar</code></li>
+<li><code>AS</code> : &#x6C47;&#x7F16;&#x8BED;&#x8A00;&#x7F16;&#x8BD1;&#x7A0B;&#x5E8F;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; <code>as</code></li>
+<li><code>CC</code> : C&#x8BED;&#x8A00;&#x7F16;&#x8BD1;&#x7A0B;&#x5E8F;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; <code>cc</code></li>
+<li><code>CXX</code> : C++&#x8BED;&#x8A00;&#x7F16;&#x8BD1;&#x7A0B;&#x5E8F;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; <code>g++</code></li>
+<li><code>CO</code> : &#x4ECE; RCS&#x6587;&#x4EF6;&#x4E2D;&#x6269;&#x5C55;&#x6587;&#x4EF6;&#x7A0B;&#x5E8F;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; <code>co</code></li>
+<li><code>CPP</code> : C&#x7A0B;&#x5E8F;&#x7684;&#x9884;&#x5904;&#x7406;&#x5668;&#xFF08;&#x8F93;&#x51FA;&#x662F;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x8BBE;&#x5907;&#xFF09;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; <code>$(CC) &#x2013;E</code></li>
+<li><code>FC</code> : Fortran &#x548C; Ratfor &#x7684;&#x7F16;&#x8BD1;&#x5668;&#x548C;&#x9884;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; <code>f77</code></li>
+<li><code>GET</code> : &#x4ECE;SCCS&#x6587;&#x4EF6;&#x4E2D;&#x6269;&#x5C55;&#x6587;&#x4EF6;&#x7684;&#x7A0B;&#x5E8F;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; <code>get</code></li>
+<li><code>LEX</code> : Lex&#x65B9;&#x6CD5;&#x5206;&#x6790;&#x5668;&#x7A0B;&#x5E8F;&#xFF08;&#x9488;&#x5BF9;&#x4E8E;C&#x6216;Ratfor&#xFF09;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; <code>lex</code></li>
+<li><code>PC</code> : Pascal&#x8BED;&#x8A00;&#x7F16;&#x8BD1;&#x7A0B;&#x5E8F;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; <code>pc</code></li>
+<li><code>YACC</code> : Yacc&#x6587;&#x6CD5;&#x5206;&#x6790;&#x5668;&#xFF08;&#x9488;&#x5BF9;&#x4E8E;C&#x7A0B;&#x5E8F;&#xFF09;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; <code>yacc</code></li>
+<li><code>YACCR</code> : Yacc&#x6587;&#x6CD5;&#x5206;&#x6790;&#x5668;&#xFF08;&#x9488;&#x5BF9;&#x4E8E;Ratfor&#x7A0B;&#x5E8F;&#xFF09;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; <code>yacc &#x2013;r</code></li>
+<li><code>MAKEINFO</code> : &#x8F6C;&#x6362;Texinfo&#x6E90;&#x6587;&#x4EF6;&#xFF08;.texi&#xFF09;&#x5230;Info&#x6587;&#x4EF6;&#x7A0B;&#x5E8F;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F;
+<code>makeinfo</code></li>
+<li><code>TEX</code> : &#x4ECE;TeX&#x6E90;&#x6587;&#x4EF6;&#x521B;&#x5EFA;TeX DVI&#x6587;&#x4EF6;&#x7684;&#x7A0B;&#x5E8F;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; <code>tex</code></li>
+<li><code>TEXI2DVI</code> : &#x4ECE;Texinfo&#x6E90;&#x6587;&#x4EF6;&#x521B;&#x5EFA;&#x519B;TeX DVI &#x6587;&#x4EF6;&#x7684;&#x7A0B;&#x5E8F;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F;
+<code>texi2dvi</code></li>
+<li><code>WEAVE</code> : &#x8F6C;&#x6362;Web&#x5230;TeX&#x7684;&#x7A0B;&#x5E8F;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; <code>weave</code></li>
+<li><code>CWEAVE</code> : &#x8F6C;&#x6362;C Web &#x5230; TeX&#x7684;&#x7A0B;&#x5E8F;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; <code>cweave</code></li>
+<li><code>TANGLE</code> : &#x8F6C;&#x6362;Web&#x5230;Pascal&#x8BED;&#x8A00;&#x7684;&#x7A0B;&#x5E8F;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; <code>tangle</code></li>
+<li><code>CTANGLE</code> : &#x8F6C;&#x6362;C Web &#x5230; C&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; <code>ctangle</code></li>
+<li><code>RM</code> : &#x5220;&#x9664;&#x6587;&#x4EF6;&#x547D;&#x4EE4;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; <code>rm &#x2013;f</code></li>
+</ul>
+<h3 id="932-&#x5173;&#x4E8E;&#x547D;&#x4EE4;&#x53C2;&#x6570;&#x7684;&#x53D8;&#x91CF;"><a name="932-&#x5173;&#x4E8E;&#x547D;&#x4EE4;&#x53C2;&#x6570;&#x7684;&#x53D8;&#x91CF;" class="anchor-navigation-ex-anchor" href="#932-&#x5173;&#x4E8E;&#x547D;&#x4EE4;&#x53C2;&#x6570;&#x7684;&#x53D8;&#x91CF;"><i class="fa fa-link" aria-hidden="true"></i></a>9.3.2 &#x5173;&#x4E8E;&#x547D;&#x4EE4;&#x53C2;&#x6570;&#x7684;&#x53D8;&#x91CF;</h3>
+<p>&#x4E0B;&#x9762;&#x7684;&#x8FD9;&#x4E9B;&#x53D8;&#x91CF;&#x90FD;&#x662F;&#x76F8;&#x5173;&#x4E0A;&#x9762;&#x7684;&#x547D;&#x4EE4;&#x7684;&#x53C2;&#x6570;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x6307;&#x660E;&#x5176;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x90A3;&#x4E48;&#x5176;&#x9ED8;&#x8BA4;&#x503C;&#x90FD;&#x662F;&#x7A7A;&#x3002;</p>
+<ul>
+<li><code>ARFLAGS</code> : &#x51FD;&#x6570;&#x5E93;&#x6253;&#x5305;&#x7A0B;&#x5E8F;AR&#x547D;&#x4EE4;&#x7684;&#x53C2;&#x6570;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x662F; <code>rv</code></li>
+<li><code>ASFLAGS</code> : &#x6C47;&#x7F16;&#x8BED;&#x8A00;&#x7F16;&#x8BD1;&#x5668;&#x53C2;&#x6570;&#x3002;&#xFF08;&#x5F53;&#x660E;&#x663E;&#x5730;&#x8C03;&#x7528; <code>.s</code> &#x6216; <code>.S</code> &#x6587;&#x4EF6;&#x65F6;&#xFF09;</li>
+<li><code>CFLAGS</code> : C&#x8BED;&#x8A00;&#x7F16;&#x8BD1;&#x5668;&#x53C2;&#x6570;&#x3002;</li>
+<li><code>CXXFLAGS</code> : C++&#x8BED;&#x8A00;&#x7F16;&#x8BD1;&#x5668;&#x53C2;&#x6570;&#x3002;</li>
+<li><code>COFLAGS</code> : RCS&#x547D;&#x4EE4;&#x53C2;&#x6570;&#x3002;</li>
+<li><code>CPPFLAGS</code> : C&#x9884;&#x5904;&#x7406;&#x5668;&#x53C2;&#x6570;&#x3002;&#xFF08; C &#x548C; Fortran &#x7F16;&#x8BD1;&#x5668;&#x4E5F;&#x4F1A;&#x7528;&#x5230;&#xFF09;&#x3002;</li>
+<li><code>FFLAGS</code> : Fortran&#x8BED;&#x8A00;&#x7F16;&#x8BD1;&#x5668;&#x53C2;&#x6570;&#x3002;</li>
+<li><code>GFLAGS</code> : SCCS &quot;get&quot;&#x7A0B;&#x5E8F;&#x53C2;&#x6570;&#x3002;</li>
+<li><code>LDFLAGS</code> : &#x94FE;&#x63A5;&#x5668;&#x53C2;&#x6570;&#x3002;&#xFF08;&#x5982;&#xFF1A; <code>ld</code> &#xFF09;</li>
+<li><code>LFLAGS</code> : Lex&#x6587;&#x6CD5;&#x5206;&#x6790;&#x5668;&#x53C2;&#x6570;&#x3002;</li>
+<li><code>PFLAGS</code> : Pascal&#x8BED;&#x8A00;&#x7F16;&#x8BD1;&#x5668;&#x53C2;&#x6570;&#x3002;</li>
+<li><code>RFLAGS</code> : Ratfor &#x7A0B;&#x5E8F;&#x7684;Fortran &#x7F16;&#x8BD1;&#x5668;&#x53C2;&#x6570;&#x3002;</li>
+<li><code>YFLAGS</code> : Yacc&#x6587;&#x6CD5;&#x5206;&#x6790;&#x5668;&#x53C2;&#x6570;&#x3002;</li>
+</ul>
+<h2 id="94-&#x9690;&#x542B;&#x89C4;&#x5219;&#x94FE;"><a name="94-&#x9690;&#x542B;&#x89C4;&#x5219;&#x94FE;" class="anchor-navigation-ex-anchor" href="#94-&#x9690;&#x542B;&#x89C4;&#x5219;&#x94FE;"><i class="fa fa-link" aria-hidden="true"></i></a>9.4 &#x9690;&#x542B;&#x89C4;&#x5219;&#x94FE;</h2>
+<p>&#x6709;&#x4E9B;&#x65F6;&#x5019;&#xFF0C;&#x4E00;&#x4E2A;&#x76EE;&#x6807;&#x53EF;&#x80FD;&#x88AB;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x6240;&#x4F5C;&#x7528;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x4E00;&#x4E2A; <code>.o</code> &#x7684;&#x6587;&#x4EF6;&#x751F;&#x6210;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x662F;&#x5148;&#x88AB; Yacc&#x7684;[.y]&#x6587;&#x4EF6;&#x5148;&#x6210; <code>.c</code> &#xFF0C;&#x7136;&#x540E;&#x518D;&#x88AB;C&#x7684;&#x7F16;&#x8BD1;&#x5668;&#x751F;&#x6210;&#x3002;&#x6211;&#x4EEC;&#x628A;&#x8FD9;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x53EB;&#x505A;&quot;&#x9690;&#x542B;&#x89C4;&#x5219;&#x94FE;&quot;&#x3002;</p>
+<p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x6587;&#x4EF6; <code>.c</code> &#x5B58;&#x5728;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x76F4;&#x63A5;&#x8C03;&#x7528;C&#x7684;&#x7F16;&#x8BD1;&#x5668;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709; <code>.c</code> &#x6587;&#x4EF6;&#xFF0C; &#x4F46;&#x6709;&#x4E00;&#x4E2A; <code>.y</code> &#x6587;&#x4EF6;&#xFF0C;&#x90A3;&#x4E48;Yacc&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x4F1A;&#x88AB;&#x8C03;&#x7528;&#xFF0C;&#x751F;&#x6210; <code>.c</code> &#x6587;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#xFF0C;&#x518D;&#x8C03;&#x7528;C&#x7F16;&#x8BD1;&#x7684;&#x9690;&#x542B; &#x89C4;&#x5219;&#x6700;&#x7EC8;&#x7531; <code>.c</code> &#x751F;&#x6210; <code>.o</code> &#x6587;&#x4EF6;&#xFF0C;&#x8FBE;&#x5230;&#x76EE;&#x6807;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x628A;&#x8FD9;&#x79CD; <code>.c</code> &#x7684;&#x6587;&#x4EF6;&#xFF08;&#x6216;&#x662F;&#x76EE;&#x6807;&#xFF09;&#xFF0C;&#x53EB;&#x505A;&#x4E2D;&#x95F4;&#x76EE;&#x6807;&#x3002;&#x4E0D;&#x7BA1;&#x600E;&#x4E48;&#x6837;&#xFF0C;make&#x4F1A;&#x52AA;&#x529B;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x751F;&#x6210;&#x76EE;&#x6807;&#x7684;&#x4E00;&#x5207;&#x65B9;&#x6CD5;&#xFF0C;&#x4E0D;&#x7BA1;&#x4E2D;&#x95F4;&#x76EE;&#x6807;&#x6709;&#x591A;&#x5C11;&#xFF0C;&#x5176;&#x90FD;&#x4F1A;&#x6267;&#x7740;&#x5730;&#x628A;&#x6240;&#x6709;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x548C;&#x4F60;&#x4E66;&#x5199;&#x7684;&#x89C4;&#x5219;&#x5168;&#x90E8;&#x5408;&#x8D77;&#x6765;&#x5206;&#x6790;&#xFF0C;&#x52AA;&#x529B;&#x8FBE;&#x5230;&#x76EE;&#x6807;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x6709;&#x4E9B;&#x65F6;&#x5019;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x8BA9;&#x4F60;&#x89C9;&#x5F97;&#x5947;&#x602A;&#xFF0C;&#x600E;&#x4E48;&#x6211;&#x7684;&#x76EE;&#x6807;&#x4F1A;&#x8FD9;&#x6837;&#x751F;&#x6210;&#xFF1F;&#x600E;&#x4E48;&#x6211;&#x7684;makefile&#x53D1;&#x75AF;&#x4E86;&#xFF1F;</p>
+<p>&#x5728;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5BF9;&#x4E8E;&#x4E2D;&#x95F4;&#x76EE;&#x6807;&#xFF0C;&#x5B83;&#x548C;&#x4E00;&#x822C;&#x7684;&#x76EE;&#x6807;&#x6709;&#x4E24;&#x4E2A;&#x5730;&#x65B9;&#x6240;&#x4E0D;&#x540C;&#xFF1A;&#x7B2C;&#x4E00;&#x4E2A;&#x4E0D;&#x540C;&#x662F;&#x9664;&#x975E;&#x4E2D;&#x95F4;&#x7684;&#x76EE;&#x6807;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x624D;&#x4F1A;&#x5F15;&#x53D1;&#x4E2D;&#x95F4;&#x89C4;&#x5219;&#x3002;&#x7B2C;&#x4E8C;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;&#x53EA;&#x8981;&#x76EE;&#x6807;&#x6210;&#x529F;&#x4EA7;&#x751F;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;&#x4EA7;&#x751F;&#x6700;&#x7EC8;&#x76EE;&#x6807;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x6240;&#x4EA7;&#x751F;&#x7684;&#x4E2D;&#x95F4;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x4F1A;&#x88AB;&#x4EE5; <code>rm -f</code> &#x5220;&#x9664;&#x3002;</p>
+<p>&#x901A;&#x5E38;&#xFF0C;&#x4E00;&#x4E2A;&#x88AB;makefile&#x6307;&#x5B9A;&#x6210;&#x76EE;&#x6807;&#x6216;&#x662F;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x7684;&#x6587;&#x4EF6;&#x4E0D;&#x80FD;&#x88AB;&#x5F53;&#x4F5C;&#x4E2D;&#x4ECB;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x660E;&#x663E;&#x5730;&#x8BF4;&#x660E;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x6216;&#x662F;&#x76EE;&#x6807;&#x662F;&#x4E2D;&#x4ECB;&#x76EE;&#x6807;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4F2A;&#x76EE;&#x6807; <code>.INTERMEDIATE</code> &#x6765;&#x5F3A;&#x5236;&#x58F0;&#x660E;&#x3002;&#xFF08;&#x5982;&#xFF1A; <code>.INTERMEDIATE : mid</code> &#xFF09;</p>
+<p>&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x963B;&#x6B62;make&#x81EA;&#x52A8;&#x5220;&#x9664;&#x4E2D;&#x95F4;&#x76EE;&#x6807;&#xFF0C;&#x8981;&#x505A;&#x5230;&#x8FD9;&#x4E00;&#x70B9;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4F2A;&#x76EE;&#x6807; <code>.SECONDARY</code> &#x6765;&#x5F3A;&#x5236;&#x58F0;&#x660E; &#xFF08;&#x5982;&#xFF1A; <code>.SECONDARY : sec</code>&#xFF09;&#x3002;&#x4F60;&#x8FD8;&#x53EF;&#x4EE5;&#x628A;&#x4F60;&#x7684;&#x76EE;&#x6807;&#xFF0C;&#x4EE5;&#x6A21;&#x5F0F;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x6307;&#x5B9A;&#xFF08;&#x5982;&#xFF1A; <code>%.o</code> &#xFF09;&#x6210; &#x4F2A;&#x76EE;&#x6807;<code>.PRECIOUS</code> &#x7684;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#xFF0C;&#x4EE5;&#x4FDD;&#x5B58;&#x88AB;&#x9690;&#x542B;&#x89C4;&#x5219;&#x6240;&#x751F;&#x6210;&#x7684;&#x4E2D;&#x95F4;&#x6587;&#x4EF6;&#x3002;</p>
+<p>&#x5728;&quot;&#x9690;&#x542B;&#x89C4;&#x5219;&#x94FE;&quot;&#x4E2D;&#xFF0C;&#x7981;&#x6B62;&#x540C;&#x4E00;&#x4E2A;&#x76EE;&#x6807;&#x51FA;&#x73B0;&#x4E24;&#x6B21;&#x6216;&#x4E24;&#x6B21;&#x4EE5;&#x4E0A;&#xFF0C;&#x8FD9;&#x6837;&#x4E00;&#x6765;&#xFF0C;&#x5C31;&#x53EF;&#x9632;&#x6B62;&#x5728;make&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x65F6;&#x51FA;&#x73B0;&#x65E0;&#x9650;&#x9012;&#x5F52;&#x7684;&#x60C5;&#x51B5;&#x3002;</p>
+<p>Make&#x4F1A;&#x4F18;&#x5316;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#xFF0C;&#x800C;&#x4E0D;&#x751F;&#x6210;&#x4E2D;&#x95F4;&#x6587;&#x4EF6;&#x3002;&#x5982;&#xFF0C;&#x4ECE;&#x6587;&#x4EF6; <code>foo.c</code> &#x751F;&#x6210;&#x76EE;&#x6807;&#x7A0B;&#x5E8F; <code>foo</code> &#xFF0C; &#x6309;&#x9053;&#x7406;&#xFF0C;make&#x4F1A;&#x7F16;&#x8BD1;&#x751F;&#x6210;&#x4E2D;&#x95F4;&#x6587;&#x4EF6; <code>foo.o</code> &#xFF0C;&#x7136;&#x540E;&#x94FE;&#x63A5;&#x6210; <code>foo</code> &#xFF0C;&#x4F46;&#x5728;&#x5B9E;&#x9645;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8FD9;&#x4E00;&#x52A8;&#x4F5C;&#x53EF;&#x4EE5; &#x88AB;&#x4E00;&#x6761; <code>cc</code> &#x7684;&#x547D;&#x4EE4;&#x5B8C;&#x6210;&#xFF08; <code>cc &#x2013;o foo foo.c</code> &#xFF09;&#xFF0C;&#x4E8E;&#x662F;&#x4F18;&#x5316;&#x8FC7;&#x7684;&#x89C4;&#x5219;&#x5C31;&#x4E0D;&#x4F1A;&#x751F;&#x6210;&#x4E2D;&#x95F4;&#x6587;&#x4EF6;&#x3002;</p>
+<h2 id="95-&#x5B9A;&#x4E49;&#x6A21;&#x5F0F;&#x89C4;&#x5219;"><a name="95-&#x5B9A;&#x4E49;&#x6A21;&#x5F0F;&#x89C4;&#x5219;" class="anchor-navigation-ex-anchor" href="#95-&#x5B9A;&#x4E49;&#x6A21;&#x5F0F;&#x89C4;&#x5219;"><i class="fa fa-link" aria-hidden="true"></i></a>9.5 &#x5B9A;&#x4E49;&#x6A21;&#x5F0F;&#x89C4;&#x5219;</h2>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x6765;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x9690;&#x542B;&#x89C4;&#x5219;&#x3002;&#x4E00;&#x4E2A;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x5C31;&#x597D;&#x50CF;&#x4E00;&#x4E2A;&#x4E00;&#x822C;&#x7684;&#x89C4;&#x5219;&#xFF0C;&#x53EA;&#x662F;&#x5728;&#x89C4;&#x5219;&#x4E2D;&#xFF0C;&#x76EE;&#x6807;&#x7684;&#x5B9A;&#x4E49;&#x9700;&#x8981;&#x6709; <code>%</code> &#x5B57;&#x7B26;&#x3002; <code>%</code> &#x7684;&#x610F;&#x601D;&#x662F;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x4EFB;&#x610F;&#x5B57;&#x7B26;&#x3002;&#x5728;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x4E2D;&#x540C;&#x6837;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>%</code> &#xFF0C;&#x53EA;&#x662F;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x4E2D;&#x7684; <code>%</code> &#x7684;&#x53D6;&#x503C;&#xFF0C;&#x53D6;&#x51B3;&#x4E8E;&#x5176;&#x76EE;&#x6807;&#x3002;</p>
+<p>&#x6709;&#x4E00;&#x70B9;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C; <code>%</code> &#x7684;&#x5C55;&#x5F00;&#x53D1;&#x751F;&#x5728;&#x53D8;&#x91CF;&#x548C;&#x51FD;&#x6570;&#x7684;&#x5C55;&#x5F00;&#x4E4B;&#x540E;&#xFF0C;&#x53D8;&#x91CF;&#x548C;&#x51FD;&#x6570;&#x7684;&#x5C55;&#x5F00;&#x53D1;&#x751F;&#x5728;make&#x8F7D;&#x5165;Makefile&#x65F6;&#xFF0C;&#x800C;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x4E2D;&#x7684; <code>%</code> &#x5219;&#x53D1;&#x751F;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x3002;</p>
+<h3 id="951-&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x4ECB;&#x7ECD;"><a name="951-&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x4ECB;&#x7ECD;" class="anchor-navigation-ex-anchor" href="#951-&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x4ECB;&#x7ECD;"><i class="fa fa-link" aria-hidden="true"></i></a>9.5.1 &#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x4ECB;&#x7ECD;</h3>
+<p>&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x4E2D;&#xFF0C;&#x81F3;&#x5C11;&#x5728;&#x89C4;&#x5219;&#x7684;&#x76EE;&#x6807;&#x5B9A;&#x4E49;&#x4E2D;&#x8981;&#x5305;&#x542B; <code>%</code> &#xFF0C;&#x5426;&#x5219;&#xFF0C;&#x5C31;&#x662F;&#x4E00;&#x822C;&#x7684;&#x89C4;&#x5219;&#x3002;&#x76EE;&#x6807;&#x4E2D;&#x7684; <code>%</code> &#x5B9A;&#x4E49; &#x8868;&#x793A;&#x5BF9;&#x6587;&#x4EF6;&#x540D;&#x7684;&#x5339;&#x914D;&#xFF0C; <code>%</code> &#x8868;&#x793A;&#x957F;&#x5EA6;&#x4EFB;&#x610F;&#x7684;&#x975E;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x4F8B;&#x5982;&#xFF1A; <code>%.c</code> &#x8868;&#x793A;&#x4EE5; <code>.c</code> &#x7ED3;&#x5C3E;&#x7684;&#x6587;&#x4EF6;&#x540D;&#xFF08;&#x6587;&#x4EF6;&#x540D;&#x7684;&#x957F;&#x5EA6;&#x81F3;&#x5C11;&#x4E3A;3&#xFF09;&#xFF0C;&#x800C; <code>s.%.c</code> &#x5219;&#x8868;&#x793A;&#x4EE5; <code>s.</code> &#x5F00;&#x5934;&#xFF0C; <code>.c</code> &#x7ED3;&#x5C3E;&#x7684;&#x6587;&#x4EF6;&#x540D; &#xFF08;&#x6587;&#x4EF6;&#x540D;&#x7684;&#x957F;&#x5EA6;&#x81F3;&#x5C11;&#x4E3A;5&#xFF09;&#x3002;</p>
+<p>&#x5982;&#x679C; <code>%</code> &#x5B9A;&#x4E49;&#x5728;&#x76EE;&#x6807;&#x4E2D;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;&#x4F9D;&#x8D56;&#x4E2D;&#x7684; <code>%</code> &#x7684;&#x503C;&#x51B3;&#x5B9A;&#x4E86;&#x76EE;&#x6807;&#x4E2D;&#x7684; <code>%</code> &#x7684;&#x503C;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C; &#x4F9D;&#x8D56;&#x4E2D;&#x7684;&#x6A21;&#x5F0F;&#x7684; <code>%</code> &#x51B3;&#x5B9A;&#x4E86;&#x76EE;&#x6807;&#x4E2D; <code>%</code> &#x7684;&#x6837;&#x5B50;&#x3002;&#x4F8B;&#x5982;&#x6709;&#x4E00;&#x4E2A;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-makefile"><span class="token target symbol">%.o</span> <span class="token punctuation">:</span> %.c <span class="token punctuation">;</span> &lt;command ......&gt;<span class="token punctuation">;</span>
+</code></pre>
+<p>&#x5176;&#x542B;&#x4E49;&#x662F;&#xFF0C;&#x6307;&#x51FA;&#x4E86;&#x600E;&#x4E48;&#x4ECE;&#x6240;&#x6709;&#x7684; <code>.c</code> &#x6587;&#x4EF6;&#x751F;&#x6210;&#x76F8;&#x5E94;&#x7684; <code>.o</code> &#x6587;&#x4EF6;&#x7684;&#x89C4;&#x5219;&#x3002;&#x5982;&#x679C;&#x8981;&#x751F;&#x6210;&#x7684;&#x76EE;&#x6807;&#x662F; <code>a.o b.o</code> &#xFF0C;&#x90A3;&#x4E48; <code>%c</code> &#x5C31;&#x662F; <code>a.c b.c</code> &#x3002;</p>
+<p>&#x4E00;&#x65E6;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x4E2D;&#x7684; <code>%</code> &#x6A21;&#x5F0F;&#x88AB;&#x786E;&#x5B9A;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;make&#x4F1A;&#x88AB;&#x8981;&#x6C42;&#x53BB;&#x5339;&#x914D;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x6240;&#x6709;&#x7684;&#x6587;&#x4EF6;&#x540D;&#xFF0C;&#x4E00;&#x65E6;&#x627E;&#x5230;&#xFF0C;make&#x5C31;&#x4F1A;&#x89C4;&#x5219;&#x4E0B;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x5728;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x4E2D;&#xFF0C;&#x76EE;&#x6807;&#x53EF;&#x80FD;&#x4F1A;&#x662F;&#x591A;&#x4E2A;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x6A21;&#x5F0F;&#x5339;&#x914D;&#x51FA;&#x591A;&#x4E2A;&#x76EE;&#x6807;&#xFF0C;make&#x5C31;&#x4F1A;&#x4EA7;&#x751F;&#x6240;&#x6709;&#x7684;&#x6A21;&#x5F0F;&#x76EE;&#x6807;&#xFF0C;&#x6B64;&#x65F6;&#xFF0C;make&#x5173;&#x5FC3;&#x7684;&#x662F;&#x4F9D;&#x8D56;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x548C;&#x751F;&#x6210;&#x76EE;&#x6807;&#x7684;&#x547D;&#x4EE4;&#x8FD9;&#x4E24;&#x4EF6;&#x4E8B;&#x3002;</p>
+<h3 id="952-&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x793A;&#x4F8B;"><a name="952-&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x793A;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#952-&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x793A;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>9.5.2 &#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x793A;&#x4F8B;</h3>
+<p>&#x4E0B;&#x9762;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x8868;&#x793A;&#x4E86;,&#x628A;&#x6240;&#x6709;&#x7684; <code>.c</code> &#x6587;&#x4EF6;&#x90FD;&#x7F16;&#x8BD1;&#x6210; <code>.o</code> &#x6587;&#x4EF6;.</p>
+<pre class="language-"><code class="lang-makefile">.RECIPEPREFIX <span class="token operator">=</span> &gt;
+<span class="token target symbol">%.o</span> <span class="token punctuation">:</span> %.c
+&gt;  <span class="token variable">$</span><span class="token punctuation">(</span>CC<span class="token punctuation">)</span> -c <span class="token variable">$</span><span class="token punctuation">(</span>CFLAGS<span class="token punctuation">)</span> <span class="token variable">$</span><span class="token punctuation">(</span>CPPFLAGS<span class="token punctuation">)</span> <span class="token variable">$&lt;</span> -o <span class="token variable">$@</span>
+</code></pre>
+<p>&#x5176;&#x4E2D;&#xFF0C; <code>$@</code> &#x8868;&#x793A;&#x6240;&#x6709;&#x7684;&#x76EE;&#x6807;&#x7684;&#x6328;&#x4E2A;&#x503C;&#xFF0C; <code>$&lt;</code> &#x8868;&#x793A;&#x4E86;&#x6240;&#x6709;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x7684;&#x6328;&#x4E2A;&#x503C;&#x3002;&#x8FD9;&#x4E9B;&#x5947;&#x602A;&#x7684;&#x53D8;&#x91CF;&#x6211;&#x4EEC;&#x53EB;&quot;&#x81EA;&#x52A8;&#x5316;&#x53D8;&#x91CF;&quot;&#xFF0C;&#x540E;&#x9762;&#x4F1A;&#x8BE6;&#x7EC6;&#x8BB2;&#x8FF0;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x7684;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#x6709;&#x4E24;&#x4E2A;&#x76EE;&#x6807;&#x662F;&#x6A21;&#x5F0F;&#x7684;&#xFF1A;</p>
+<pre class="language-"><code class="lang-makefile">.RECIPEPREFIX <span class="token operator">=</span> &gt;
+<span class="token target symbol">%.tab.c %.tab.h</span><span class="token punctuation">:</span> %.y
+&gt;  bison -d <span class="token variable">$&lt;</span>
+</code></pre>
+<p>&#x8FD9;&#x6761;&#x89C4;&#x5219;&#x544A;&#x8BC9;make&#x628A;&#x6240;&#x6709;&#x7684; <code>.y</code> &#x6587;&#x4EF6;&#x90FD;&#x4EE5; <code>bison -d <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span>.y</code> &#x6267;&#x884C;&#xFF0C;&#x7136;&#x540E;&#x751F;&#x6210; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span>.tab.c</code> &#x548C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span>.tab.h</code> &#x6587;&#x4EF6;&#x3002;&#xFF08;&#x5176;&#x4E2D;&#xFF0C; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n</span><span class="token punctuation">&gt;</span></span></code> &#x8868;&#x793A;&#x4E00;&#x4E2A;&#x4EFB;&#x610F;&#x5B57;&#x7B26;&#x4E32;&#xFF09;&#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x7684;&#x6267;&#x884C;&#x7A0B;&#x5E8F; <code>foo</code> &#x4F9D;&#x8D56;&#x4E8E;&#x6587;&#x4EF6; <code>parse.tab.o</code> &#x548C; <code>scan.o</code> &#xFF0C;&#x5E76;&#x4E14;&#x6587;&#x4EF6; <code>scan.o</code> &#x4F9D;&#x8D56;&#x4E8E;&#x6587;&#x4EF6; <code>parse.tab.h</code> &#xFF0C; &#x5982;&#x679C; <code>parse.y</code> &#x6587;&#x4EF6;&#x88AB;&#x66F4;&#x65B0;&#x4E86;&#xFF0C;&#x90A3;&#x4E48;&#x6839;&#x636E;&#x4E0A;&#x8FF0;&#x7684;&#x89C4;&#x5219;&#xFF0C; <code>bison -d parse.y</code> &#x5C31;&#x4F1A;&#x88AB;&#x6267;&#x884C;&#x4E00;&#x6B21;&#xFF0C; &#x4E8E;&#x662F;&#xFF0C; <code>parse.tab.o</code> &#x548C; <code>scan.o</code> &#x7684;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x5C31;&#x9F50;&#x4E86;&#x3002;&#xFF08;&#x5047;&#x8BBE;&#xFF0C; <code>parse.tab.o</code> &#x7531; <code>parse.tab.c</code> &#x751F;&#x6210;&#xFF0C;&#x548C; <code>scan.o</code> &#x7531; <code>scan.c</code> &#x751F;&#x6210;&#xFF0C;&#x800C; <code>foo</code> &#x7531; <code>parse.tab.o</code> &#x548C; <code>scan.o</code> &#x94FE;&#x63A5;&#x751F;&#x6210;&#xFF0C;&#x800C;&#x4E14; <code>foo</code> &#x548C;&#x5176; <code>.o</code> &#x6587;&#x4EF6;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x4E5F;&#x5199;&#x597D;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x76EE;&#x6807;&#x90FD;&#x4F1A;&#x5F97;&#x5230;&#x6EE1;&#x8DB3;&#xFF09;</p>
+<h3 id="953-&#x81EA;&#x52A8;&#x5316;&#x53D8;&#x91CF;"><a name="953-&#x81EA;&#x52A8;&#x5316;&#x53D8;&#x91CF;" class="anchor-navigation-ex-anchor" href="#953-&#x81EA;&#x52A8;&#x5316;&#x53D8;&#x91CF;"><i class="fa fa-link" aria-hidden="true"></i></a>9.5.3 &#x81EA;&#x52A8;&#x5316;&#x53D8;&#x91CF;</h3>
+<p>&#x5728;&#x4E0A;&#x8FF0;&#x7684;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x4E2D;&#xFF0C;&#x76EE;&#x6807;&#x548C;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x90FD;&#x662F;&#x4E00;&#x7CFB;&#x4F8B;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x5982;&#x4F55;&#x4E66;&#x5199;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x6765;&#x5B8C;&#x6210;&#x4ECE;&#x4E0D;&#x540C;&#x7684;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x751F;&#x6210;&#x76F8;&#x5E94;&#x7684;&#x76EE;&#x6807;&#xFF1F;&#x56E0;&#x4E3A;&#x5728;&#x6BCF;&#x4E00;&#x6B21;&#x7684;&#x5BF9;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x7684;&#x89E3;&#x6790;&#x65F6;&#xFF0C;&#x90FD;&#x4F1A;&#x662F;&#x4E0D;&#x540C;&#x7684;&#x76EE;&#x6807;&#x548C;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x3002;</p>
+<p>&#x81EA;&#x52A8;&#x5316;&#x53D8;&#x91CF;&#x5C31;&#x662F;&#x5B8C;&#x6210;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#x7684;&#x3002;&#x5728;&#x524D;&#x9762;&#xFF0C;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x5BF9;&#x81EA;&#x52A8;&#x5316;&#x53D8;&#x91CF;&#x6709;&#x6240;&#x63D0;&#x6D89;&#xFF0C;&#x76F8;&#x4FE1;&#x4F60;&#x770B;&#x5230;&#x8FD9;&#x91CC;&#x5DF2;&#x5BF9;&#x5B83;&#x6709;&#x4E00;&#x4E2A;&#x611F;&#x6027;&#x8BA4;&#x8BC6;&#x4E86;&#x3002;&#x6240;&#x8C13;&#x81EA;&#x52A8;&#x5316;&#x53D8;&#x91CF;&#xFF0C;&#x5C31;&#x662F;&#x8FD9;&#x79CD;&#x53D8;&#x91CF;&#x4F1A;&#x628A;&#x6A21;&#x5F0F;&#x4E2D;&#x6240;&#x5B9A;&#x4E49;&#x7684;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x6587;&#x4EF6;&#x81EA;&#x52A8;&#x5730;&#x6328;&#x4E2A;&#x53D6;&#x51FA;&#xFF0C;&#x76F4;&#x81F3;&#x6240;&#x6709;&#x7684;&#x7B26;&#x5408;&#x6A21;&#x5F0F;&#x7684;&#x6587;&#x4EF6;&#x90FD;&#x53D6;&#x5B8C;&#x4E86;&#x3002;&#x8FD9;&#x79CD;&#x81EA;&#x52A8;&#x5316;&#x53D8;&#x91CF;&#x53EA;&#x5E94;&#x51FA;&#x73B0;&#x5728;&#x89C4;&#x5219;&#x7684;&#x547D;&#x4EE4;&#x4E2D;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F;&#x6240;&#x6709;&#x7684;&#x81EA;&#x52A8;&#x5316;&#x53D8;&#x91CF;&#x53CA;&#x5176;&#x8BF4;&#x660E;&#xFF1A;</p>
+<ul>
+<li><code>$@</code> : &#x8868;&#x793A;&#x89C4;&#x5219;&#x4E2D;&#x7684;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x96C6;&#x3002;&#x5728;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x591A;&#x4E2A;&#x76EE;&#x6807;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;  <code>$@</code> &#x5C31;&#x662F;&#x5339;&#x914D;&#x4E8E; &#x76EE;&#x6807;&#x4E2D;&#x6A21;&#x5F0F;&#x5B9A;&#x4E49;&#x7684;&#x96C6;&#x5408;&#x3002;</li>
+<li><code>$%</code> : &#x4EC5;&#x5F53;&#x76EE;&#x6807;&#x662F;&#x51FD;&#x6570;&#x5E93;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x8868;&#x793A;&#x89C4;&#x5219;&#x4E2D;&#x7684;&#x76EE;&#x6807;&#x6210;&#x5458;&#x540D;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x76EE;&#x6807;&#x662F; <code>foo.a(bar.o)</code> &#xFF0C; &#x90A3;&#x4E48;&#xFF0C; <code>$%</code> &#x5C31;&#x662F; <code>bar.o</code> &#xFF0C; <code>$@</code> &#x5C31;&#x662F; <code>foo.a</code> &#x3002;&#x5982;&#x679C;&#x76EE;&#x6807;&#x4E0D;&#x662F;&#x51FD;&#x6570;&#x5E93;&#x6587;&#x4EF6; &#xFF08;Unix&#x4E0B;&#x662F; <code>.a</code> &#xFF0C;Windows&#x4E0B;&#x662F; <code>.lib</code>&#xFF09;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;&#x5176;&#x503C;&#x4E3A;&#x7A7A;&#x3002;</li>
+<li><code>$&lt;</code> : &#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x4E2D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x76EE;&#x6807;&#x540D;&#x5B57;&#x3002;&#x5982;&#x679C;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x662F;&#x4EE5;&#x6A21;&#x5F0F;&#xFF08;&#x5373; <code>%</code>&#xFF09;&#x5B9A;&#x4E49;&#x7684;&#xFF0C;&#x90A3;&#x4E48; <code>$&lt;</code> &#x5C06;&#x662F;&#x7B26;&#x5408;&#x6A21;&#x5F0F;&#x7684;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x6587;&#x4EF6;&#x96C6;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x5176;&#x662F;&#x4E00;&#x4E2A;&#x4E00;&#x4E2A;&#x53D6;&#x51FA;&#x6765;&#x7684;&#x3002;</li>
+<li><code>$?</code> : &#x6240;&#x6709;&#x6BD4;&#x76EE;&#x6807;&#x65B0;&#x7684;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x7684;&#x96C6;&#x5408;&#x3002;&#x4EE5;&#x7A7A;&#x683C;&#x5206;&#x9694;&#x3002;</li>
+<li><code>$^</code> : &#x6240;&#x6709;&#x7684;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x7684;&#x96C6;&#x5408;&#x3002;&#x4EE5;&#x7A7A;&#x683C;&#x5206;&#x9694;&#x3002;&#x5982;&#x679C;&#x5728;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x4E2D;&#x6709;&#x591A;&#x4E2A;&#x91CD;&#x590D;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x4F1A;&#x53BB;&#x9664;&#x91CD;&#x590D;&#x7684;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#xFF0C;&#x53EA;&#x4FDD;&#x7559;&#x4E00;&#x4EFD;&#x3002;</li>
+<li><code>$+</code> : &#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x5F88;&#x50CF; <code>$^</code> &#xFF0C;&#x4E5F;&#x662F;&#x6240;&#x6709;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x7684;&#x96C6;&#x5408;&#x3002;&#x53EA;&#x662F;&#x5B83;&#x4E0D;&#x53BB;&#x9664;&#x91CD;&#x590D;&#x7684;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x3002;</li>
+<li><code>$*</code> : &#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x8868;&#x793A;&#x76EE;&#x6807;&#x6A21;&#x5F0F;&#x4E2D; <code>%</code> &#x53CA;&#x5176;&#x4E4B;&#x524D;&#x7684;&#x90E8;&#x5206;&#x3002;&#x5982;&#x679C;&#x76EE;&#x6807;&#x662F; <code>dir/a.foo.b</code> &#xFF0C;&#x5E76;&#x4E14; &#x76EE;&#x6807;&#x7684;&#x6A21;&#x5F0F;&#x662F; <code>a.%.b</code> &#xFF0C;&#x90A3;&#x4E48;&#xFF0C; <code>$*</code> &#x7684;&#x503C;&#x5C31;&#x662F; <code>dir/foo</code> &#x3002;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x5BF9;&#x4E8E;&#x6784;&#x9020;&#x6709;&#x5173;&#x8054;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x662F;&#x6BD4;&#x8F83;&#x6709;&#x6548;&#x3002;&#x5982;&#x679C;&#x76EE;&#x6807;&#x4E2D;&#x6CA1;&#x6709;&#x6A21;&#x5F0F;&#x7684;&#x5B9A;&#x4E49;&#xFF0C;&#x90A3;&#x4E48; <code>$*</code> &#x4E5F;&#x5C31;&#x4E0D;&#x80FD;&#x88AB;&#x63A8;&#x5BFC;&#x51FA;&#xFF0C;&#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x7684; &#x540E;&#x7F00;&#x662F;make&#x6240;&#x8BC6;&#x522B;&#x7684;&#xFF0C;&#x90A3;&#x4E48; <code>$*</code>  &#x5C31;&#x662F;&#x9664;&#x4E86;&#x540E;&#x7F00;&#x7684;&#x90A3;&#x4E00;&#x90E8;&#x5206;&#x3002;&#x4F8B;&#x5982;&#xFF1A;&#x5982;&#x679C;&#x76EE;&#x6807;&#x662F; <code>foo.c</code> &#xFF0C;&#x56E0;&#x4E3A; <code>.c</code> &#x662F;make&#x6240;&#x80FD;&#x8BC6;&#x522B;&#x7684;&#x540E;&#x7F00;&#x540D;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C; <code>$*</code> &#x7684;&#x503C;&#x5C31;&#x662F; <code>foo</code> &#x3002;&#x8FD9;&#x4E2A;&#x7279;&#x6027;&#x662F;GNU make&#x7684;&#xFF0C; &#x5F88;&#x6709;&#x53EF;&#x80FD;&#x4E0D;&#x517C;&#x5BB9;&#x4E8E;&#x5176;&#x5B83;&#x7248;&#x672C;&#x7684;make&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x4F60;&#x5E94;&#x8BE5;&#x5C3D;&#x91CF;&#x907F;&#x514D;&#x4F7F;&#x7528; <code>$*</code> &#xFF0C;&#x9664;&#x975E;&#x662F;&#x5728;&#x9690;&#x542B;&#x89C4;&#x5219;&#x6216;&#x662F;&#x9759;&#x6001;&#x6A21;&#x5F0F;&#x4E2D;&#x3002;&#x5982;&#x679C;&#x76EE;&#x6807;&#x4E2D;&#x7684;&#x540E;&#x7F00;&#x662F;make&#x6240;&#x4E0D;&#x80FD;&#x8BC6;&#x522B;&#x7684;&#xFF0C;&#x90A3;&#x4E48; <code>$*</code> &#x5C31;&#x662F;&#x7A7A;&#x503C;&#x3002;</li>
+</ul>
+<p>&#x5F53;&#x4F60;&#x5E0C;&#x671B;&#x53EA;&#x5BF9;&#x66F4;&#x65B0;&#x8FC7;&#x7684;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x65F6;&#xFF0C; <code>$?</code> &#x5728;&#x663E;&#x5F0F;&#x89C4;&#x5219;&#x4E2D;&#x5F88;&#x6709;&#x7528;&#xFF0C;&#x4F8B;&#x5982;&#xFF0C;&#x5047;&#x8BBE;&#x6709;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x5E93;&#x6587;&#x4EF6; &#x53EB; <code>lib</code> &#xFF0C;&#x5176;&#x7531;&#x5176;&#x5B83;&#x51E0;&#x4E2A;object&#x6587;&#x4EF6;&#x66F4;&#x65B0;&#x3002;&#x90A3;&#x4E48;&#x628A;object&#x6587;&#x4EF6;&#x6253;&#x5305;&#x7684;&#x6BD4;&#x8F83;&#x6709;&#x6548;&#x7387;&#x7684;Makefile&#x89C4;&#x5219;&#x662F;&#xFF1A;</p>
+<pre class="language-"><code class="lang-makefile">.RECIPEPREFIX <span class="token operator">=</span> &gt;
+<span class="token target symbol">lib</span> <span class="token punctuation">:</span> foo.o bar.o lose.o win.o
+&gt;  ar r lib <span class="token variable">$?</span>
+</code></pre>
+<p>&#x5728;&#x4E0A;&#x8FF0;&#x6240;&#x5217;&#x51FA;&#x6765;&#x7684;&#x81EA;&#x52A8;&#x91CF;&#x53D8;&#x91CF;&#x4E2D;&#x3002;&#x56DB;&#x4E2A;&#x53D8;&#x91CF;&#xFF08; <code>$@</code> &#x3001; <code>$&lt;</code> &#x3001; <code>$%</code> &#x3001; <code>$*</code>&#xFF09;&#x5728;&#x6269;&#x5C55;&#x65F6;&#x53EA;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x800C;&#x53E6;&#x4E09;&#x4E2A;&#x7684;&#x503C;&#x662F;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5217;&#x8868;&#x3002;&#x8FD9;&#x4E03;&#x4E2A;&#x81EA;&#x52A8;&#x5316;&#x53D8;&#x91CF;&#x8FD8;&#x53EF;&#x4EE5;&#x53D6;&#x5F97;&#x6587;&#x4EF6;&#x7684;&#x76EE;&#x5F55;&#x540D;&#x6216;&#x662F;&#x5728;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x7B26;&#x5408;&#x6A21;&#x5F0F;&#x7684;&#x6587;&#x4EF6;&#x540D;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x642D;&#x914D;&#x4E0A; <code>D</code> &#x6216; <code>F</code> &#x5B57;&#x6837;&#x3002;&#x8FD9;&#x662F;GNU make&#x4E2D;&#x8001;&#x7248;&#x672C;&#x7684;&#x7279;&#x6027;&#xFF0C; &#x5728;&#x65B0;&#x7248;&#x672C;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x51FD;&#x6570; <code>dir</code> &#x6216; <code>notdir</code> &#x5C31;&#x53EF;&#x4EE5;&#x505A;&#x5230;&#x4E86;&#x3002; <code>D</code> &#x7684;&#x542B;&#x4E49;&#x5C31;&#x662F;Directory&#xFF0C; &#x5C31;&#x662F;&#x76EE;&#x5F55;&#xFF0C; <code>F</code> &#x7684;&#x542B;&#x4E49;&#x5C31;&#x662F;File&#xFF0C;&#x5C31;&#x662F;&#x6587;&#x4EF6;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F;&#x5BF9;&#x4E8E;&#x4E0A;&#x9762;&#x7684;&#x4E03;&#x4E2A;&#x53D8;&#x91CF;&#x5206;&#x522B;&#x52A0;&#x4E0A; <code>D</code> &#x6216;&#x662F; <code>F</code> &#x7684;&#x542B;&#x4E49;&#xFF1A;</p>
+<p><code>$(@D)</code></p>
+<p>:   &#x8868;&#x793A; <code>$@</code> &#x7684;&#x76EE;&#x5F55;&#x90E8;&#x5206;&#xFF08;&#x4E0D;&#x4EE5;&#x659C;&#x6760;&#x4F5C;&#x4E3A;&#x7ED3;&#x5C3E;&#xFF09;&#xFF0C;&#x5982;&#x679C; <code>$@</code> &#x503C;&#x662F; <code>dir/foo.o</code> &#xFF0C;&#x90A3;&#x4E48; <code>$(@D)</code> &#x5C31;&#x662F; <code>dir</code> &#xFF0C;&#x800C;&#x5982;&#x679C; <code>$@</code> &#x4E2D;&#x6CA1;&#x6709;&#x5305;&#x542B;&#x659C;&#x6760;&#x7684;&#x8BDD;&#xFF0C;&#x5176;&#x503C;&#x5C31;&#x662F; <code>.</code> &#xFF08;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#xFF09;&#x3002;</p>
+<p><code>$(@F)</code></p>
+<p>:   &#x8868;&#x793A; <code>$@</code> &#x7684;&#x6587;&#x4EF6;&#x90E8;&#x5206;&#xFF0C;&#x5982;&#x679C; <code>$@</code> &#x503C;&#x662F; <code>dir/foo.o</code> &#xFF0C;&#x90A3;&#x4E48; <code>$(@F)</code> &#x5C31;&#x662F;    <code>foo.o</code> &#xFF0C; <code>$(@F)</code> &#x76F8;&#x5F53;&#x4E8E;&#x51FD;&#x6570; <code>$(notdir $@)</code> &#x3002;</p>
+<p><code>$(*D)</code>, <code>$(*F)</code></p>
+<p>:   &#x548C;&#x4E0A;&#x9762;&#x6240;&#x8FF0;&#x7684;&#x540C;&#x7406;&#xFF0C;&#x4E5F;&#x662F;&#x53D6;&#x6587;&#x4EF6;&#x7684;&#x76EE;&#x5F55;&#x90E8;&#x5206;&#x548C;&#x6587;&#x4EF6;&#x90E8;&#x5206;&#x3002;&#x5BF9;&#x4E8E;&#x4E0A;&#x9762;&#x7684;&#x90A3;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C; <code>$(*D)</code> &#x8FD4;&#x56DE; <code>dir</code> &#xFF0C; &#x800C; <code>$(*F)</code> &#x8FD4;&#x56DE; <code>foo</code></p>
+<p><code>$(%D)</code>, <code>$(%F)</code></p>
+<p>:   &#x5206;&#x522B;&#x8868;&#x793A;&#x4E86;&#x51FD;&#x6570;&#x5305;&#x6587;&#x4EF6;&#x6210;&#x5458;&#x7684;&#x76EE;&#x5F55;&#x90E8;&#x5206;&#x548C;&#x6587;&#x4EF6;&#x90E8;&#x5206;&#x3002;&#x8FD9;&#x5BF9;&#x4E8E;&#x5F62;&#x540C; <code>archive(member)</code> &#x5F62;&#x5F0F;&#x7684;&#x76EE;&#x6807;&#x4E2D;&#x7684; <code>member</code> &#x4E2D;&#x5305;&#x542B;&#x4E86;&#x4E0D;&#x540C;&#x7684;&#x76EE;&#x5F55;&#x5F88;&#x6709;&#x7528;&#x3002;</p>
+<p><code>$(&lt;D)</code>, <code>$(&lt;F)</code></p>
+<p>:   &#x5206;&#x522B;&#x8868;&#x793A;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x7684;&#x76EE;&#x5F55;&#x90E8;&#x5206;&#x548C;&#x6587;&#x4EF6;&#x90E8;&#x5206;&#x3002;</p>
+<p><code>$(^D)</code>, <code>$(^F)</code></p>
+<p>:   &#x5206;&#x522B;&#x8868;&#x793A;&#x6240;&#x6709;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x7684;&#x76EE;&#x5F55;&#x90E8;&#x5206;&#x548C;&#x6587;&#x4EF6;&#x90E8;&#x5206;&#x3002;&#xFF08;&#x65E0;&#x76F8;&#x540C;&#x7684;&#xFF09;</p>
+<p><code>$(+D)</code>, <code>$(+F)</code></p>
+<p>:   &#x5206;&#x522B;&#x8868;&#x793A;&#x6240;&#x6709;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x7684;&#x76EE;&#x5F55;&#x90E8;&#x5206;&#x548C;&#x6587;&#x4EF6;&#x90E8;&#x5206;&#x3002;&#xFF08;&#x53EF;&#x4EE5;&#x6709;&#x76F8;&#x540C;&#x7684;&#xFF09;</p>
+<p><code>$(?D)</code>, <code>$(?F)</code></p>
+<p>:   &#x5206;&#x522B;&#x8868;&#x793A;&#x88AB;&#x66F4;&#x65B0;&#x7684;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x7684;&#x76EE;&#x5F55;&#x90E8;&#x5206;&#x548C;&#x6587;&#x4EF6;&#x90E8;&#x5206;&#x3002;</p>
+<p>&#x6700;&#x540E;&#x60F3;&#x63D0;&#x9192;&#x4E00;&#x4E0B;&#x7684;&#x662F;&#xFF0C;&#x5BF9;&#x4E8E; <code>$&lt;</code> &#xFF0C;&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x4EA7;&#x751F;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x9EBB;&#x70E6;&#xFF0C;&#x6211;&#x4EEC;&#x6700;&#x597D;&#x7ED9; <code>$</code> &#x540E;&#x9762;&#x7684;&#x90A3;&#x4E2A;&#x7279;&#x5B9A; &#x5B57;&#x7B26;&#x90FD;&#x52A0;&#x4E0A;&#x5706;&#x62EC;&#x53F7;&#xFF0C;&#x6BD4;&#x5982;&#xFF0C; <code>$(&lt;)</code> &#x5C31;&#x8981;&#x6BD4; <code>$&lt;</code> &#x8981;&#x597D;&#x4E00;&#x4E9B;&#x3002;</p>
+<p>&#x8FD8;&#x5F97;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x8FD9;&#x4E9B;&#x53D8;&#x91CF;&#x53EA;&#x4F7F;&#x7528;&#x5728;&#x89C4;&#x5219;&#x7684;&#x547D;&#x4EE4;&#x4E2D;&#xFF0C;&#x800C;&#x4E14;&#x4E00;&#x822C;&#x90FD;&#x662F;&quot;&#x663E;&#x5F0F;&#x89C4;&#x5219;&quot;&#x548C;&quot;&#x9759;&#x6001;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&quot; &#xFF08;&#x53C2;&#x89C1;&#x524D;&#x9762;&quot;&#x4E66;&#x5199;&#x89C4;&#x5219;&quot;&#x4E00;&#x7AE0;&#xFF09;&#x3002;&#x5176;&#x5728;&#x9690;&#x542B;&#x89C4;&#x5219;&#x4E2D;&#x5E76;&#x6CA1;&#x6709;&#x610F;&#x4E49;&#x3002;</p>
+<h3 id="954-&#x6A21;&#x5F0F;&#x7684;&#x5339;&#x914D;"><a name="954-&#x6A21;&#x5F0F;&#x7684;&#x5339;&#x914D;" class="anchor-navigation-ex-anchor" href="#954-&#x6A21;&#x5F0F;&#x7684;&#x5339;&#x914D;"><i class="fa fa-link" aria-hidden="true"></i></a>9.5.4 &#x6A21;&#x5F0F;&#x7684;&#x5339;&#x914D;</h3>
+<p>&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x4E00;&#x4E2A;&#x76EE;&#x6807;&#x7684;&#x6A21;&#x5F0F;&#x6709;&#x4E00;&#x4E2A;&#x6709;&#x524D;&#x7F00;&#x6216;&#x662F;&#x540E;&#x7F00;&#x7684; <code>%</code> &#xFF0C;&#x6216;&#x662F;&#x6CA1;&#x6709;&#x524D;&#x540E;&#x7F00;&#xFF0C;&#x76F4;&#x63A5;&#x5C31;&#x662F;&#x4E00;&#x4E2A; <code>%</code> &#x3002; &#x56E0;&#x4E3A; <code>%</code> &#x4EE3;&#x8868;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x5B57;&#x7B26;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x5B9A;&#x4E49;&#x597D;&#x4E86;&#x7684;&#x6A21;&#x5F0F;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x628A; <code>%</code> &#x6240;&#x5339;&#x914D;&#x7684;&#x5185;&#x5BB9;&#x53EB;&#x505A;&quot;&#x830E;&quot;&#xFF0C;&#x4F8B;&#x5982; <code>%.c</code> &#x6240;&#x5339;&#x914D;&#x7684;&#x6587;&#x4EF6;&quot;test.c&quot;&#x4E2D;&quot;test&quot;&#x5C31;&#x662F;&quot;&#x830E;&quot;&#x3002;&#x56E0;&#x4E3A;&#x5728;&#x76EE;&#x6807;&#x548C;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x4E2D;&#x540C;&#x65F6;&#x6709; <code>%</code> &#x65F6;&#xFF0C;&#x4F9D;&#x8D56; &#x76EE;&#x6807;&#x7684;&quot;&#x830E;&quot;&#x4F1A;&#x4F20;&#x7ED9;&#x76EE;&#x6807;&#xFF0C;&#x5F53;&#x505A;&#x76EE;&#x6807;&#x4E2D;&#x7684;&quot;&#x830E;&quot;&#x3002;</p>
+<p>&#x5F53;&#x4E00;&#x4E2A;&#x6A21;&#x5F0F;&#x5339;&#x914D;&#x5305;&#x542B;&#x6709;&#x659C;&#x6760;&#xFF08;&#x5B9E;&#x9645;&#x4E5F;&#x4E0D;&#x7ECF;&#x5E38;&#x5305;&#x542B;&#xFF09;&#x7684;&#x6587;&#x4EF6;&#x65F6;&#xFF0C;&#x90A3;&#x4E48;&#x5728;&#x8FDB;&#x884C;&#x6A21;&#x5F0F;&#x5339;&#x914D;&#x65F6;&#xFF0C;&#x76EE;&#x5F55;&#x90E8;&#x5206;&#x4F1A;&#x9996;&#x5148;&#x88AB;&#x79FB;&#x5F00;&#xFF0C; &#x7136;&#x540E;&#x8FDB;&#x884C;&#x5339;&#x914D;&#xFF0C;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x518D;&#x628A;&#x76EE;&#x5F55;&#x52A0;&#x56DE;&#x53BB;&#x3002;&#x5728;&#x8FDB;&#x884C;&quot;&#x830E;&quot;&#x7684;&#x4F20;&#x9012;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x77E5;&#x9053;&#x8FD9;&#x4E2A;&#x6B65;&#x9AA4;&#x3002;&#x4F8B;&#x5982;&#x6709;&#x4E00;&#x4E2A;&#x6A21;&#x5F0F; <code>e%t</code> &#xFF0C;&#x6587;&#x4EF6; <code>src/eat</code> &#x5339;&#x914D;&#x4E8E;&#x8BE5;&#x6A21;&#x5F0F;&#xFF0C;&#x4E8E;&#x662F; <code>src/a</code> &#x5C31;&#x662F;&#x5176;&quot;&#x830E;&quot;&#xFF0C;&#x5982;&#x679C;&#x8FD9;&#x4E2A;&#x6A21;&#x5F0F;&#x5B9A;&#x4E49;&#x5728;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x4E2D;&#xFF0C;&#x800C;&#x88AB;&#x4F9D;&#x8D56;&#x4E8E;&#x8FD9;&#x4E2A;&#x6A21;&#x5F0F;&#x7684;&#x76EE;&#x6807;&#x4E2D;&#x53C8;&#x6709;&#x4E2A;&#x6A21;&#x5F0F; <code>c%r</code> &#xFF0C;&#x90A3;&#x4E48;&#xFF0C;&#x76EE;&#x6807;&#x5C31;&#x662F;
+<code>src/car</code> &#x3002;&#xFF08;&quot;&#x830E;&quot;&#x88AB;&#x4F20;&#x9012;&#xFF09;</p>
+<h3 id="955-&#x91CD;&#x8F7D;&#x5185;&#x5EFA;&#x9690;&#x542B;&#x89C4;&#x5219;"><a name="955-&#x91CD;&#x8F7D;&#x5185;&#x5EFA;&#x9690;&#x542B;&#x89C4;&#x5219;" class="anchor-navigation-ex-anchor" href="#955-&#x91CD;&#x8F7D;&#x5185;&#x5EFA;&#x9690;&#x542B;&#x89C4;&#x5219;"><i class="fa fa-link" aria-hidden="true"></i></a>9.5.5 &#x91CD;&#x8F7D;&#x5185;&#x5EFA;&#x9690;&#x542B;&#x89C4;&#x5219;</h3>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x91CD;&#x8F7D;&#x5185;&#x5EFA;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#xFF08;&#x6216;&#x662F;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5168;&#x65B0;&#x7684;&#xFF09;&#xFF0C;&#x4F8B;&#x5982;&#x4F60;&#x53EF;&#x4EE5;&#x91CD;&#x65B0;&#x6784;&#x9020;&#x548C;&#x5185;&#x5EFA;&#x9690;&#x542B;&#x89C4;&#x5219;&#x4E0D;&#x540C;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x5982;&#xFF1A;</p>
+<pre class="language-"><code class="lang-makefile">.RECIPEPREFIX <span class="token operator">=</span> &gt;
+<span class="token target symbol">%.o</span> <span class="token punctuation">:</span> %.c
+&gt;  <span class="token variable">$</span><span class="token punctuation">(</span>CC<span class="token punctuation">)</span> -c <span class="token variable">$</span><span class="token punctuation">(</span>CPPFLAGS<span class="token punctuation">)</span> <span class="token variable">$</span><span class="token punctuation">(</span>CFLAGS<span class="token punctuation">)</span> -D<span class="token variable">$</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x53D6;&#x6D88;&#x5185;&#x5EFA;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#xFF0C;&#x53EA;&#x8981;&#x4E0D;&#x5728;&#x540E;&#x9762;&#x5199;&#x547D;&#x4EE4;&#x5C31;&#x884C;&#x3002;&#x5982;&#xFF1A;</p>
+<pre class="language-"><code class="lang-makefile"><span class="token target symbol">%.o</span> <span class="token punctuation">:</span> %.s
+</code></pre>
+<p>&#x540C;&#x6837;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x91CD;&#x65B0;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5168;&#x65B0;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#xFF0C;&#x5176;&#x5728;&#x9690;&#x542B;&#x89C4;&#x5219;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;&#x53D6;&#x51B3;&#x4E8E;&#x4F60;&#x5728;&#x54EA;&#x91CC;&#x5199;&#x4E0B;&#x8FD9;&#x4E2A;&#x89C4;&#x5219;&#x3002;&#x671D;&#x524D;&#x7684;&#x4F4D;&#x7F6E;&#x5C31;&#x9760;&#x524D;&#x3002;</p>
+<h2 id="96-&#x8001;&#x5F0F;&#x98CE;&#x683C;&#x7684;&#x540E;&#x7F00;&#x89C4;&#x5219;"><a name="96-&#x8001;&#x5F0F;&#x98CE;&#x683C;&#x7684;&#x540E;&#x7F00;&#x89C4;&#x5219;" class="anchor-navigation-ex-anchor" href="#96-&#x8001;&#x5F0F;&#x98CE;&#x683C;&#x7684;&#x540E;&#x7F00;&#x89C4;&#x5219;"><i class="fa fa-link" aria-hidden="true"></i></a>9.6 &#x8001;&#x5F0F;&#x98CE;&#x683C;&#x7684;&quot;&#x540E;&#x7F00;&#x89C4;&#x5219;&quot;</h2>
+<p>&#x540E;&#x7F00;&#x89C4;&#x5219;&#x662F;&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x8001;&#x5F0F;&#x7684;&#x5B9A;&#x4E49;&#x9690;&#x542B;&#x89C4;&#x5219;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x540E;&#x7F00;&#x89C4;&#x5219;&#x4F1A;&#x88AB;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x9010;&#x6B65;&#x5730;&#x53D6;&#x4EE3;&#x3002;&#x56E0;&#x4E3A;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x66F4;&#x5F3A;&#x66F4;&#x6E05;&#x6670;&#x3002;&#x4E3A;&#x4E86;&#x548C;&#x8001;&#x7248;&#x672C;&#x7684;Makefile&#x517C;&#x5BB9;&#xFF0C;GNU make&#x540C;&#x6837;&#x517C;&#x5BB9;&#x4E8E;&#x8FD9;&#x4E9B;&#x4E1C;&#x897F;&#x3002;&#x540E;&#x7F00;&#x89C4;&#x5219;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF1A;&quot;&#x53CC;&#x540E;&#x7F00;&quot;&#x548C;&quot;&#x5355;&#x540E;&#x7F00;&quot;&#x3002;</p>
+<p>&#x53CC;&#x540E;&#x7F00;&#x89C4;&#x5219;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x5BF9;&#x540E;&#x7F00;&#xFF1A;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x7684;&#x540E;&#x7F00;&#x548C;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#xFF08;&#x6E90;&#x6587;&#x4EF6;&#xFF09;&#x7684;&#x540E;&#x7F00;&#x3002;&#x5982; <code>.c.o</code> &#x76F8;&#x5F53;&#x4E8E; <code>%o : %c</code> &#x3002;&#x5355;&#x540E;&#x7F00;&#x89C4;&#x5219;&#x53EA;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x540E;&#x7F00;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x6E90;&#x6587;&#x4EF6;&#x7684;&#x540E;&#x7F00;&#x3002;&#x5982; <code>.c</code> &#x76F8;&#x5F53;&#x4E8E; <code>% : %.c</code>
+&#x3002;</p>
+<p>&#x540E;&#x7F00;&#x89C4;&#x5219;&#x4E2D;&#x6240;&#x5B9A;&#x4E49;&#x7684;&#x540E;&#x7F00;&#x5E94;&#x8BE5;&#x662F;make&#x6240;&#x8BA4;&#x8BC6;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x540E;&#x7F00;&#x662F;make&#x6240;&#x8BA4;&#x8BC6;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x89C4;&#x5219;&#x5C31;&#x662F;&#x5355;&#x540E;&#x7F00;&#x89C4;&#x5219;&#xFF0C;&#x800C;&#x5982;&#x679C;&#x4E24;&#x4E2A;&#x8FDE;&#x5728;&#x4E00;&#x8D77;&#x7684;&#x540E;&#x7F00;&#x90FD;&#x88AB;make&#x6240;&#x8BA4;&#x8BC6;&#xFF0C;&#x90A3;&#x5C31;&#x662F;&#x53CC;&#x540E;&#x7F00;&#x89C4;&#x5219;&#x3002;&#x4F8B;&#x5982;&#xFF1A; <code>.c</code> &#x548C; <code>.o</code> &#x90FD;&#x662F;make&#x6240;&#x77E5;&#x9053;&#x3002; &#x56E0;&#x800C;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x89C4;&#x5219;&#x662F; <code>.c.o</code> &#x90A3;&#x4E48;&#x5176;&#x5C31;&#x662F;&#x53CC;&#x540E;&#x7F00;&#x89C4;&#x5219;&#xFF0C;&#x610F;&#x4E49;&#x5C31;&#x662F; <code>.c</code> &#x662F;&#x6E90;&#x6587;&#x4EF6;&#x7684;&#x540E;&#x7F00;&#xFF0C; <code>.o</code> &#x662F;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x7684;&#x540E;&#x7F00;&#x3002;&#x5982;&#x4E0B;&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-makefile">.RECIPEPREFIX <span class="token operator">=</span> &gt;
+<span class="token target symbol">.c.o</span><span class="token punctuation">:</span>
+&gt;  <span class="token variable">$</span><span class="token punctuation">(</span>CC<span class="token punctuation">)</span> -c <span class="token variable">$</span><span class="token punctuation">(</span>CFLAGS<span class="token punctuation">)</span> <span class="token variable">$</span><span class="token punctuation">(</span>CPPFLAGS<span class="token punctuation">)</span> -o <span class="token variable">$@</span> <span class="token variable">$&lt;</span>
+</code></pre>
+<p>&#x540E;&#x7F00;&#x89C4;&#x5219;&#x4E0D;&#x5141;&#x8BB8;&#x4EFB;&#x4F55;&#x7684;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x7684;&#x8BDD;&#xFF0C;&#x90A3;&#x5C31;&#x4E0D;&#x662F;&#x540E;&#x7F00;&#x89C4;&#x5219;&#xFF0C;&#x90A3;&#x4E9B;&#x540E;&#x7F00;&#x7EDF;&#x7EDF;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x6587;&#x4EF6;&#x540D;&#xFF0C;&#x5982;&#xFF1A;</p>
+<pre class="language-"><code class="lang-makefile">.RECIPEPREFIX <span class="token operator">=</span> &gt;
+<span class="token target symbol">.c.o</span><span class="token punctuation">:</span> foo.h
+&gt;  <span class="token variable">$</span><span class="token punctuation">(</span>CC<span class="token punctuation">)</span> -c <span class="token variable">$</span><span class="token punctuation">(</span>CFLAGS<span class="token punctuation">)</span> <span class="token variable">$</span><span class="token punctuation">(</span>CPPFLAGS<span class="token punctuation">)</span> -o <span class="token variable">$@</span> <span class="token variable">$&lt;</span>
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x6587;&#x4EF6; <code>.c.o</code> &#x4F9D;&#x8D56;&#x4E8E;&#x6587;&#x4EF6; <code>foo.h</code>
+&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x7684;&#x8FD9;&#x6837;&#xFF1A;</p>
+<pre class="language-"><code class="lang-makefile">.RECIPEPREFIX <span class="token operator">=</span> &gt;
+<span class="token target symbol">%.o</span><span class="token punctuation">:</span> %.c foo.h
+&gt;  <span class="token variable">$</span><span class="token punctuation">(</span>CC<span class="token punctuation">)</span> -c <span class="token variable">$</span><span class="token punctuation">(</span>CFLAGS<span class="token punctuation">)</span> <span class="token variable">$</span><span class="token punctuation">(</span>CPPFLAGS<span class="token punctuation">)</span> -o <span class="token variable">$@</span> <span class="token variable">$&lt;</span>
+</code></pre>
+<p>&#x540E;&#x7F00;&#x89C4;&#x5219;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x547D;&#x4EE4;&#xFF0C;&#x90A3;&#x662F;&#x6BEB;&#x65E0;&#x610F;&#x4E49;&#x7684;&#x3002;&#x56E0;&#x4E3A;&#x4ED6;&#x4E5F;&#x4E0D;&#x4F1A;&#x79FB;&#x53BB;&#x5185;&#x5EFA;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x3002;</p>
+<p>&#x800C;&#x8981;&#x8BA9;make&#x77E5;&#x9053;&#x4E00;&#x4E9B;&#x7279;&#x5B9A;&#x7684;&#x540E;&#x7F00;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4F2A;&#x76EE;&#x6807; <code>.SUFFIXES</code> &#x6765;&#x5B9A;&#x4E49;&#x6216;&#x662F;&#x5220;&#x9664;&#xFF0C;&#x5982;&#xFF1A;</p>
+<pre class="language-"><code class="lang-makefile"><span class="token builtin-target builtin">.SUFFIXES</span><span class="token punctuation">:</span> .hack .win
+</code></pre>
+<p>&#x628A;&#x540E;&#x7F00; <code>.hack</code> &#x548C; <code>.win</code> &#x52A0;&#x5165;&#x540E;&#x7F00;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x672B;&#x5C3E;&#x3002;</p>
+<pre class="language-"><code class="lang-makefile"><span class="token builtin-target builtin">.SUFFIXES</span><span class="token punctuation">:</span>              <span class="token comment"># &#x5220;&#x9664;&#x9ED8;&#x8BA4;&#x7684;&#x540E;&#x7F00;</span>
+<span class="token builtin-target builtin">.SUFFIXES</span><span class="token punctuation">:</span> .c .o .h   <span class="token comment"># &#x5B9A;&#x4E49;&#x81EA;&#x5DF1;&#x7684;&#x540E;&#x7F00;</span>
+</code></pre>
+<p>&#x5148;&#x6E05;&#x9664;&#x9ED8;&#x8BA4;&#x540E;&#x7F00;&#xFF0C;&#x540E;&#x5B9A;&#x4E49;&#x81EA;&#x5DF1;&#x7684;&#x540E;&#x7F00;&#x5217;&#x8868;&#x3002;</p>
+<p>make&#x7684;&#x53C2;&#x6570; <code>-r</code> &#x6216; <code>-no-builtin-rules</code> &#x4E5F;&#x4F1A;&#x4F7F;&#x7528;&#x5F97;&#x9ED8;&#x8BA4;&#x7684;&#x540E;&#x7F00;&#x5217;&#x8868;&#x4E3A;&#x7A7A;&#x3002;&#x800C;&#x53D8;&#x91CF; <code>SUFFIXE</code> &#x88AB;&#x7528;&#x6765;&#x5B9A;&#x4E49;&#x9ED8;&#x8BA4;&#x7684;&#x540E;&#x7F00;&#x5217;&#x8868;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x7528; <code>.SUFFIXES</code> &#x6765;&#x6539;&#x53D8;&#x540E;&#x7F00;&#x5217;&#x8868;&#xFF0C;&#x4F46;&#x8BF7;&#x4E0D;&#x8981;&#x6539;&#x53D8;&#x53D8;&#x91CF; <code>SUFFIXE</code> &#x7684;&#x503C;&#x3002;</p>
+<h2 id="97-&#x9690;&#x542B;&#x89C4;&#x5219;&#x641C;&#x7D22;&#x7B97;&#x6CD5;"><a name="97-&#x9690;&#x542B;&#x89C4;&#x5219;&#x641C;&#x7D22;&#x7B97;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#97-&#x9690;&#x542B;&#x89C4;&#x5219;&#x641C;&#x7D22;&#x7B97;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>9.7 &#x9690;&#x542B;&#x89C4;&#x5219;&#x641C;&#x7D22;&#x7B97;&#x6CD5;</h2>
+<p>&#x6BD4;&#x5982;&#x6211;&#x4EEC;&#x6709;&#x4E00;&#x4E2A;&#x76EE;&#x6807;&#x53EB;T&#x3002;&#x4E0B;&#x9762;&#x662F;&#x641C;&#x7D22;&#x76EE;&#x6807;T&#x7684;&#x89C4;&#x5219;&#x7684;&#x7B97;&#x6CD5;&#x3002;&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x5728;&#x4E0B;&#x9762;&#xFF0C;&#x6211;&#x4EEC;&#x6CA1;&#x6709;&#x63D0;&#x5230;&#x540E;&#x7F00;&#x89C4;&#x5219;&#xFF0C;&#x539F;&#x56E0;&#x662F;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x540E;&#x7F00;&#x89C4;&#x5219;&#x5728;Makefile&#x88AB;&#x8F7D;&#x5165;&#x5185;&#x5B58;&#x65F6;&#xFF0C;&#x4F1A;&#x88AB;&#x8F6C;&#x6362;&#x6210;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x3002;&#x5982;&#x679C;&#x76EE;&#x6807;&#x662F; <code>archive(member)</code> &#x7684;&#x51FD;&#x6570;&#x5E93;&#x6587;&#x4EF6;&#x6A21;&#x5F0F;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x7B97;&#x6CD5;&#x4F1A;&#x88AB;&#x8FD0;&#x884C;&#x4E24;&#x6B21;&#xFF0C;&#x7B2C;&#x4E00;&#x6B21;&#x662F;&#x627E;&#x76EE;&#x6807;T&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x627E;&#x5230;&#x7684;&#x8BDD;&#xFF0C;&#x90A3;&#x4E48;&#x8FDB;&#x5165;&#x7B2C;&#x4E8C;&#x6B21;&#xFF0C;&#x7B2C;&#x4E8C;&#x6B21;&#x4F1A;&#x628A; <code>member</code> &#x5F53;&#x4F5C;T&#x6765;&#x641C;&#x7D22;&#x3002;</p>
+<ol>
+<li>&#x628A;T&#x7684;&#x76EE;&#x5F55;&#x90E8;&#x5206;&#x5206;&#x79BB;&#x51FA;&#x6765;&#x3002;&#x53EB;D&#xFF0C;&#x800C;&#x5269;&#x4F59;&#x90E8;&#x5206;&#x53EB;N&#x3002;&#xFF08;&#x5982;&#xFF1A;&#x5982;&#x679C;T&#x662F; <code>src/foo.o</code> &#xFF0C;&#x90A3;&#x4E48;&#xFF0C;D&#x5C31;&#x662F; <code>src/</code> &#xFF0C;N&#x5C31;&#x662F; <code>foo.o</code> &#xFF09;</li>
+<li>&#x521B;&#x5EFA;&#x6240;&#x6709;&#x5339;&#x914D;&#x4E8E;T&#x6216;&#x662F;N&#x7684;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x5217;&#x8868;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x5728;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x5217;&#x8868;&#x4E2D;&#x6709;&#x5339;&#x914D;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x7684;&#x6A21;&#x5F0F;&#xFF0C;&#x5982; <code>%</code> &#xFF0C;&#x90A3;&#x4E48;&#x4ECE;&#x5217;&#x8868;&#x4E2D;&#x79FB;&#x9664;&#x5176;&#x5B83;&#x7684;&#x6A21;&#x5F0F;&#x3002;</li>
+<li>&#x79FB;&#x9664;&#x5217;&#x8868;&#x4E2D;&#x6CA1;&#x6709;&#x547D;&#x4EE4;&#x7684;&#x89C4;&#x5219;&#x3002;</li>
+<li>&#x5BF9;&#x4E8E;&#x7B2C;&#x4E00;&#x4E2A;&#x5728;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#xFF1A;<ol>
+<li>&#x63A8;&#x5BFC;&#x5176;&quot;&#x830E;&quot;S&#xFF0C;S&#x5E94;&#x8BE5;&#x662F;T&#x6216;&#x662F;N&#x5339;&#x914D;&#x4E8E;&#x6A21;&#x5F0F;&#x4E2D; <code>%</code> &#x975E;&#x7A7A;&#x7684;&#x90E8;&#x5206;&#x3002;</li>
+<li>&#x8BA1;&#x7B97;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x3002;&#x628A;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x4E2D;&#x7684; <code>%</code> &#x90FD;&#x66FF;&#x6362;&#x6210;&quot;&#x830E;&quot;S&#x3002;&#x5982;&#x679C;&#x76EE;&#x6807;&#x6A21;&#x5F0F;&#x4E2D;&#x6CA1;&#x6709;&#x5305;&#x542B;&#x659C;&#x6846;&#x5B57;&#x7B26;&#xFF0C;&#x800C;&#x628A;D&#x52A0;&#x5728;&#x7B2C;&#x4E00;&#x4E2A;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x7684;&#x5F00;&#x5934;&#x3002;</li>
+<li>&#x6D4B;&#x8BD5;&#x662F;&#x5426;&#x6240;&#x6709;&#x7684;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x90FD;&#x5B58;&#x5728;&#x6216;&#x662F;&#x7406;&#x5F53;&#x5B58;&#x5728;&#x3002;&#xFF08;&#x5982;&#x679C;&#x6709;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x88AB;&#x5B9A;&#x4E49;&#x6210;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x89C4;&#x5219;&#x7684;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#xFF0C;&#x6216;&#x8005;&#x662F;&#x4E00;&#x4E2A;&#x663E;&#x5F0F;&#x89C4;&#x5219;&#x7684;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x5C31;&#x53EB;&quot;&#x7406;&#x5F53;&#x5B58;&#x5728;&quot;&#xFF09;</li>
+<li>&#x5982;&#x679C;&#x6240;&#x6709;&#x7684;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x5B58;&#x5728;&#x6216;&#x662F;&#x7406;&#x5F53;&#x5B58;&#x5728;&#xFF0C;&#x6216;&#x662F;&#x5C31;&#x6CA1;&#x6709;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x3002;&#x90A3;&#x4E48;&#x8FD9;&#x6761;&#x89C4;&#x5219;&#x5C06;&#x88AB;&#x91C7;&#x7528;&#xFF0C;&#x9000;&#x51FA;&#x8BE5;&#x7B97;&#x6CD5;&#x3002;</li>
+</ol>
+</li>
+<li>&#x5982;&#x679C;&#x7ECF;&#x8FC7;&#x7B2C;5&#x6B65;&#xFF0C;&#x6CA1;&#x6709;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x88AB;&#x627E;&#x5230;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x505A;&#x66F4;&#x8FDB;&#x4E00;&#x6B65;&#x7684;&#x641C;&#x7D22;&#x3002;&#x5BF9;&#x4E8E;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#xFF1A;<ol>
+<li>&#x5982;&#x679C;&#x89C4;&#x5219;&#x662F;&#x7EC8;&#x6B62;&#x89C4;&#x5219;&#xFF0C;&#x90A3;&#x5C31;&#x5FFD;&#x7565;&#x5B83;&#xFF0C;&#x7EE7;&#x7EED;&#x4E0B;&#x4E00;&#x6761;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x3002;</li>
+<li>&#x8BA1;&#x7B97;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x3002;&#xFF08;&#x540C;&#x7B2C;5&#x6B65;&#xFF09;</li>
+<li>&#x6D4B;&#x8BD5;&#x6240;&#x6709;&#x7684;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x5B58;&#x5728;&#x6216;&#x662F;&#x7406;&#x5F53;&#x5B58;&#x5728;&#x3002;</li>
+<li>&#x5BF9;&#x4E8E;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#xFF0C;&#x9012;&#x5F52;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x7B97;&#x6CD5;&#x67E5;&#x627E;&#x4ED6;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x88AB;&#x9690;&#x542B;&#x89C4;&#x5219;&#x627E;&#x5230;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x6240;&#x6709;&#x7684;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x5B58;&#x5728;&#x6216;&#x662F;&#x7406;&#x5F53;&#x5B58;&#x5728;&#xFF0C;&#x6216;&#x662F;&#x5C31;&#x6839;&#x672C;&#x6CA1;&#x6709;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x3002;&#x90A3;&#x4E48;&#x8FD9;&#x6761;&#x89C4;&#x5219;&#x88AB;&#x91C7;&#x7528;&#xFF0C;&#x9000;&#x51FA;&#x8BE5;&#x7B97;&#x6CD5;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x9690;&#x542B;&#x89C4;&#x5219;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#xFF0C;&#x67E5;&#x770B; <code>.DEFAULT</code> &#x89C4;&#x5219;&#xFF0C;&#x5982;&#x679C;&#x6709;&#xFF0C;&#x91C7;&#x7528;&#xFF0C;&#x628A; <code>.DEFAULT</code> &#x7684;&#x547D;&#x4EE4;&#x7ED9;T&#x4F7F;&#x7528;&#x3002;</li>
+</ol>
+</li>
+</ol>
+<p>&#x4E00;&#x65E6;&#x89C4;&#x5219;&#x88AB;&#x627E;&#x5230;&#xFF0C;&#x5C31;&#x4F1A;&#x6267;&#x884C;&#x5176;&#x76F8;&#x5F53;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x800C;&#x6B64;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x7684;&#x81EA;&#x52A8;&#x5316;&#x53D8;&#x91CF;&#x7684;&#x503C;&#x624D;&#x4F1A;&#x751F;&#x6210;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="chapter-08-invoke.html" class="navigation navigation-prev " aria-label="Previous page: 第八章　　make的运行">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="chapter-10-archives.html" class="navigation navigation-next " aria-label="Next page: 第十章　　使用make更新函数库文件">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第九章　　隐含规则","level":"1.10","depth":1,"next":{"title":"第十章　　使用make更新函数库文件","level":"1.11","depth":1,"path":"articles/chapter-10-archives.md","ref":"./articles/chapter-10-archives.md","articles":[]},"previous":{"title":"第八章　　make的运行","level":"1.9","depth":1,"path":"articles/chapter-08-invoke.md","ref":"./articles/chapter-08-invoke.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","-highlight","prism","-sharing","github","anchor-navigation-ex","edit-link","theme-comscore","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/lewis1573/write-makefile-with-me"},"search-pro":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"night","family":"sans"},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"theme-comscore":{},"ga":{"configuration":"auto","token":""},"edit-link":{"label":"Edit This Page","base":"https://github.com/lewis1573/write-makefile-with-me/edit/master/book_sources/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","gitbook":"*"},"file":{"path":"articles/chapter-09-implicit_rules.md","mtime":"2024-05-29T11:48:45.527Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-05-29T11:49:16.297Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+
